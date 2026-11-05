@@ -101,8 +101,7 @@ def run_demo(out_dir):
 
 def main(argv=None):
     arguments = list(sys.argv[1:] if argv is None else argv)
-  
-    parser = argparse.ArgumentParser(prog="ymap", description="Y-Map research framework. Use 'ymap dataset --help' for the combined Dataset and imported SQL catalogue.")
+    parser = argparse.ArgumentParser(prog="ymap", description="Y-Map research framework.")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("doctor", help="Report dependencies without printing credentials")
     gen = sub.add_parser("generate", help="Generate candidates; does not measure or certify application semantics")

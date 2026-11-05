@@ -4,7 +4,7 @@
 
 ## Source identity and page numbering
 
-- Source copied within this project: `provenance/Papers/YMap_v8.pdf`.
+- Source: manuscript version v8 (the PDF is not included in this repository).
 - Document title: *Y-Map: Performance-Aware Relational Schema Recommendation under Object-Relational Mapping Constraints*.
 - SHA-256: `efadae1dcf94a541cd219810ae31bc313f391bf8a2352cdacd9ee10ea2dcba2e`.
 - Source length: 41 physical PDF pages. `source_page` uses the one-based physical PDF page, including the highlights page. `source_printed_page` records the manuscript footer where unambiguous; for the selected pages it is one less than the physical page. Physical page 27 has an overlaid earlier footer as well as the current footer 26.
@@ -33,8 +33,6 @@ These sources describe different collections. None establishes that the others h
 | Source | Count and meaning | Relationship to this register |
 | --- | --- | --- |
 | v8 source PDF, physical page 15, Table 3 | Reports 12,500 unique/profiled candidates across 11 systems. Its listed shared-system unique counts sum to 7,506, with the remaining 4,994 assigned to HIS and ERP. | Source-paper corpus claim; not a count verified from raw measurements here. |
-| `Dataset/README.md`, correlation subsection | Describes correlation analysis over 31,302 candidate designs from an archived March 2026 source. | Archived comparator/analysis material; the README statement alone does not identify it with the v8 paper corpus. |
-| `provenance/User_Run_Logs/YMap_728_Candidate_Generation_Windows.txt`, generation output | A supplied Windows log reports `candidate_count: 728` after a Python-backend candidate-generation command. | A separately observed generation log. It is not a 728-candidate measured performance dataset, a reconstruction of the 12,500 paper labels, or proof of the archived 31,302-design population. |
 | Current package profiling/training outputs | Counts and metrics must be read from their own manifests and generated output files. | Fresh results must carry their own run IDs and provenance, and must never be relabeled from this CSV. |
 
 ## Source caveats preserved

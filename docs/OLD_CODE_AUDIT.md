@@ -1,6 +1,6 @@
 # Audit of the supplied older archive
 
-This audit concerns the exact uploaded older ZIP. It does not determine whether a different implementation produced the manuscript's reported measurements. The untouched archive and its SHA-256 are retained in `legacy/`.
+This audit concerns the exact uploaded older ZIP. It does not determine whether a different implementation produced the manuscript's reported measurements. The older archive is not included in this repository; its SHA-256 was `4d7af8e30b2e486a66b66505222acaa17e04b01f45de49e84eba845715f4d0a0`.
 
 | Observed implementation | Consequence | Revised implementation |
 |---|---|---|
