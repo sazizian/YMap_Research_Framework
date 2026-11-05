@@ -1,0 +1,17 @@
+{
+  "scope": "Exploratory graph + symbolic CPU diagnostic; no pretrained text encoders.",
+  "input_hashes": {
+    "candidates.jsonl": "a3070d97ce7cb05097d1e3f3b9319b19cb9024b35ecc3f0a5861d8ef50162b3e",
+    "measurements.csv": "6619ed1a8c87b01eba31c0ac42f5fa3d98b8c71a0f98965662511c019f3a64d1",
+    "baseline_evaluation.yaml": "c28d31d4665b532055838a06e26d816af65159356ebe84741b9760bad6990118"
+  },
+  "torch_version": "2.14.1+cpu",
+  "torch_num_threads": 2,
+  "candidate_count": 728,
+  "source_system_count": 11,
+  "neural_member_fit_count": 66,
+  "epochs_per_neural_member": 10,
+  "epoch_policy": "Fixed budget; no calibration or test outcomes used for early stopping.",
+  "comparison_scope": "Structural model parameters retained from the existing configuration.",
+  "interpretation": "Ten epochs are a diagnostic budget, not a convergence guarantee. Changes motivated by previous outer-test inspection are exploratory."
+}

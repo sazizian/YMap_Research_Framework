@@ -1,0 +1,86 @@
+{
+  "domain": "travel",
+  "classes": [
+    {
+      "name": "Traveler",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Booking",
+      "attributes": [
+        {
+          "name": "booked_at",
+          "type": "datetime"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ItineraryItem",
+      "attributes": [
+        {
+          "name": "start_time",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "name": "FlightSegment",
+      "extends": "ItineraryItem",
+      "attributes": [
+        {
+          "name": "flight_no",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "HotelStay",
+      "extends": "ItineraryItem",
+      "attributes": [
+        {
+          "name": "hotel_name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Payment",
+      "attributes": [
+        {
+          "name": "amount",
+          "type": "decimal"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "TravelerBookings",
+      "source": "Traveler",
+      "target": "Booking",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "BookingItems",
+      "source": "Booking",
+      "target": "ItineraryItem",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "BookingPayments",
+      "source": "Booking",
+      "target": "Payment",
+      "multiplicity": "one-to-many"
+    }
+  ],
+  "name": "travel_booking"
+}

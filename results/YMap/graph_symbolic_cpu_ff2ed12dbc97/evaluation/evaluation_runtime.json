@@ -1,0 +1,24 @@
+{
+  "clock": "time.perf_counter wall-clock seconds",
+  "total_evaluation_workflow_seconds": 2418.8737627000082,
+  "total_boundary": "From evaluate() entry through input validation, aggregation, folds, model fits, predictions, selections, metric/statistical computation and output writes, stopping before the final runtime/summary manifest serialization",
+  "stage_totals_seconds": {
+    "calibration_prediction": 52.00859100010712,
+    "feature_preparation": 2.0451442002668045,
+    "fit": 2338.501080199785,
+    "prediction_metric_calculation": 0.3112381001119502,
+    "recommendation_metric_calculation": 0.5481323001440614,
+    "selection": 0.40817210014211014,
+    "test_prediction": 20.90208279993385
+  },
+  "shared_ensemble_accounting": "One fit/prediction record for ensemble5; mean/risk variants reuse those predictions and each receive a separate selection record. Do not count shared stages twice.",
+  "neural_boundary": "Representation preparation, checkpoint/cache operations and device transfers performed by fit/predict APIs are included in their respective call timers; feature_preparation=0 means included within these calls, not absent",
+  "excluded_before_evaluation": [
+    "object-model acquisition",
+    "schema synthesis/enumeration",
+    "schema encoding done before evaluate()",
+    "database setup/data loading and measurement profiling"
+  ],
+  "comparison_rule": "These evaluation times cannot establish end-to-end speedups against competitors unless all methods report matching acquisition/synthesis/representation/training/inference/selection boundaries on the same workload and hardware",
+  "overhead": "Input loading, fold assembly, normalization, aggregation, statistics, bookkeeping and serialization are included in workflow total but not assigned to model stage records"
+}

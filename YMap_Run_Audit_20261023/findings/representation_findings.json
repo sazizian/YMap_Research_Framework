@@ -1,0 +1,219 @@
+{
+  "main_finding": "The 16-count structural baseline discards schema distinctions; this is a representation limitation, not evidence of a synthesis/profiling software bug.",
+  "scope": "Read-only descriptive audit. No model fitted, no held-out-target-guided tuning, no target or source-file changes.",
+  "evidence": {
+    "candidates": 728,
+    "feature_vectors": 226,
+    "collision_groups": 112,
+    "collision_candidates": 614,
+    "collision_candidate_percentage": 84.34065934065934,
+    "cross_system_collision_groups": 4,
+    "artifact_consistency": {
+      "canonical_candidate_valid": 728,
+      "measured_candidate_exactly_matches_input": 728,
+      "measured_sql_matches_input": 728,
+      "summary_realization_matches_fixture": 728,
+      "query_spec_exactly_regenerates": 728,
+      "expected_query_results_match_logical_oracle": 728,
+      "owned_schema_cleanup_dropped": 728,
+      "raw_repetition_results_match_logical_oracle": 4368
+    },
+    "artifact_mismatches": [],
+    "exact_physical_declaration_duplicate_groups": 0
+  },
+  "concrete_identical_feature_contrast": [
+    {
+      "schema_id": "hospital_information_system_071147be978fb095",
+      "decisions": {
+        "association:DepartmentProviders": "association_table",
+        "association:EncounterOrders": "direct_fk",
+        "association:OrderResults": "direct_fk",
+        "association:PatientBilling": "direct_fk",
+        "association:PatientEncounters": "association_table",
+        "association:PatientPlans": "association_table",
+        "association:ProviderEncounters": "association_table",
+        "inheritance:OrderRequest": "single_table",
+        "inheritance:Person": "single_table"
+      },
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 28,
+        "class_count": 11,
+        "column_count": 39,
+        "foreign_key_count": 11,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 13,
+        "pk_column_count": 15,
+        "single_table_count": 2,
+        "table_count": 11,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 5
+      },
+      "measured_objectives": {
+        "insert_ms": 756.3444,
+        "query_ms": 3.3543206896551725,
+        "storage_mb": 0.671744
+      },
+      "fixture_derived_structure": {
+        "physical_insert_rows": 1700,
+        "table_rows": {
+          "c_BillingAccount": 100,
+          "c_Department": 100,
+          "c_Encounter": 100,
+          "c_InsurancePlan": 100,
+          "c_OrderRequest": 300,
+          "c_Person": 300,
+          "c_Result": 100,
+          "l_DepartmentProviders": 100,
+          "l_PatientEncounters": 100,
+          "l_PatientPlans": 200,
+          "l_ProviderEncounters": 200
+        },
+        "type_counts": {
+          "BIGINT": 18,
+          "NUMERIC": 1,
+          "TEXT": 17,
+          "TIMESTAMP": 2,
+          "DATE": 1
+        },
+        "physical_text_payload_bytes": 47917,
+        "deferred_trigger_insert_events": 600,
+        "trigger_details": [
+          {
+            "association": "PatientEncounters",
+            "target_storage_rows": 100,
+            "link_rows": 100,
+            "events": 200
+          },
+          {
+            "association": "DepartmentProviders",
+            "target_storage_rows": 300,
+            "link_rows": 100,
+            "events": 400
+          }
+        ],
+        "query_count": 29,
+        "workload_sql_join_count": 14,
+        "workload_sql_union_all_count": 12
+      }
+    },
+    {
+      "schema_id": "hospital_information_system_cd430f89686cd8dd",
+      "decisions": {
+        "association:DepartmentProviders": "direct_fk",
+        "association:EncounterOrders": "association_table",
+        "association:OrderResults": "direct_fk",
+        "association:PatientBilling": "direct_fk",
+        "association:PatientEncounters": "association_table",
+        "association:PatientPlans": "association_table",
+        "association:ProviderEncounters": "association_table",
+        "inheritance:OrderRequest": "single_table",
+        "inheritance:Person": "single_table"
+      },
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 28,
+        "class_count": 11,
+        "column_count": 39,
+        "foreign_key_count": 11,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 13,
+        "pk_column_count": 15,
+        "single_table_count": 2,
+        "table_count": 11,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 5
+      },
+      "measured_objectives": {
+        "insert_ms": 957.5384,
+        "query_ms": 3.7197241379310344,
+        "storage_mb": 0.720896
+      },
+      "fixture_derived_structure": {
+        "physical_insert_rows": 1900,
+        "table_rows": {
+          "c_BillingAccount": 100,
+          "c_Department": 100,
+          "c_Encounter": 100,
+          "c_InsurancePlan": 100,
+          "c_OrderRequest": 300,
+          "c_Person": 300,
+          "c_Result": 100,
+          "l_EncounterOrders": 300,
+          "l_PatientEncounters": 100,
+          "l_PatientPlans": 200,
+          "l_ProviderEncounters": 200
+        },
+        "type_counts": {
+          "BIGINT": 18,
+          "NUMERIC": 1,
+          "TEXT": 17,
+          "TIMESTAMP": 2,
+          "DATE": 1
+        },
+        "physical_text_payload_bytes": 50617,
+        "deferred_trigger_insert_events": 800,
+        "trigger_details": [
+          {
+            "association": "PatientEncounters",
+            "target_storage_rows": 100,
+            "link_rows": 100,
+            "events": 200
+          },
+          {
+            "association": "EncounterOrders",
+            "target_storage_rows": 300,
+            "link_rows": 300,
+            "events": 600
+          }
+        ],
+        "query_count": 29,
+        "workload_sql_join_count": 14,
+        "workload_sql_union_all_count": 12
+      }
+    }
+  ],
+  "observed_omitted_information": {
+    "physical_insert_rows": 20,
+    "deferred_trigger_insert_events": 20,
+    "physical_text_payload_bytes": 20,
+    "type_counts": 4,
+    "workload_sql_join_count": 2,
+    "workload_sql_union_all_count": 4
+  },
+  "empirical_same_feature_prediction_bounds": {
+    "insert_ms": {
+      "best_empirical_same_feature_prediction_rmse": 196.52579391917956,
+      "empirical_r2_ceiling": 0.5938719821358296,
+      "interpretation": "Optimistic in-sample group-mean bound on these measured medians; includes measurement variation, not a causal or generalization claim."
+    },
+    "query_ms": {
+      "best_empirical_same_feature_prediction_rmse": 0.8747658116676493,
+      "empirical_r2_ceiling": 0.34888545747116273,
+      "interpretation": "Optimistic in-sample group-mean bound on these measured medians; includes measurement variation, not a causal or generalization claim."
+    },
+    "storage_mb": {
+      "best_empirical_same_feature_prediction_rmse": 0.01894031896577168,
+      "empirical_r2_ceiling": 0.9880914803390793,
+      "interpretation": "Optimistic in-sample group-mean bound on these measured medians; includes measurement variation, not a causal or generalization claim."
+    }
+  },
+  "interpretation": [
+    "All source-system variants match the same finite logical fixture/query oracle within that system; this is workload equivalence, not a general semantic-equivalence proof.",
+    "No duplicate complete physical declaration set was found after order normalization. Aggregate-feature collisions must not be treated as duplicate schemas.",
+    "Twenty collision groups differ in actual physical load rows and deferred trigger events; four cross-system groups differ in declared SQL type distributions.",
+    "The concrete Hospital contrast swaps which association is materialized. Its aggregate JOIN/UNION counts also coincide, showing why endpoint roles/cardinalities matter beyond more aggregate counts.",
+    "Typed graph/DDL representations retain more role/topology/type information than the 16 counts. Their actual pretrained or trained encoders must be evaluated; this audit does not show that they will solve LOSO or measurement instability.",
+    "SQL query text/topology is available, but optimizer EXPLAIN plans are not part of the supplied artifacts. Query/data/environment conditioning remains different from encoding DDL alone.",
+    "Empirical group-mean bounds include timing variation in the observed medians. They are optimistic in-sample information bounds, not attainable held-out performance or causal attribution.",
+    "The next methodological comparison should prespecify graph-plus-symbolic ablations versus the actual pretrained-text/graph/symbolic system, retaining source-system separation and fixed measurement provenance."
+  ]
+}

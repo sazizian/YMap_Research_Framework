@@ -1,0 +1,100 @@
+{
+  "domain": "healthcare",
+  "classes": [
+    {
+      "name": "Person",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "string"
+        },
+        {
+          "name": "dob",
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "name": "Patient",
+      "extends": "Person",
+      "attributes": [
+        {
+          "name": "mrn",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Clinician",
+      "extends": "Person",
+      "attributes": [
+        {
+          "name": "npi",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Encounter",
+      "attributes": [
+        {
+          "name": "encounter_date",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "name": "Diagnosis",
+      "attributes": [
+        {
+          "name": "code",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "Medication",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "dose",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "PatientEncounters",
+      "source": "Patient",
+      "target": "Encounter",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "ClinicianEncounters",
+      "source": "Clinician",
+      "target": "Encounter",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "EncounterDiagnoses",
+      "source": "Encounter",
+      "target": "Diagnosis",
+      "multiplicity": "many-to-many"
+    },
+    {
+      "name": "EncounterMedications",
+      "source": "Encounter",
+      "target": "Medication",
+      "multiplicity": "many-to-many"
+    }
+  ],
+  "name": "healthcare"
+}

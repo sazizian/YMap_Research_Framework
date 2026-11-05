@@ -1,0 +1,86 @@
+{
+  "domain": "library",
+  "classes": [
+    {
+      "name": "Item",
+      "attributes": [
+        {
+          "name": "title",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Book",
+      "extends": "Item",
+      "attributes": [
+        {
+          "name": "isbn",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Media",
+      "extends": "Item",
+      "attributes": [
+        {
+          "name": "format",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Patron",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Loan",
+      "attributes": [
+        {
+          "name": "loan_date",
+          "type": "date"
+        },
+        {
+          "name": "due_date",
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "name": "Branch",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "PatronLoans",
+      "source": "Patron",
+      "target": "Loan",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "ItemLoans",
+      "source": "Item",
+      "target": "Loan",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "BranchItems",
+      "source": "Branch",
+      "target": "Item",
+      "multiplicity": "one-to-many"
+    }
+  ],
+  "name": "library"
+}

@@ -1,0 +1,221 @@
+{
+  "status": "consistent_with_supplied_artifacts",
+  "audit_timestamp_utc": "2026-10-23T16:49:30.621718+00:00",
+  "input_sha256": {
+    "candidates.jsonl": "a3070d97ce7cb05097d1e3f3b9319b19cb9024b35ecc3f0a5861d8ef50162b3e",
+    "measurements/measurements.csv": "6619ed1a8c87b01eba31c0ac42f5fa3d98b8c71a0f98965662511c019f3a64d1",
+    "measurements/raw_measurements.jsonl": "eb9d55266451af25d633ac360b3973f300315014ed3fefb8660a9bc212d291f8",
+    "evaluation_20261023_105939_243/fold_audit.json": "7a78b52d52f8e18598632a311a824da9687e54d12bf53d6d5c460179e2f1bb19",
+    "evaluation_20261023_105939_243/summary.json": "769998335ba6eeab9ced21a25e01836219aad2beffa415266840a4f6d6ad2053",
+    "evaluation_20261023_105939_243/paired_statistics.json": "2fcbd9bcd2349334ea9fb28bc12d0383267908d06af737d05a04d9f19f9e054d",
+    "evaluation_20261023_105939_243/recommendations.json": "817345e2422e0513c856208138d80637222bc9d0a77fde0ab02376035c6ff910",
+    "evaluation_20261023_105939_243/training_warnings.json": "7d009ca5897405c04eed7246d61a7f09e4150640c07e77550ab14275deb6e876",
+    "evaluation_20261023_105939_243/oof_predictions.csv": "1f9c33066766fe76210f8abb8b66b72ac62ae6ed4666e60f77e424ea415816c0",
+    "evaluation_20261023_105939_243/calibration_predictions.csv": "e82631bd047b0745339b92e088ee64706b734a96348d7f0b7f3d16814ad0701e",
+    "evaluation_20261023_105939_243/per_system_metrics.csv": "40943e9a2bda2bacd774dbec48664d86695e704cf628b565bc68011530973726",
+    "evaluation_20261023_105939_243/aggregated_measurements.csv": "9c9b3502375554487a5ddc607128e0f419b76402a3e8f3d7b166c0829087b32a",
+    "evaluation_20261023_105939_243/evaluation_config.json": "1c5694d4d4b765ffe94b54854d2f4b9b67f2baa698966555b40bb7bbe0e93c19"
+  },
+  "boolean_checks": 15668,
+  "numeric_comparisons": 66251,
+  "numeric_absolute_tolerance": 2e-09,
+  "numeric_relative_tolerance": 2e-09,
+  "max_absolute_numeric_difference": 4.547473508864641e-13,
+  "raw_measurements": {
+    "raw_rows": 4368,
+    "warmup_rows": 728,
+    "nonwarmup_rows": 3640,
+    "timed_repetitions_per_schema": 5,
+    "summary_aggregation_verified": "objective-wise median of five nonwarmup records",
+    "max_absolute_summary_median_differences": {
+      "insert_ms": 0.0,
+      "query_ms": 8.881784197001252e-16,
+      "storage_mb": 0.0
+    },
+    "max_query_aggregation_difference": 7.105427357601002e-15,
+    "max_storage_decimal_mb_difference": 0.0,
+    "unique_realizations_per_system": {
+      "banking": 1,
+      "blog_platform": 1,
+      "crm": 1,
+      "customer_order": 1,
+      "ecommerce": 1,
+      "erp_system": 1,
+      "healthcare": 1,
+      "hospital_information_system": 1,
+      "library": 1,
+      "travel_booking": 1,
+      "university": 1
+    },
+    "storage_variable_across_timed_repeats_candidate_count": 5,
+    "timing_variability": {
+      "insert_ms": {
+        "descriptive_cv_threshold": 0.2,
+        "candidates_above_cv_threshold": 467,
+        "median_cv": 0.2577611092793841,
+        "max_cv": 0.9989638947019874,
+        "median_max_to_min_ratio": 1.8716348116283092,
+        "max_max_to_min_ratio": 7.896827696125139
+      },
+      "query_ms": {
+        "descriptive_cv_threshold": 0.2,
+        "candidates_above_cv_threshold": 451,
+        "median_cv": 0.2320613141838986,
+        "max_cv": 1.4668783589214798,
+        "median_max_to_min_ratio": 1.8027130424365323,
+        "max_max_to_min_ratio": 12.027426987432758
+      }
+    },
+    "interpretation": "Descriptive repeat variability only. No data excluded, labels changed, hyperparameters tuned or model retraining performed."
+  },
+  "checks_performed": [
+    "schema and source-group split disjointness/full coverage",
+    "every schema held out exactly once per prediction model",
+    "source truth and aggregated measurement alignment",
+    "training-only objective normalizers",
+    "ensemble five-member means and sample standard deviations",
+    "calibration membership/residual quantiles/interval coverage",
+    "objective MAE/RMSE/nRMSE/R2 and uncertainty-error Spearman",
+    "predicted-risk Pareto selection identities",
+    "measured-coordinate Pareto precision/recall/F1/GD/IGD+/exact 3D HV/preference regret",
+    "all signed-rank p-values via exhaustive sign enumeration and entire Holm family",
+    "source summary medians against five nonwarmup repeats",
+    "source file hashes unchanged after analysis"
+  ],
+  "limits": [
+    "Does not rerun training or independently authenticate the Windows database execution",
+    "Saved fold records and predictions support split/metric consistency, not proof of every unrecorded internal operation",
+    "Findings concern structural baselines and this one measured profiling scenario",
+    "Few source systems and many tied outcomes limit inference; no significance is not equivalence",
+    "Models or lambda tuned using outer-test results require independent evaluation before confirmatory improvement claims"
+  ],
+  "issues": [],
+  "metric_discrepancies": [],
+  "fold_count": 11,
+  "oof_prediction_rows": 4368,
+  "calibration_prediction_rows": 11088,
+  "source_schema_count": 728,
+  "per_system_method_rows": 77,
+  "test_model_count": 6,
+  "stats_count": 30,
+  "stats_min_raw_p": 0.30078125,
+  "stats_min_holm_p": 1.0,
+  "stats_significant_holm_count": 0,
+  "ensemble_risk_differences": [
+    {
+      "object_model": "blog_platform",
+      "f1": -0.13333333333333341,
+      "hypervolume": -0.06210558492022944,
+      "gd": 0.0,
+      "preference_regret": 0.0
+    }
+  ],
+  "negative_predictions": [
+    {
+      "model": "ensemble5",
+      "insert_ms": 0,
+      "query_ms": 0,
+      "storage_mb": 0
+    },
+    {
+      "model": "extra_trees",
+      "insert_ms": 0,
+      "query_ms": 0,
+      "storage_mb": 0
+    },
+    {
+      "model": "linear",
+      "insert_ms": 3,
+      "query_ms": 0,
+      "storage_mb": 0
+    },
+    {
+      "model": "mlp",
+      "insert_ms": 4,
+      "query_ms": 0,
+      "storage_mb": 0
+    },
+    {
+      "model": "random_forest",
+      "insert_ms": 0,
+      "query_ms": 0,
+      "storage_mb": 0
+    },
+    {
+      "model": "ridge",
+      "insert_ms": 0,
+      "query_ms": 0,
+      "storage_mb": 0
+    }
+  ],
+  "negative_r2_system_counts": [
+    {
+      "model": "ensemble_mean",
+      "insert_ms": 9,
+      "query_ms": 11,
+      "storage_mb": 7
+    },
+    {
+      "model": "ensemble_risk",
+      "insert_ms": 9,
+      "query_ms": 11,
+      "storage_mb": 7
+    },
+    {
+      "model": "extra_trees",
+      "insert_ms": 9,
+      "query_ms": 11,
+      "storage_mb": 8
+    },
+    {
+      "model": "linear",
+      "insert_ms": 7,
+      "query_ms": 10,
+      "storage_mb": 6
+    },
+    {
+      "model": "mlp",
+      "insert_ms": 9,
+      "query_ms": 10,
+      "storage_mb": 4
+    },
+    {
+      "model": "random_forest",
+      "insert_ms": 8,
+      "query_ms": 9,
+      "storage_mb": 8
+    },
+    {
+      "model": "ridge",
+      "insert_ms": 7,
+      "query_ms": 11,
+      "storage_mb": 3
+    }
+  ],
+  "training_warnings": [
+    {
+      "fold": 5,
+      "object_model": "erp_system",
+      "model": "mlp",
+      "warnings": [
+        "Stochastic Optimizer: Maximum iterations (500) reached and the optimization hasn't converged yet."
+      ]
+    },
+    {
+      "fold": 6,
+      "object_model": "healthcare",
+      "model": "mlp",
+      "warnings": [
+        "Stochastic Optimizer: Maximum iterations (500) reached and the optimization hasn't converged yet."
+      ]
+    },
+    {
+      "fold": 7,
+      "object_model": "hospital_information_system",
+      "model": "mlp",
+      "warnings": [
+        "Stochastic Optimizer: Maximum iterations (500) reached and the optimization hasn't converged yet."
+      ]
+    }
+  ]
+}

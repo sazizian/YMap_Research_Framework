@@ -1,0 +1,10 @@
+# Small REAL measurement protocol for a first executable check, not the paper's original protocol.
+dsn_env: YMAP_POSTGRES_DSN
+fixture_mode: deterministic_generated
+rows_per_class: 100
+repetitions: 5
+warmup: 1
+seed: 42
+batch_size: 1000
+query_limit: 100
+statement_timeout_ms: 30000

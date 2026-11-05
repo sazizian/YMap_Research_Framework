@@ -1,0 +1,5 @@
+mode: research
+model: extra_trees
+ensemble_size: 5
+trees: 100
+seed: 42

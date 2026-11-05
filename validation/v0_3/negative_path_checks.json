@@ -1,0 +1,35 @@
+[
+  {
+    "check": "research_rejects_synthetic",
+    "passed": true,
+    "expected_exit_code": 2,
+    "observed_exit_code": 2,
+    "stderr": "Y-Map: Research mode rejects demo/synthetic/unknown label sources. Supply actual measurements and provenance."
+  },
+  {
+    "check": "missing_database_no_fallback",
+    "passed": true,
+    "expected_exit_code": 2,
+    "observed_exit_code": 2,
+    "stderr": "Y-Map: PostgreSQL connection variable YMAP_POSTGRES_DSN is unset; no synthetic measurements produced."
+  },
+  {
+    "check": "missing_alloy_no_fallback",
+    "passed": true,
+    "expected_exit_code": 2,
+    "observed_exit_code": 2,
+    "stderr": "Y-Map: backend='alloy' requires an existing local Alloy distribution JAR via alloy_jar."
+  },
+  {
+    "check": "existing_candidates_preserved",
+    "passed": true,
+    "expected_exit_code": 2,
+    "observed_exit_code": 2,
+    "stderr": "Y-Map: Candidate output already exists; use a new output directory to preserve the previous run"
+  },
+  {
+    "check": "statistics_cli_preserves_literal_NA_id",
+    "passed": true,
+    "observed_exit_code": 0
+  }
+]

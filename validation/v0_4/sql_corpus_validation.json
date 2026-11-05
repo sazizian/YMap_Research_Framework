@@ -1,0 +1,66 @@
+{
+  "scope": "all distinct catalogued SQL bytes, read-only structural parsing; no SQL execution or objective-label inference",
+  "fingerprint": {
+    "catalogue_sha256": "eec66a8bca5db5e7a435a631935e016953ac0c444be44f94fd0469dbb77f7c0d",
+    "importer_sha256": "9ef2ce731f63118e6ba886bdcf7f8ef1cd8aa5fc0055fbc3125d2dbc57f148a1",
+    "sqlglot_version": "30.24.0"
+  },
+  "sql_occurrences": 80248,
+  "distinct_sql_contents": 38606,
+  "inspected_distinct_sql_contents": 38606,
+  "parse_status_distinct_counts": {
+    "error": 1347,
+    "parsed": 36504,
+    "partial": 755
+  },
+  "by_source": {
+    "reinforceorm": {
+      "error": {
+        "occurrences": 2428,
+        "distinct_byte_contents_within_source": 1347
+      },
+      "parsed": {
+        "occurrences": 74956,
+        "distinct_byte_contents_within_source": 35608
+      },
+      "partial": {
+        "occurrences": 408,
+        "distinct_byte_contents_within_source": 59
+      }
+    },
+    "ymap": {
+      "parsed": {
+        "occurrences": 32,
+        "distinct_byte_contents_within_source": 32
+      },
+      "partial": {
+        "occurrences": 696,
+        "distinct_byte_contents_within_source": 696
+      }
+    },
+    "ymap_legacy": {
+      "parsed": {
+        "occurrences": 1728,
+        "distinct_byte_contents_within_source": 864
+      }
+    }
+  },
+  "internal_error_count": 0,
+  "internal_errors": [],
+  "completed_without_internal_errors": true,
+  "canonical_ymap_postgresql_static_check": {
+    "input": "Dataset/YMap/Generated/candidates.jsonl",
+    "candidates": 728,
+    "passed": 728,
+    "failures": [],
+    "database_execution": false,
+    "scope": "pglast PostgreSQL DDL/PLpgSQL/query-template parsing only",
+    "parser_version": "v8.7"
+  },
+  "cache": "Dataset/Derived/sql_validation.sqlite",
+  "elapsed_seconds": 120.426,
+  "database_execution": false,
+  "native_performance_validation": false,
+  "created_measured_labels": false,
+  "provenance": "Imported ReinforceORM records retain their source attribution; structural parsing does not relabel them as YMap results."
+}

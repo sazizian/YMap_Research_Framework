@@ -1,0 +1,260 @@
+{
+  "status": "completed",
+  "analysis_kind": "historical_raw_cost_reanalysis_not_new_YMap_experiments",
+  "source_csv": "ReinforceORM_Old_Artifacts_Initial_Submission/Corelation_Analysis/All_Designs_Raw_Data.csv",
+  "source_sha256": "e677dc1113f655e822c64b156c529d02af7890f440c8d3d268fa13123b477e28",
+  "raw_record_count": 31393,
+  "system_count": 15,
+  "distinct_system_solution_pairs": 31313,
+  "repeated_id_groups": 68,
+  "extra_records_beyond_unique_ids": 80,
+  "conflicting_id_groups": 68,
+  "nondominated_record_count": 159,
+  "verified_sql_join_pairs": 31057,
+  "verified_sql_join_records": 31137,
+  "join_methods": {
+    "exact_filename": 21449,
+    "case_insensitive_filename": 8,
+    "exact_filename_internal_use_unverified": 256,
+    "hospital_filename_alias": 9600
+  },
+  "per_system": [
+    {
+      "subject_system": "Bank",
+      "raw_record_count": 62,
+      "distinct_solution_ids": 30,
+      "unique_objective_vectors": 62,
+      "nondominated_record_count": 7,
+      "distinct_ids_with_nondominated_records": 7,
+      "repeated_id_groups": 21,
+      "conflicting_id_groups": 21,
+      "verified_sql_join_records": 62
+    },
+    {
+      "subject_system": "CSOS",
+      "raw_record_count": 2320,
+      "distinct_solution_ids": 2320,
+      "unique_objective_vectors": 2318,
+      "nondominated_record_count": 13,
+      "distinct_ids_with_nondominated_records": 13,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 2320
+    },
+    {
+      "subject_system": "Camping",
+      "raw_record_count": 44,
+      "distinct_solution_ids": 29,
+      "unique_objective_vectors": 44,
+      "nondominated_record_count": 7,
+      "distinct_ids_with_nondominated_records": 6,
+      "repeated_id_groups": 14,
+      "conflicting_id_groups": 14,
+      "verified_sql_join_records": 44
+    },
+    {
+      "subject_system": "Canteen",
+      "raw_record_count": 2688,
+      "distinct_solution_ids": 2688,
+      "unique_objective_vectors": 2688,
+      "nondominated_record_count": 11,
+      "distinct_ids_with_nondominated_records": 11,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 2688
+    },
+    {
+      "subject_system": "Customer - Order",
+      "raw_record_count": 9,
+      "distinct_solution_ids": 8,
+      "unique_objective_vectors": 9,
+      "nondominated_record_count": 2,
+      "distinct_ids_with_nondominated_records": 2,
+      "repeated_id_groups": 1,
+      "conflicting_id_groups": 1,
+      "verified_sql_join_records": 9
+    },
+    {
+      "subject_system": "Decider",
+      "raw_record_count": 80,
+      "distinct_solution_ids": 80,
+      "unique_objective_vectors": 80,
+      "nondominated_record_count": 9,
+      "distinct_ids_with_nondominated_records": 9,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 80
+    },
+    {
+      "subject_system": "E-Commerce",
+      "raw_record_count": 8144,
+      "distinct_solution_ids": 8144,
+      "unique_objective_vectors": 8133,
+      "nondominated_record_count": 20,
+      "distinct_ids_with_nondominated_records": 20,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 8144
+    },
+    {
+      "subject_system": "Flagship",
+      "raw_record_count": 256,
+      "distinct_solution_ids": 256,
+      "unique_objective_vectors": 256,
+      "nondominated_record_count": 8,
+      "distinct_ids_with_nondominated_records": 8,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 0
+    },
+    {
+      "subject_system": "Hospital",
+      "raw_record_count": 9600,
+      "distinct_solution_ids": 9600,
+      "unique_objective_vectors": 9583,
+      "nondominated_record_count": 16,
+      "distinct_ids_with_nondominated_records": 16,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 9600
+    },
+    {
+      "subject_system": "Library",
+      "raw_record_count": 2688,
+      "distinct_solution_ids": 2688,
+      "unique_objective_vectors": 2687,
+      "nondominated_record_count": 8,
+      "distinct_ids_with_nondominated_records": 8,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 2688
+    },
+    {
+      "subject_system": "Onlinestore",
+      "raw_record_count": 8,
+      "distinct_solution_ids": 8,
+      "unique_objective_vectors": 8,
+      "nondominated_record_count": 6,
+      "distinct_ids_with_nondominated_records": 6,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 8
+    },
+    {
+      "subject_system": "Order-Processing",
+      "raw_record_count": 56,
+      "distinct_solution_ids": 56,
+      "unique_objective_vectors": 56,
+      "nondominated_record_count": 7,
+      "distinct_ids_with_nondominated_records": 7,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 56
+    },
+    {
+      "subject_system": "Store",
+      "raw_record_count": 2686,
+      "distinct_solution_ids": 2686,
+      "unique_objective_vectors": 2678,
+      "nondominated_record_count": 20,
+      "distinct_ids_with_nondominated_records": 20,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 2686
+    },
+    {
+      "subject_system": "Traffic-Control",
+      "raw_record_count": 2688,
+      "distinct_solution_ids": 2688,
+      "unique_objective_vectors": 2683,
+      "nondominated_record_count": 15,
+      "distinct_ids_with_nondominated_records": 15,
+      "repeated_id_groups": 0,
+      "conflicting_id_groups": 0,
+      "verified_sql_join_records": 2688
+    },
+    {
+      "subject_system": "University-Payroll",
+      "raw_record_count": 64,
+      "distinct_solution_ids": 32,
+      "unique_objective_vectors": 64,
+      "nondominated_record_count": 10,
+      "distinct_ids_with_nondominated_records": 8,
+      "repeated_id_groups": 32,
+      "conflicting_id_groups": 32,
+      "verified_sql_join_records": 64
+    }
+  ],
+  "rocket_audit": {
+    "status": "analyzed",
+    "source": "Dataset/RQ4_Ablation_Study/rocket_controller/rocket_controller_tradespace_full.csv",
+    "source_sha256": "5aeccf3f5820e2e04a66fd46ccbe5d2e99f77875b485ded2d3e07d52f7c77b9b",
+    "row_count": 2520,
+    "supplied_marked_pareto_count": 13,
+    "recomputed_nondominated_count": 337,
+    "marked_and_nondominated_count": 11,
+    "marked_but_dominated_ids": [
+      "RCO-0952",
+      "RCO-0975"
+    ],
+    "unmarked_nondominated_count": 326,
+    "generator_script": "reproduction/build_rocket_controller_artifact.py",
+    "matches_recognized_bundled_generator_formula": true,
+    "label_provenance": "formula_generated_objectives_not_database_measurements",
+    "flags_policy": "Preserved original flags; separately recomputed actual nondominance. No supplied values or files were changed."
+  },
+  "reported_dataset_comparison": {
+    "status": "compared",
+    "source": "results/rq1_tradespace_effectiveness.csv",
+    "reported_total_solutions": 31302,
+    "raw_records": 31393,
+    "systems_with_record_count_differences": [
+      {
+        "subject_system": "Library",
+        "reported_records": 2600,
+        "raw_records": 2688,
+        "raw_minus_reported": 88
+      },
+      {
+        "subject_system": "Traffic-Control",
+        "reported_records": 2685,
+        "raw_records": 2688,
+        "raw_minus_reported": 3
+      }
+    ],
+    "interpretation": "These supplied files describe different counts; version/protocol reconciliation is unresolved. No source totals were changed."
+  },
+  "units": {
+    "query_time": "not_confirmed",
+    "insert_time": "not_confirmed",
+    "storage": "not_confirmed"
+  },
+  "unknown_protocol": [
+    "objective units and measurement semantics",
+    "workload and generated-data distribution",
+    "database engine/version and environment",
+    "seed/run identity for repeated IDs"
+  ],
+  "scope": "Exact within-system nondominance over supplied raw cost records. No pooling across systems, schema averaging, new model training, end-to-end speedup claim or normalized paper hypervolume reproduction.",
+  "reported_outputs": {
+    "location": "results/*.csv and results/ReinforceORM_All_Results.xlsx",
+    "classification": "supplied reported/frozen summaries; retained separately from this reanalysis",
+    "reproduction_behavior": "RQ1-RQ3 export stored PKLs; build_frozen_states.py contains paper table constants; RQ4 runner includes simulated objectives and convergence formulas",
+    "execution_policy": "No imported scripts, SQL or pickle files executed/deserialized by this analysis"
+  },
+  "attribution": {
+    "benchmark": "ReinforceORM ASE 2026 artifact",
+    "doi": "10.6084/m9.figshare.30071260.v8",
+    "license": "CC BY-NC 4.0; see original LICENSE.md"
+  },
+  "files": [
+    "raw_objective_records.csv",
+    "per_system_pareto_counts.csv",
+    "duplicate_id_conflicts.csv",
+    "schema_join_audit.csv",
+    "rocket_audit.json",
+    "summary.json",
+    "report.md"
+  ],
+  "elapsed_analysis_seconds": 5.181775041999572
+}

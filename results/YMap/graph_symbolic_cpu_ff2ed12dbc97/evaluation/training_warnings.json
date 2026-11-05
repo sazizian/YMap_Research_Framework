@@ -1,0 +1,23 @@
+[
+  {
+    "fold": 5,
+    "model": "mlp",
+    "warnings": [
+      "Stochastic Optimizer: Maximum iterations (500) reached and the optimization hasn't converged yet."
+    ]
+  },
+  {
+    "fold": 6,
+    "model": "mlp",
+    "warnings": [
+      "Stochastic Optimizer: Maximum iterations (500) reached and the optimization hasn't converged yet."
+    ]
+  },
+  {
+    "fold": 7,
+    "model": "mlp",
+    "warnings": [
+      "Stochastic Optimizer: Maximum iterations (500) reached and the optimization hasn't converged yet."
+    ]
+  }
+]

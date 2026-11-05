@@ -1,0 +1,18 @@
+{
+  "status": "analyzed",
+  "source": "Dataset/RQ4_Ablation_Study/rocket_controller/rocket_controller_tradespace_full.csv",
+  "source_sha256": "5aeccf3f5820e2e04a66fd46ccbe5d2e99f77875b485ded2d3e07d52f7c77b9b",
+  "row_count": 2520,
+  "supplied_marked_pareto_count": 13,
+  "recomputed_nondominated_count": 337,
+  "marked_and_nondominated_count": 11,
+  "marked_but_dominated_ids": [
+    "RCO-0952",
+    "RCO-0975"
+  ],
+  "unmarked_nondominated_count": 326,
+  "generator_script": "reproduction/build_rocket_controller_artifact.py",
+  "matches_recognized_bundled_generator_formula": true,
+  "label_provenance": "formula_generated_objectives_not_database_measurements",
+  "flags_policy": "Preserved original flags; separately recomputed actual nondominance. No supplied values or files were changed."
+}

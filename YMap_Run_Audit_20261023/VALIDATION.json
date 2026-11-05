@@ -1,0 +1,18 @@
+{
+  "scope": "Independent audit software and derived results; no changes to profiling inputs, targets or fitted models.",
+  "input_archive_sha256": "83a67c172be448724e690be2dd0ac0c80ad5e37be23d2f715ff28d6ed5f55783",
+  "evaluation_audit": {
+    "boolean_checks": 15668,
+    "numeric_comparisons": 66251,
+    "max_absolute_difference": 4.547473508864641e-13,
+    "issues": 0
+  },
+  "preference_regret_hand_calculated_tests": {
+    "passed": 2,
+    "failed": 0
+  },
+  "all_python_files_compile": true,
+  "evaluation_output_guard_test_passed": true,
+  "readiness_check_test": "Executed against the recovered project configuration in an environment without Torch/checkpoints; JSON report completed. This is not user GPU evidence.",
+  "source_framework": "YMap Research Framework 0.4.0; numerical and representation audits use this version."
+}

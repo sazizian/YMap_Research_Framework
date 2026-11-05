@@ -1,0 +1,9 @@
+{
+  "catalogue_content_hashes_checked": 117824,
+  "failure_count": 0,
+  "failures": [],
+  "imported_source_files_checked": 110865,
+  "paper_results_reproduced": false,
+  "passed": true,
+  "source_preservation_check": "Original ZIP CRC32 and size for each imported file"
+}

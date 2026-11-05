@@ -1,0 +1,90 @@
+{
+  "domain": "crm",
+  "classes": [
+    {
+      "name": "Organization",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "attributes": [
+        {
+          "name": "email",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Lead",
+      "extends": "Contact",
+      "attributes": [
+        {
+          "name": "source",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "CustomerContact",
+      "extends": "Contact",
+      "attributes": [
+        {
+          "name": "customer_since",
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "name": "Opportunity",
+      "attributes": [
+        {
+          "name": "amount",
+          "type": "decimal"
+        },
+        {
+          "name": "stage",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Activity",
+      "attributes": [
+        {
+          "name": "activity_type",
+          "type": "string"
+        },
+        {
+          "name": "occurred_at",
+          "type": "datetime"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "OrgContacts",
+      "source": "Organization",
+      "target": "Contact",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "ContactOpportunities",
+      "source": "Contact",
+      "target": "Opportunity",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "ContactActivities",
+      "source": "Contact",
+      "target": "Activity",
+      "multiplicity": "one-to-many"
+    }
+  ],
+  "name": "crm"
+}

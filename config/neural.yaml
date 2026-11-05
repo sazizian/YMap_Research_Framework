@@ -1,0 +1,38 @@
+# Optional REAL full multi-view model. Supply actual local checkpoints before use.
+# These are an explicit new experiment configuration, not the original paper's settings.
+mode: research
+models: [linear, ridge, random_forest, extra_trees, mlp, neural]
+ensemble_base: neural
+ensemble_size: 5
+seed: 42
+risk_lambda: 1.0
+calibration_alpha: 0.10
+neural:
+  use_graph: true
+  use_symbolic: true
+  target_names: [insert_ms, query_ms, storage_mb]
+  device: cuda
+  epochs: 50
+  batch_size: 16
+  learning_rate: 0.0001
+  hidden_dim: 512
+  graph_layers: 2
+  dropout: 0.2
+  patience: 10
+  cache_dir: runs/encoder_cache
+  text_encoders:
+    - family: graphcodebert
+      model_name_or_path: checkpoints/graphcodebert-base
+      local_files_only: true
+      max_length: 512
+      batch_size: 4
+    - family: codet5
+      model_name_or_path: checkpoints/codet5p-220m
+      local_files_only: true
+      max_length: 512
+      batch_size: 4
+    - family: llama
+      model_name_or_path: checkpoints/llama
+      local_files_only: true
+      max_length: 512
+      batch_size: 1

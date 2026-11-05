@@ -1,0 +1,134 @@
+{
+  "purpose": "Software integration verification only; not paper-result reconstruction or native performance validation",
+  "code_and_docs_language": "English",
+  "native_postgresql_server_validated": false,
+  "native_postgresql_limitation": "PostgreSQL refuses root server startup; sandbox prevents switching to a nonroot UID. Native server execution and psycopg negative transaction recovery remain unverified.",
+  "performance_claims_validated": false,
+  "submitted_paper_results_reproduced": false,
+  "alloy": {
+    "version": "6.2.0",
+    "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+    "jar_path": "/workspace/scratch/b47cd7394855/verification_tools/alloy.jar",
+    "jar_sha256": "6b8c1cb5bc93bedfc7c61435c4e1ab6e688a242dc702a394628d9a9801edb78d",
+    "test": "test_synthesis.SynthesisTests.test_real_alloy_enumerates_same_finite_choices_including_empty_product",
+    "executed": true,
+    "passed": true,
+    "cases": [
+      {
+        "name": "zero_decision_dimensions",
+        "python_candidates": 1,
+        "alloy_candidates": 1
+      },
+      {
+        "name": "three_inheritance_strategies",
+        "python_candidates": 3,
+        "alloy_candidates": 3
+      },
+      {
+        "name": "polymorphic_association",
+        "python_candidates": 4,
+        "alloy_candidates": 4
+      }
+    ],
+    "scope": "finite mapping-choice admissibility, not full ORM semantic proof"
+  },
+  "static_postgresql_parse": {
+    "parser": "pglast",
+    "version": "8.7",
+    "candidate_count": 84,
+    "model_count": 11,
+    "ddl_and_select_and_insert_and_plpgsql_validated": true,
+    "database_execution": false,
+    "evidence": "validation/postgresql_static_parse.json"
+  },
+  "pglite": {
+    "package_version": "0.5.10",
+    "postgresql_version": "18.6",
+    "runtime": "WebAssembly",
+    "native_server": false,
+    "positive_psycopg_socket_mapping_cases": 10,
+    "positive_cases": [
+      {
+        "test": "test_real_postgres_all_supported_customer_mappings",
+        "mappings": 4,
+        "passed": true
+      },
+      {
+        "test": "test_real_postgres_tpc_leaf_associations_and_scalar_roundtrip",
+        "mappings": 6,
+        "passed": true
+      }
+    ],
+    "independent_logical_oracle_matched": true,
+    "owned_schema_cleanup_verified": true,
+    "direct_engine_negative_integrity_probe_count": 6,
+    "direct_engine_negative_integrity_probes": [
+      {
+        "backend": "PGlite0.5.10 PostgreSQL18.6 WASM direct API",
+        "strategy": "direct_fk",
+        "probe": "wrong_subtype",
+        "expected_sqlstate": "23514",
+        "observed_sqlstate": "23514",
+        "passed": true
+      },
+      {
+        "backend": "PGlite0.5.10 PostgreSQL18.6 WASM direct API",
+        "strategy": "direct_fk",
+        "probe": "one_to_one_uniqueness",
+        "expected_sqlstate": "23505",
+        "observed_sqlstate": "23505",
+        "passed": true
+      },
+      {
+        "backend": "PGlite0.5.10 PostgreSQL18.6 WASM direct API",
+        "strategy": "direct_fk",
+        "probe": "partial_null_composite_fk",
+        "expected_sqlstate": "23503",
+        "observed_sqlstate": "23503",
+        "passed": true
+      },
+      {
+        "backend": "PGlite0.5.10 PostgreSQL18.6 WASM direct API",
+        "strategy": "association_table",
+        "probe": "wrong_subtype",
+        "expected_sqlstate": "23514",
+        "observed_sqlstate": "23514",
+        "passed": true
+      },
+      {
+        "backend": "PGlite0.5.10 PostgreSQL18.6 WASM direct API",
+        "strategy": "association_table",
+        "probe": "one_to_one_uniqueness",
+        "expected_sqlstate": "23505",
+        "observed_sqlstate": "23505",
+        "passed": true
+      },
+      {
+        "backend": "PGlite0.5.10 PostgreSQL18.6 WASM direct API",
+        "strategy": "association_table",
+        "probe": "mandatory_target_participation",
+        "expected_sqlstate": "P0001",
+        "observed_sqlstate": "P0001",
+        "passed": true
+      }
+    ],
+    "negative_evidence_path": "/workspace/scratch/b47cd7394855/verification_tools/sql_integrity_results.json",
+    "negative_probe_script_path": "/workspace/scratch/b47cd7394855/verification_tools/sql_integrity_probe.mjs",
+    "psycopg_negative_error_recovery": "PGlite socket wrapper returned invalid rollback protocol responses; native test retained without weakening semantics."
+  },
+  "latest_owned_test_suite": {
+    "tests_run": 25,
+    "passed": 22,
+    "skipped": 3,
+    "skips": "Native PostgreSQL integration tests not enabled in final pure/Alloy suite; two positive tests separately executed against PGlite and negative SQL checks separately executed through its direct API."
+  },
+  "file_sha256": {
+    "src/ymap_research/synthesis.py": "00b8caae9c34a2b4043fd3fc51296f4b67d06943657a8c5e4d724a2cb05fedcd",
+    "src/ymap_research/profiling.py": "b77dfc4515066e2d7ef05d319aea265c0fd31325ea0aac5379d54ffdbe8f4d65",
+    "src/ymap_research/java/AlloyBridge.java": "158dae030ca74a9d31f6599d2d6cefc09bad4c8829175d1dc3b5bfa9198b3bd2",
+    "tests/test_synthesis.py": "d714f5031540c2115d727a5f02f3cb83c128ed2686e657d255fb2e3ad1bd11de",
+    "tests/test_profiling.py": "5fbd680fe8d3792d5bc4c8359b545d8def05647603f10788800150df6c37cc5d",
+    "docs/SUPPORTED_MAPPING_SEMANTICS.md": "d69cab741cf648b89abebfe9c5bbd0d315f5b5ad6d01c84a05a59e2107424719",
+    "docs/PROFILING_PROTOCOL.md": "97ed22a3193d874691e78b7d2cf3f2b1cedb4ce3a0a1e9e994ce5ce7a7e049af"
+  }
+}

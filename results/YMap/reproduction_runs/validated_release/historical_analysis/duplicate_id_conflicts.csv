@@ -1,0 +1,69 @@
+subject_system,solution,record_count,distinct_objective_vectors,conflicting_cost_values,source_csv_row_numbers,raw_cost_triples,policy
+Bank,Bank_Sol_1,2,2,True,"[41, 47]","[[""53.1"", ""1.9"", ""26166.0""], [""82.4"", ""3.7"", ""26339.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_14,2,2,True,"[13, 16]","[[""147.9"", ""2.4"", ""22188.0""], [""81.10000000000001"", ""2.4"", ""22191.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_17,2,2,True,"[11, 36]","[[""79.3"", ""3.2"", ""19593.0""], [""87.2"", ""3.0"", ""20344.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_20,2,2,True,"[15, 35]","[[""70.1"", ""2.8"", ""19724.0""], [""165.5"", ""2.9"", ""20343.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_22,2,2,True,"[27, 45]","[[""62.8"", ""2.6"", ""18191.0""], [""64.5"", ""2.8"", ""18328.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_23,2,2,True,"[28, 37]","[[""62.199999999999996"", ""2.8"", ""20214.0""], [""66.5"", ""3.2"", ""20344.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_25,2,2,True,"[42, 52]","[[""75.2"", ""2.9"", ""18316.0""], [""77.7"", ""3.0"", ""18705.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_3,2,2,True,"[24, 38]","[[""140.1"", ""2.6"", ""22739.0""], [""82.3"", ""4.6"", ""22888.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_31,6,6,True,"[26, 32, 33, 40, 43, 46]","[[""78.5"", ""2.9"", ""20212.0""], [""50.8"", ""1.9"", ""20257.0""], [""76.8"", ""3.0"", ""20269.0""], [""116.3"", ""2.1"", ""20350.0""], [""73.89999999999999"", ""2.9"", ""20353.0""], [""150.9"", ""3.3"", ""20485.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_37,3,3,True,"[17, 20, 29]","[[""78.0"", ""3.1"", ""19725.0""], [""97.10000000000001"", ""4.1000000000000005"", ""20135.0""], [""77.8"", ""3.2"", ""20231.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_40,2,2,True,"[49, 50]","[[""75.89999999999999"", ""3.1"", ""20492.0""], [""73.80000000000001"", ""3.0"", ""20742.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_44,2,2,True,"[61, 62]","[[""66.69999999999999"", ""2.9"", ""18810.0""], [""61.5"", ""2.5"", ""18810.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_46,2,2,True,"[56, 59]","[[""93.39999999999999"", ""2.9"", ""18771.0""], [""76.39999999999999"", ""2.8"", ""18810.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_49,2,2,True,"[4, 63]","[[""65.69999999999999"", ""3.0"", ""13755.0""], [""138.9"", ""2.7"", ""18810.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_5,2,2,True,"[25, 34]","[[""92.7"", ""2.6"", ""22739.0""], [""98.3"", ""2.9"", ""22856.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_53,4,4,True,"[51, 57, 58, 60]","[[""141.8"", ""3.8"", ""18704.0""], [""152.60000000000002"", ""3.0"", ""18807.0""], [""73.2"", ""2.8"", ""18810.0""], [""78.2"", ""2.5"", ""18810.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_56,3,3,True,"[10, 53, 54]","[[""72.0"", ""3.3"", ""17622.0""], [""75.7"", ""3.1"", ""18705.0""], [""74.1"", ""2.3"", ""18705.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_59,2,2,True,"[2, 8]","[[""128.6"", ""4.1000000000000005"", ""10649.0""], [""159.3"", ""3.6"", ""15981.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_61,2,2,True,"[5, 7]","[[""61.3"", ""2.8"", ""13332.0""], [""69.2"", ""3.0"", ""15165.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_63,2,2,True,"[6, 9]","[[""80.4"", ""3.1"", ""14360.0""], [""76.0"", ""3.1"", ""16018.0""]]",Preserved all records; no run/seed or averaging assumption
+Bank,Bank_Sol_9,5,5,True,"[18, 19, 21, 22, 23]","[[""75.39999999999999"", ""3.2"", ""22245.0""], [""146.2"", ""2.6"", ""22373.0""], [""79.2"", ""2.8"", ""22683.0""], [""75.80000000000001"", ""3.2"", ""22706.0""], [""85.2"", ""3.7"", ""22723.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_1,2,2,True,"[67, 83]","[[""103.5"", ""4.1000000000000005"", ""26988.0""], [""189.0"", ""3.7"", ""30820.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_11,2,2,True,"[70, 75]","[[""95.3"", ""3.9"", ""23720.0""], [""100.0"", ""3.6"", ""23968.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_15,2,2,True,"[65, 71]","[[""88.0"", ""4.1000000000000005"", ""19212.0""], [""86.6"", ""3.4"", ""25427.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_2,2,2,True,"[68, 73]","[[""105.6"", ""4.1000000000000005"", ""27238.0""], [""214.10000000000002"", ""4.7"", ""27642.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_20,2,2,True,"[92, 100]","[[""182.60000000000002"", ""3.3"", ""23139.0""], [""76.1"", ""3.0"", ""23195.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_23,2,2,True,"[88, 98]","[[""130.5"", ""5.6"", ""26432.0""], [""86.9"", ""3.6"", ""26508.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_24,2,2,True,"[64, 95]","[[""131.70000000000002"", ""3.5"", ""17429.0""], [""103.0"", ""3.1"", ""26448.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_29,3,3,True,"[72, 94, 101]","[[""108.0"", ""3.6"", ""21001.0""], [""87.8"", ""3.4"", ""21779.0""], [""98.0"", ""3.2"", ""21837.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_38,2,2,True,"[76, 77]","[[""92.1"", ""3.1"", ""24008.0""], [""95.4"", ""4.1000000000000005"", ""24080.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_41,2,2,True,"[102, 104]","[[""159.89999999999998"", ""4.3"", ""24762.0""], [""87.4"", ""3.5"", ""24762.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_43,2,2,True,"[105, 106]","[[""73.3"", ""3.2"", ""19551.0""], [""71.8"", ""3.1"", ""19557.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_45,2,2,True,"[103, 107]","[[""70.1"", ""3.8"", ""21849.0""], [""72.6"", ""3.1"", ""21900.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_5,2,2,True,"[74, 80]","[[""114.6"", ""4.6"", ""23957.0""], [""163.0"", ""5.1000000000000005"", ""24578.0""]]",Preserved all records; no run/seed or averaging assumption
+Camping,Camping_Sol_7,2,2,True,"[79, 89]","[[""176.1"", ""7.5"", ""24537.0""], [""116.2"", ""4.2"", ""24670.0""]]",Preserved all records; no run/seed or averaging assumption
+Customer - Order,customerOrderObjectModel_Sol_3,2,2,True,"[5121, 5123]","[[""57.0"", ""1.9"", ""87806.0""], [""102.8"", ""3.1"", ""89125.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_1,2,2,True,"[31336, 31368]","[[""88.9"", ""16.1"", ""25600.0""], [""83.0"", ""2.8"", ""25679.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_10,2,2,True,"[31337, 31369]","[[""77.7"", ""2.6"", ""22461.0""], [""75.39999999999999"", ""2.7"", ""22491.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_14,2,2,True,"[31340, 31372]","[[""78.3"", ""2.6"", ""22473.0""], [""74.2"", ""2.7"", ""22542.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_16,2,2,True,"[31344, 31376]","[[""126.8"", ""2.8"", ""20092.0""], [""131.20000000000002"", ""2.9"", ""20235.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_17,2,2,True,"[31343, 31375]","[[""76.7"", ""3.7"", ""20033.0""], [""79.5"", ""2.6"", ""20097.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_20,2,2,True,"[31352, 31384]","[[""76.2"", ""2.5"", ""20960.0""], [""90.39999999999999"", ""3.5"", ""20907.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_21,2,2,True,"[31351, 31383]","[[""147.60000000000002"", ""2.9"", ""20958.0""], [""191.0"", ""3.0"", ""20906.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_22,2,2,True,"[31353, 31385]","[[""68.9"", ""2.4"", ""18864.0""], [""82.19999999999999"", ""2.4"", ""18830.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_23,2,2,True,"[31354, 31386]","[[""168.6"", ""2.6"", ""20960.0""], [""132.70000000000002"", ""2.6"", ""20944.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_25,2,2,True,"[31350, 31382]","[[""111.19999999999999"", ""2.6"", ""18745.0""], [""70.1"", ""2.8"", ""18811.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_27,2,2,True,"[31346, 31378]","[[""76.5"", ""2.8"", ""20106.0""], [""80.5"", ""2.6"", ""20515.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_28,2,2,True,"[31339, 31371]","[[""82.19999999999999"", ""2.6"", ""19965.0""], [""74.89999999999999"", ""2.6"", ""20035.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_3,2,2,True,"[31338, 31370]","[[""135.4"", ""3.9"", ""22461.0""], [""133.6"", ""2.8"", ""22533.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_30,2,2,True,"[31348, 31380]","[[""76.6"", ""2.8"", ""20503.0""], [""155.4"", ""3.6"", ""20894.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_31,2,2,True,"[31349, 31381]","[[""78.5"", ""2.5"", ""20515.0""], [""102.1"", ""2.7"", ""20897.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_37,2,2,True,"[31355, 31387]","[[""69.9"", ""2.4"", ""20960.0""], [""74.6"", ""2.4"", ""20946.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_4,2,2,True,"[31342, 31374]","[[""69.9"", ""2.5"", ""19986.0""], [""70.0"", ""2.5"", ""20094.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_40,2,2,True,"[31362, 31394]","[[""70.2"", ""2.6"", ""21062.0""], [""67.2"", ""2.7"", ""21047.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_43,2,2,True,"[31360, 31392]","[[""69.2"", ""2.5"", ""18919.0""], [""69.0"", ""2.4"", ""18941.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_44,2,2,True,"[31356, 31388]","[[""69.0"", ""2.4"", ""18879.0""], [""71.9"", ""2.4"", ""18853.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_46,2,2,True,"[31358, 31390]","[[""74.7"", ""2.7"", ""18884.0""], [""145.5"", ""2.7"", ""18939.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_48,2,2,True,"[31333, 31365]","[[""73.3"", ""2.5"", ""15744.0""], [""70.7"", ""3.1"", ""15785.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_49,2,2,True,"[31335, 31367]","[[""136.9"", ""2.9"", ""17630.0""], [""133.70000000000002"", ""2.7"", ""17970.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_5,2,2,True,"[31345, 31377]","[[""77.7"", ""2.8"", ""22614.0""], [""76.8"", ""2.5"", ""23047.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_53,2,2,True,"[31357, 31389]","[[""125.5"", ""2.6"", ""18882.0""], [""68.1"", ""2.4"", ""18921.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_55,2,2,True,"[31361, 31393]","[[""142.1"", ""2.5"", ""18954.0""], [""148.10000000000002"", ""8.1"", ""18943.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_56,2,2,True,"[31359, 31391]","[[""76.2"", ""2.5"", ""18884.0""], [""78.8"", ""3.4"", ""18940.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_59,2,2,True,"[31331, 31363]","[[""124.8"", ""5.0"", ""11164.0""], [""126.1"", ""6.6"", ""11220.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_6,2,2,True,"[31341, 31373]","[[""137.7"", ""2.5"", ""22483.0""], [""133.20000000000002"", ""2.7"", ""22606.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_61,2,2,True,"[31334, 31366]","[[""74.7"", ""2.7"", ""15885.0""], [""70.6"", ""2.5"", ""15913.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_63,2,2,True,"[31332, 31364]","[[""81.19999999999999"", ""2.6"", ""12735.0""], [""69.7"", ""2.6"", ""12792.0""]]",Preserved all records; no run/seed or averaging assumption
+University-Payroll,University_Sol_9,2,2,True,"[31347, 31379]","[[""136.8"", ""2.7"", ""22972.0""], [""73.3"", ""2.6"", ""23336.0""]]",Preserved all records; no run/seed or averaging assumption

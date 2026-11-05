@@ -1,0 +1,162 @@
+{
+  "domain": "large-healthcare",
+  "classes": [
+    {
+      "name": "Person",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "dob",
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "name": "Patient",
+      "extends": "Person",
+      "attributes": [
+        {
+          "name": "mrn",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Provider",
+      "extends": "Person",
+      "attributes": [
+        {
+          "name": "credential",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Department",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Encounter",
+      "attributes": [
+        {
+          "name": "admit_time",
+          "type": "datetime"
+        },
+        {
+          "name": "discharge_time",
+          "type": "datetime",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "name": "OrderRequest",
+      "attributes": [
+        {
+          "name": "priority",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "LabOrder",
+      "extends": "OrderRequest",
+      "attributes": [
+        {
+          "name": "specimen",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "MedicationOrder",
+      "extends": "OrderRequest",
+      "attributes": [
+        {
+          "name": "route",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Result",
+      "attributes": [
+        {
+          "name": "value_text",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "BillingAccount",
+      "attributes": [
+        {
+          "name": "balance",
+          "type": "decimal"
+        }
+      ]
+    },
+    {
+      "name": "InsurancePlan",
+      "attributes": [
+        {
+          "name": "payer",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "PatientEncounters",
+      "source": "Patient",
+      "target": "Encounter",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "ProviderEncounters",
+      "source": "Provider",
+      "target": "Encounter",
+      "multiplicity": "many-to-many"
+    },
+    {
+      "name": "DepartmentProviders",
+      "source": "Department",
+      "target": "Provider",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "EncounterOrders",
+      "source": "Encounter",
+      "target": "OrderRequest",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "OrderResults",
+      "source": "OrderRequest",
+      "target": "Result",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "PatientBilling",
+      "source": "Patient",
+      "target": "BillingAccount",
+      "multiplicity": "one-to-one"
+    },
+    {
+      "name": "PatientPlans",
+      "source": "Patient",
+      "target": "InsurancePlan",
+      "multiplicity": "many-to-many"
+    }
+  ],
+  "name": "hospital_information_system"
+}

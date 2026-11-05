@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+runs/
+checkpoints/
+Dataset/catalog.sqlite
+Dataset/.catalog-*
+*.sqlite-journal
+.env
+.DS_Store
+ORM_Old_Artifacts_Initial_Submission/
+*.egg-info/

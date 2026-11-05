@@ -1,0 +1,309 @@
+{
+  "passed": true,
+  "version": "0.4.0",
+  "format": "wheel",
+  "installed_outside_source_tree": true,
+  "module_path": "/workspace/scratch/b47cd7394855/verification_install_v04/lib/python3.12/site-packages/ymap_research/__init__.py",
+  "wheel_sha256": "09f83e5e6433e4f3eba35a633d86c5f948bc9ec35ebe5e73ac6630aaaa772ea3",
+  "source_matches_installed_modules": true,
+  "checks": [
+    {
+      "check": "installed_doctor",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_dataset_summary",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_dataset_list",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_show_and_dot_Dataset_alias",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_nested_archive_SQL_read",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_canonical_SQL_export",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_export_preserves_existing_output",
+      "passed": true,
+      "exit_code": 2
+    },
+    {
+      "check": "installed_unknown_id_error",
+      "passed": true,
+      "exit_code": 2
+    },
+    {
+      "check": "installed_catalogue_cannot_overwrite_imported_model",
+      "passed": true,
+      "exit_code": 2
+    },
+    {
+      "check": "installed_table_reader_0_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_1_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_2_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_3_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_4_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_5_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_6_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_7_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_8_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_9_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_10_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_11_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_12_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_13_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_14_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_15_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_16_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_17_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_18_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_19_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_20_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_21_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_22_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_23_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_24_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_25_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_26_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_27_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_28_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_29_workbook",
+      "passed": true,
+      "exit_code": 2
+    },
+    {
+      "check": "installed_table_reader_30_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_31_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_32_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_33_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_34_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_35_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_36_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_37_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_38_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_39_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_40_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_41_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_42_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_43_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_44_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_45_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_46_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_47_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_48_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_49_workbook",
+      "passed": true,
+      "exit_code": 0
+    }
+  ],
+  "table_artifacts_read": 49,
+  "office_lock_metadata_handled": 1,
+  "research_measurements_created": false
+}

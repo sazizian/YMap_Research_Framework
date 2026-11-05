@@ -1,0 +1,76 @@
+{
+  "domain": "content",
+  "classes": [
+    {
+      "name": "Author",
+      "attributes": [
+        {
+          "name": "display_name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Post",
+      "attributes": [
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "body",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "SponsoredPost",
+      "extends": "Post",
+      "attributes": [
+        {
+          "name": "campaign_code",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Comment",
+      "attributes": [
+        {
+          "name": "body",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "Tag",
+      "attributes": [
+        {
+          "name": "label",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "AuthorPosts",
+      "source": "Author",
+      "target": "Post",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "PostComments",
+      "source": "Post",
+      "target": "Comment",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "PostTags",
+      "source": "Post",
+      "target": "Tag",
+      "multiplicity": "many-to-many"
+    }
+  ],
+  "name": "blog_platform"
+}

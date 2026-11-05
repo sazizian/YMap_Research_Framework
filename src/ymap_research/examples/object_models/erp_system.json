@@ -1,0 +1,193 @@
+{
+  "domain": "large-enterprise",
+  "classes": [
+    {
+      "name": "Party",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Employee",
+      "extends": "Party",
+      "attributes": [
+        {
+          "name": "employee_no",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Vendor",
+      "extends": "Party",
+      "attributes": [
+        {
+          "name": "vendor_no",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "extends": "Party",
+      "attributes": [
+        {
+          "name": "customer_no",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "attributes": [
+        {
+          "name": "sku",
+          "type": "string"
+        },
+        {
+          "name": "cost",
+          "type": "decimal"
+        }
+      ]
+    },
+    {
+      "name": "Warehouse",
+      "attributes": [
+        {
+          "name": "code",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "InventoryItem",
+      "attributes": [
+        {
+          "name": "quantity",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "name": "PurchaseOrder",
+      "attributes": [
+        {
+          "name": "po_no",
+          "type": "string"
+        },
+        {
+          "name": "total",
+          "type": "decimal"
+        }
+      ]
+    },
+    {
+      "name": "SalesOrder",
+      "attributes": [
+        {
+          "name": "so_no",
+          "type": "string"
+        },
+        {
+          "name": "total",
+          "type": "decimal"
+        }
+      ]
+    },
+    {
+      "name": "Invoice",
+      "attributes": [
+        {
+          "name": "invoice_no",
+          "type": "string"
+        },
+        {
+          "name": "amount",
+          "type": "decimal"
+        }
+      ]
+    },
+    {
+      "name": "Payment",
+      "attributes": [
+        {
+          "name": "amount",
+          "type": "decimal"
+        },
+        {
+          "name": "paid_at",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "name": "Shipment",
+      "attributes": [
+        {
+          "name": "tracking_no",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "WarehouseInventory",
+      "source": "Warehouse",
+      "target": "InventoryItem",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "ProductInventory",
+      "source": "Product",
+      "target": "InventoryItem",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "VendorPurchaseOrders",
+      "source": "Vendor",
+      "target": "PurchaseOrder",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "PurchaseOrderProducts",
+      "source": "PurchaseOrder",
+      "target": "Product",
+      "multiplicity": "many-to-many"
+    },
+    {
+      "name": "CustomerSalesOrders",
+      "source": "Customer",
+      "target": "SalesOrder",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "SalesOrderProducts",
+      "source": "SalesOrder",
+      "target": "Product",
+      "multiplicity": "many-to-many"
+    },
+    {
+      "name": "SalesOrderInvoices",
+      "source": "SalesOrder",
+      "target": "Invoice",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "InvoicePayments",
+      "source": "Invoice",
+      "target": "Payment",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "SalesOrderShipments",
+      "source": "SalesOrder",
+      "target": "Shipment",
+      "multiplicity": "one-to-many"
+    }
+  ],
+  "name": "erp_system"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "examined_sql_occurrences": 728,
+  "exported_candidates": 728,
+  "rejected_sql_occurrences": 0,
+  "feature_basis": "Parsed physical structure only",
+  "labels_created": false,
+  "measurement_rows_created": 0,
+  "source_namespaces_preserved": true,
+  "files": [
+    "candidates.jsonl",
+    "parse_rejections.csv"
+  ]
+}

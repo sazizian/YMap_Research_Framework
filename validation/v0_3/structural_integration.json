@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "research_evidence": false,
+  "models": [
+    {
+      "model": "linear",
+      "passed": true,
+      "trained_saved_reloaded_and_recommended": true,
+      "label_source": "synthetic_demo"
+    },
+    {
+      "model": "ridge",
+      "passed": true,
+      "trained_saved_reloaded_and_recommended": true,
+      "label_source": "synthetic_demo"
+    },
+    {
+      "model": "random_forest",
+      "passed": true,
+      "trained_saved_reloaded_and_recommended": true,
+      "label_source": "synthetic_demo"
+    },
+    {
+      "model": "extra_trees",
+      "passed": true,
+      "trained_saved_reloaded_and_recommended": true,
+      "label_source": "synthetic_demo"
+    },
+    {
+      "model": "mlp",
+      "passed": true,
+      "trained_saved_reloaded_and_recommended": true,
+      "label_source": "synthetic_demo"
+    },
+    {
+      "model": "xgboost",
+      "passed": true,
+      "trained_saved_reloaded_and_recommended": true,
+      "label_source": "synthetic_demo"
+    }
+  ]
+}

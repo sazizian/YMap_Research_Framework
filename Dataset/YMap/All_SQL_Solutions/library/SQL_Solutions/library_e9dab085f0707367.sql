@@ -1,0 +1,16 @@
+CREATE TABLE "c_Book" ("id" BIGINT NOT NULL, "dtype" TEXT NOT NULL, "a_Book_isbn" TEXT NOT NULL, PRIMARY KEY ("id"), UNIQUE ("id", "dtype"), CHECK (dtype IN ('Book')));
+CREATE TABLE "c_Branch" ("id" BIGINT NOT NULL, "a_Branch_name" TEXT NOT NULL, PRIMARY KEY ("id"));
+CREATE TABLE "c_Item" ("id" BIGINT NOT NULL, "dtype" TEXT NOT NULL, "a_Item_title" TEXT NOT NULL, "r_BranchItems_source_id" BIGINT, PRIMARY KEY ("id"), UNIQUE ("id", "dtype"), CHECK (dtype IN ('Book','Item','Media')), CHECK ((dtype IN ('Book','Item','Media')) OR "r_BranchItems_source_id" IS NULL), CHECK (NOT (dtype IN ('Book','Item','Media')) OR "r_BranchItems_source_id" IS NOT NULL));
+CREATE TABLE "c_Loan" ("id" BIGINT NOT NULL, "a_Loan_loan_date" DATE NOT NULL, "a_Loan_due_date" DATE NOT NULL, "r_PatronLoans_source_id" BIGINT, PRIMARY KEY ("id"), CHECK ((TRUE) OR "r_PatronLoans_source_id" IS NULL), CHECK (NOT (TRUE) OR "r_PatronLoans_source_id" IS NOT NULL));
+CREATE TABLE "c_Media" ("id" BIGINT NOT NULL, "dtype" TEXT NOT NULL, "a_Media_format" TEXT NOT NULL, PRIMARY KEY ("id"), UNIQUE ("id", "dtype"), CHECK (dtype IN ('Media')));
+CREATE TABLE "c_Patron" ("id" BIGINT NOT NULL, "a_Patron_name" TEXT NOT NULL, PRIMARY KEY ("id"));
+CREATE TABLE "l_ItemLoans" ("r_ItemLoans_source_id" BIGINT NOT NULL, "r_ItemLoans_source_dtype" TEXT NOT NULL, "r_ItemLoans_target_id" BIGINT NOT NULL, PRIMARY KEY ("r_ItemLoans_source_id", "r_ItemLoans_target_id"), UNIQUE ("r_ItemLoans_target_id"), CHECK ("r_ItemLoans_source_dtype" IS NULL OR "r_ItemLoans_source_dtype" IN ('Book','Item','Media')));
+ALTER TABLE "c_Book" ADD CONSTRAINT "fk_c_Book_0" FOREIGN KEY ("id", "dtype") REFERENCES "c_Item" ("id", "dtype") MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "c_Item" ADD CONSTRAINT "fk_c_Item_0" FOREIGN KEY ("r_BranchItems_source_id") REFERENCES "c_Branch" ("id") MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "c_Loan" ADD CONSTRAINT "fk_c_Loan_0" FOREIGN KEY ("r_PatronLoans_source_id") REFERENCES "c_Patron" ("id") MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "c_Media" ADD CONSTRAINT "fk_c_Media_0" FOREIGN KEY ("id", "dtype") REFERENCES "c_Item" ("id", "dtype") MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "l_ItemLoans" ADD CONSTRAINT "fk_l_ItemLoans_0" FOREIGN KEY ("r_ItemLoans_source_id", "r_ItemLoans_source_dtype") REFERENCES "c_Item" ("id", "dtype") MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "l_ItemLoans" ADD CONSTRAINT "fk_l_ItemLoans_1" FOREIGN KEY ("r_ItemLoans_target_id") REFERENCES "c_Loan" ("id") MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+CREATE FUNCTION "require_ItemLoans"() RETURNS trigger LANGUAGE plpgsql SET search_path FROM CURRENT AS $ymap$ BEGIN IF EXISTS (SELECT 1 FROM "c_Loan" t WHERE (TRUE) AND NOT EXISTS (SELECT 1 FROM "l_ItemLoans" l WHERE l."r_ItemLoans_target_id"=t.id)) THEN RAISE EXCEPTION 'Required target participation violated: ItemLoans'; END IF; RETURN NULL; END; $ymap$;
+CREATE CONSTRAINT TRIGGER "ct_ItemLoans_target" AFTER INSERT OR UPDATE OR DELETE ON "c_Loan" DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION "require_ItemLoans"();
+CREATE CONSTRAINT TRIGGER "ct_ItemLoans_link" AFTER INSERT OR UPDATE OR DELETE ON "l_ItemLoans" DEFERRABLE INITIALLY DEFERRED FOR EACH ROW EXECUTE FUNCTION "require_ItemLoans"();

@@ -1,0 +1,896 @@
+{
+  "minimal_overview": {
+    "index": {
+      "artifact_count": 117824,
+      "by_kind": {
+        "archive": 18,
+        "document": 49,
+        "notebook": 604,
+        "object_model": 96,
+        "record": 36565,
+        "source": 158,
+        "sql": 80248,
+        "stored_state": 36,
+        "table": 31,
+        "workbook": 19
+      },
+      "by_source": {
+        "reinforceorm": 111663,
+        "ymap": 743,
+        "ymap_legacy": 5418
+      },
+      "by_system": {
+        "": 17065,
+        "bank": 2955,
+        "bank_txt": 2,
+        "banking": 13,
+        "blog_platform": 13,
+        "camping": 2476,
+        "camping_txt": 2,
+        "canteen": 7751,
+        "canteen_txt": 2,
+        "crm": 21,
+        "csos": 5222,
+        "csos_re": 3344,
+        "csos_txt": 2,
+        "customer_order": 34,
+        "customerorderobjectmodel": 2902,
+        "customerorderobjectmodel_txt": 2,
+        "decider": 3065,
+        "decider_txt": 2,
+        "dominated": 120,
+        "e_commerce": 8147,
+        "ecommerce": 11074,
+        "ecommerce_txt": 2,
+        "erp_system": 389,
+        "flagship": 3161,
+        "flagship_txt": 2,
+        "healthcare": 17,
+        "hospital": 12475,
+        "hospital_information_system": 197,
+        "hospital_mgmt": 24,
+        "hospital_mgmt_txt": 2,
+        "library": 2710,
+        "librarymanagement": 5592,
+        "librarymanagement_txt": 2,
+        "manifest": 1,
+        "onlinestore": 2918,
+        "onlinestore_txt": 2,
+        "order_process": 2060,
+        "order_process_txt": 2,
+        "order_processing": 777,
+        "ore": 5,
+        "pareto_optimal": 120,
+        "readme_md": 1,
+        "rocket_controller": 2526,
+        "rocket_controller_operations": 1,
+        "rocket_controller_pareto_optimal_csv": 1,
+        "rocket_controller_tradespace": 1,
+        "solution": 1121,
+        "store": 8227,
+        "store_txt": 2,
+        "traffic_control": 8227,
+        "traffic_control_txt": 2,
+        "travel_booking": 21,
+        "university": 2987,
+        "university_payroll": 33,
+        "university_txt": 2
+      },
+      "catalogue": "Dataset/catalog.sqlite",
+      "duplicate_sql_occurrences": 41642,
+      "format": "ymap_combined_dataset_v1",
+      "measurement_policy": "A stored file or parsed schema does not establish measured performance or a verified label join",
+      "source_and_method_namespaces_are_distinct": true,
+      "sql_count": 80248,
+      "sql_identity": "SHA-256 byte identity; no semantic equivalence claim",
+      "unique_sql_contents": 38606
+    },
+    "root": "/workspace/scratch/b47cd7394855/work/YMap_Research_Framework",
+    "scope": "Actual historical SQL inspection; objective units and evidence status are inherited from source classification, not independently verified measurements",
+    "sql_examples": [
+      {
+        "artifact": {
+          "archive_member": "",
+          "artifact_id": "artifact_dd173ea0b4293ddd8491d804",
+          "dialect": "unknown",
+          "evidence_status": "source_generated_formula_or_software_fixture",
+          "kind": "sql",
+          "origin_method": "mixed_or_unspecified_in_source",
+          "path": "Dataset/RQ4_Ablation_Study/rocket_controller/sql_solutions/RCO-0001.sql",
+          "sha256": "ad3feb7d5d03f588d4b4d9b0b08c48cf7329e0cdb2661725cd1ae064dc9b75cd",
+          "size_bytes": 2786,
+          "source": "reinforceorm",
+          "system": "rocket_controller"
+        },
+        "preview_limit_bytes": 1200,
+        "preview_truncated": true,
+        "sql_preview": "-- Source OOP model: State Machine Modeling of the Space Launch System Solid Rocket Boosters\n-- URL: https://ntrs.nasa.gov/citations/20160000328\n-- Solution: RCO-0001\n-- ORM mapping: class=1, inheritance=1, association=1, attribute_embedding=1, table_layout=1, index_strategy=1, normalization=1\n\nCREATE TABLE rocket_controller_all (\n  controller_id INTEGER,\n  controller_status VARCHAR(64),\n  flight_phase_code VARCHAR(32),\n  redundancy_level SMALLINT,\n  firmware_version VARCHAR(24),\n  life_support_status VARCHAR(64),\n  cabin_pressure_kpa REAL,\n  remote_override VARCHAR(32),\n  mission_profile_id INTEGER,\n  controller_kind VARCHAR(16),\n  propulsion_id INTEGER,\n  channel_id INTEGER,\n  PRIMARY KEY (controller_id),\n  CONSTRAINT fk_rocket_controller_all_propulsion_id FOREIGN KEY (propulsion_id) REFERENCES propulsion_subsystem_all (propulsion_id),\n  CONSTRAINT fk_rocket_controller_all_channel_id FOREIGN KEY (channel_id) REFERENCES telemetry_channel (channel_id)\n);\nCREATE TABLE propulsion_subsystem_all (\n  propulsion_id INTEGER,\n  thrust_rating_kn REAL,\n  fuel_remaining_pct REAL,\n  throttle_setpoint REAL,\n  burn_profile VARCHAR(64),\n  nozzle_temp_c REAL,\n  chamber_pressure_mpa REAL,\n  turbopu"
+      },
+      {
+        "artifact": {
+          "archive_member": "",
+          "artifact_id": "artifact_5b8c94aaaac1fa1cd717b4df",
+          "dialect": "unknown",
+          "evidence_status": "source_generated_formula_or_software_fixture",
+          "kind": "sql",
+          "origin_method": "mixed_or_unspecified_in_source",
+          "path": "Dataset/RQ4_Ablation_Study/rocket_controller/sql_solutions/RCO-0002.sql",
+          "sha256": "d19c7992ffa21b062267836f839eb26adf1b5e819b2a782e8e4be495b6bf9591",
+          "size_bytes": 3287,
+          "source": "reinforceorm",
+          "system": "rocket_controller"
+        },
+        "preview_limit_bytes": 1200,
+        "preview_truncated": true,
+        "sql_preview": "-- Source OOP model: State Machine Modeling of the Space Launch System Solid Rocket Boosters\n-- URL: https://ntrs.nasa.gov/citations/20160000328\n-- Solution: RCO-0002\n-- ORM mapping: class=1, inheritance=1, association=1, attribute_embedding=1, table_layout=1, index_strategy=1, normalization=2\n\nCREATE TABLE rocket_controller_all (\n  controller_id INTEGER,\n  controller_status VARCHAR(64),\n  flight_phase_code VARCHAR(32),\n  redundancy_level SMALLINT,\n  firmware_version VARCHAR(24),\n  life_support_status VARCHAR(64),\n  cabin_pressure_kpa REAL,\n  remote_override VARCHAR(32),\n  mission_profile_id INTEGER,\n  controller_kind VARCHAR(16),\n  propulsion_id INTEGER,\n  channel_id INTEGER,\n  PRIMARY KEY (controller_id),\n  CONSTRAINT fk_rocket_controller_all_propulsion_id FOREIGN KEY (propulsion_id) REFERENCES propulsion_subsystem_all (propulsion_id),\n  CONSTRAINT fk_rocket_controller_all_channel_id FOREIGN KEY (channel_id) REFERENCES telemetry_channel (channel_id)\n);\nCREATE TABLE propulsion_subsystem_all (\n  propulsion_id INTEGER,\n  thrust_rating_kn REAL,\n  fuel_remaining_pct REAL,\n  throttle_setpoint REAL,\n  burn_profile VARCHAR(64),\n  nozzle_temp_c REAL,\n  chamber_pressure_mpa REAL,\n  turbopu"
+      },
+      {
+        "artifact": {
+          "archive_member": "",
+          "artifact_id": "artifact_285a1e74f7b89411b593c248",
+          "dialect": "unknown",
+          "evidence_status": "source_generated_formula_or_software_fixture",
+          "kind": "sql",
+          "origin_method": "mixed_or_unspecified_in_source",
+          "path": "Dataset/RQ4_Ablation_Study/rocket_controller/sql_solutions/RCO-0003.sql",
+          "sha256": "41f32e43eef9beab8c73e02b86a93d5979c8c2342b8ee9cee844bcc7eff61072",
+          "size_bytes": 3508,
+          "source": "reinforceorm",
+          "system": "rocket_controller"
+        },
+        "preview_limit_bytes": 1200,
+        "preview_truncated": true,
+        "sql_preview": "-- Source OOP model: State Machine Modeling of the Space Launch System Solid Rocket Boosters\n-- URL: https://ntrs.nasa.gov/citations/20160000328\n-- Solution: RCO-0003\n-- ORM mapping: class=1, inheritance=1, association=1, attribute_embedding=1, table_layout=1, index_strategy=2, normalization=1\n\nCREATE TABLE rocket_controller_all (\n  controller_id INTEGER,\n  controller_status VARCHAR(64),\n  flight_phase_code VARCHAR(32),\n  redundancy_level SMALLINT,\n  firmware_version VARCHAR(24),\n  life_support_status VARCHAR(64),\n  cabin_pressure_kpa REAL,\n  remote_override VARCHAR(32),\n  mission_profile_id INTEGER,\n  controller_kind VARCHAR(16),\n  propulsion_id INTEGER,\n  channel_id INTEGER,\n  PRIMARY KEY (controller_id),\n  CONSTRAINT fk_rocket_controller_all_propulsion_id FOREIGN KEY (propulsion_id) REFERENCES propulsion_subsystem_all (propulsion_id),\n  CONSTRAINT fk_rocket_controller_all_channel_id FOREIGN KEY (channel_id) REFERENCES telemetry_channel (channel_id),\n  INDEX idx_rocket_controller_all_propulsion_id (propulsion_id),\n  INDEX idx_rocket_controller_all_channel_id (channel_id),\n  INDEX idx_rocket_controller_all_controller_status (controller_status),\n  INDEX idx_rocket_controller_all_li"
+      }
+    ],
+    "status": "completed",
+    "summary": {
+      "artifact_count": 117824,
+      "by_kind": {
+        "archive": 18,
+        "document": 49,
+        "notebook": 604,
+        "object_model": 96,
+        "record": 36565,
+        "source": 158,
+        "sql": 80248,
+        "stored_state": 36,
+        "table": 31,
+        "workbook": 19
+      },
+      "by_source": {
+        "reinforceorm": 111663,
+        "ymap": 743,
+        "ymap_legacy": 5418
+      },
+      "by_system": {
+        "": 17065,
+        "bank": 2955,
+        "bank_txt": 2,
+        "banking": 13,
+        "blog_platform": 13,
+        "camping": 2476,
+        "camping_txt": 2,
+        "canteen": 7751,
+        "canteen_txt": 2,
+        "crm": 21,
+        "csos": 5222,
+        "csos_re": 3344,
+        "csos_txt": 2,
+        "customer_order": 34,
+        "customerorderobjectmodel": 2902,
+        "customerorderobjectmodel_txt": 2,
+        "decider": 3065,
+        "decider_txt": 2,
+        "dominated": 120,
+        "e_commerce": 8147,
+        "ecommerce": 11074,
+        "ecommerce_txt": 2,
+        "erp_system": 389,
+        "flagship": 3161,
+        "flagship_txt": 2,
+        "healthcare": 17,
+        "hospital": 12475,
+        "hospital_information_system": 197,
+        "hospital_mgmt": 24,
+        "hospital_mgmt_txt": 2,
+        "library": 2710,
+        "librarymanagement": 5592,
+        "librarymanagement_txt": 2,
+        "manifest": 1,
+        "onlinestore": 2918,
+        "onlinestore_txt": 2,
+        "order_process": 2060,
+        "order_process_txt": 2,
+        "order_processing": 777,
+        "ore": 5,
+        "pareto_optimal": 120,
+        "readme_md": 1,
+        "rocket_controller": 2526,
+        "rocket_controller_operations": 1,
+        "rocket_controller_pareto_optimal_csv": 1,
+        "rocket_controller_tradespace": 1,
+        "solution": 1121,
+        "store": 8227,
+        "store_txt": 2,
+        "traffic_control": 8227,
+        "traffic_control_txt": 2,
+        "travel_booking": 21,
+        "university": 2987,
+        "university_payroll": 33,
+        "university_txt": 2
+      },
+      "duplicate_sql_occurrences": 41642,
+      "format": "ymap_combined_dataset_v1",
+      "measurement_policy": "A stored file or parsed schema does not establish measured performance or a verified label join",
+      "source_and_method_namespaces_are_distinct": true,
+      "sql_count": 80248,
+      "sql_identity": "SHA-256 byte identity; no semantic equivalence claim",
+      "unique_sql_contents": 38606
+    }
+  },
+  "historical_reproduction": {
+    "analysis": {
+      "analysis_kind": "historical_raw_cost_reanalysis_not_new_YMap_experiments",
+      "attribution": {
+        "benchmark": "ReinforceORM ASE 2026 artifact",
+        "doi": "10.6084/m9.figshare.30071260.v8",
+        "license": "CC BY-NC 4.0; see original LICENSE.md"
+      },
+      "conflicting_id_groups": 68,
+      "distinct_system_solution_pairs": 31313,
+      "elapsed_analysis_seconds": 5.181775041999572,
+      "extra_records_beyond_unique_ids": 80,
+      "files": [
+        "raw_objective_records.csv",
+        "per_system_pareto_counts.csv",
+        "duplicate_id_conflicts.csv",
+        "schema_join_audit.csv",
+        "rocket_audit.json",
+        "summary.json",
+        "report.md"
+      ],
+      "join_methods": {
+        "case_insensitive_filename": 8,
+        "exact_filename": 21449,
+        "exact_filename_internal_use_unverified": 256,
+        "hospital_filename_alias": 9600
+      },
+      "nondominated_record_count": 159,
+      "per_system": [
+        {
+          "conflicting_id_groups": 21,
+          "distinct_ids_with_nondominated_records": 7,
+          "distinct_solution_ids": 30,
+          "nondominated_record_count": 7,
+          "raw_record_count": 62,
+          "repeated_id_groups": 21,
+          "subject_system": "Bank",
+          "unique_objective_vectors": 62,
+          "verified_sql_join_records": 62
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 13,
+          "distinct_solution_ids": 2320,
+          "nondominated_record_count": 13,
+          "raw_record_count": 2320,
+          "repeated_id_groups": 0,
+          "subject_system": "CSOS",
+          "unique_objective_vectors": 2318,
+          "verified_sql_join_records": 2320
+        },
+        {
+          "conflicting_id_groups": 14,
+          "distinct_ids_with_nondominated_records": 6,
+          "distinct_solution_ids": 29,
+          "nondominated_record_count": 7,
+          "raw_record_count": 44,
+          "repeated_id_groups": 14,
+          "subject_system": "Camping",
+          "unique_objective_vectors": 44,
+          "verified_sql_join_records": 44
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 11,
+          "distinct_solution_ids": 2688,
+          "nondominated_record_count": 11,
+          "raw_record_count": 2688,
+          "repeated_id_groups": 0,
+          "subject_system": "Canteen",
+          "unique_objective_vectors": 2688,
+          "verified_sql_join_records": 2688
+        },
+        {
+          "conflicting_id_groups": 1,
+          "distinct_ids_with_nondominated_records": 2,
+          "distinct_solution_ids": 8,
+          "nondominated_record_count": 2,
+          "raw_record_count": 9,
+          "repeated_id_groups": 1,
+          "subject_system": "Customer - Order",
+          "unique_objective_vectors": 9,
+          "verified_sql_join_records": 9
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 9,
+          "distinct_solution_ids": 80,
+          "nondominated_record_count": 9,
+          "raw_record_count": 80,
+          "repeated_id_groups": 0,
+          "subject_system": "Decider",
+          "unique_objective_vectors": 80,
+          "verified_sql_join_records": 80
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 20,
+          "distinct_solution_ids": 8144,
+          "nondominated_record_count": 20,
+          "raw_record_count": 8144,
+          "repeated_id_groups": 0,
+          "subject_system": "E-Commerce",
+          "unique_objective_vectors": 8133,
+          "verified_sql_join_records": 8144
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 8,
+          "distinct_solution_ids": 256,
+          "nondominated_record_count": 8,
+          "raw_record_count": 256,
+          "repeated_id_groups": 0,
+          "subject_system": "Flagship",
+          "unique_objective_vectors": 256,
+          "verified_sql_join_records": 0
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 16,
+          "distinct_solution_ids": 9600,
+          "nondominated_record_count": 16,
+          "raw_record_count": 9600,
+          "repeated_id_groups": 0,
+          "subject_system": "Hospital",
+          "unique_objective_vectors": 9583,
+          "verified_sql_join_records": 9600
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 8,
+          "distinct_solution_ids": 2688,
+          "nondominated_record_count": 8,
+          "raw_record_count": 2688,
+          "repeated_id_groups": 0,
+          "subject_system": "Library",
+          "unique_objective_vectors": 2687,
+          "verified_sql_join_records": 2688
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 6,
+          "distinct_solution_ids": 8,
+          "nondominated_record_count": 6,
+          "raw_record_count": 8,
+          "repeated_id_groups": 0,
+          "subject_system": "Onlinestore",
+          "unique_objective_vectors": 8,
+          "verified_sql_join_records": 8
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 7,
+          "distinct_solution_ids": 56,
+          "nondominated_record_count": 7,
+          "raw_record_count": 56,
+          "repeated_id_groups": 0,
+          "subject_system": "Order-Processing",
+          "unique_objective_vectors": 56,
+          "verified_sql_join_records": 56
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 20,
+          "distinct_solution_ids": 2686,
+          "nondominated_record_count": 20,
+          "raw_record_count": 2686,
+          "repeated_id_groups": 0,
+          "subject_system": "Store",
+          "unique_objective_vectors": 2678,
+          "verified_sql_join_records": 2686
+        },
+        {
+          "conflicting_id_groups": 0,
+          "distinct_ids_with_nondominated_records": 15,
+          "distinct_solution_ids": 2688,
+          "nondominated_record_count": 15,
+          "raw_record_count": 2688,
+          "repeated_id_groups": 0,
+          "subject_system": "Traffic-Control",
+          "unique_objective_vectors": 2683,
+          "verified_sql_join_records": 2688
+        },
+        {
+          "conflicting_id_groups": 32,
+          "distinct_ids_with_nondominated_records": 8,
+          "distinct_solution_ids": 32,
+          "nondominated_record_count": 10,
+          "raw_record_count": 64,
+          "repeated_id_groups": 32,
+          "subject_system": "University-Payroll",
+          "unique_objective_vectors": 64,
+          "verified_sql_join_records": 64
+        }
+      ],
+      "raw_record_count": 31393,
+      "repeated_id_groups": 68,
+      "reported_dataset_comparison": {
+        "interpretation": "These supplied files describe different counts; version/protocol reconciliation is unresolved. No source totals were changed.",
+        "raw_records": 31393,
+        "reported_total_solutions": 31302,
+        "source": "results/rq1_tradespace_effectiveness.csv",
+        "status": "compared",
+        "systems_with_record_count_differences": [
+          {
+            "raw_minus_reported": 88,
+            "raw_records": 2688,
+            "reported_records": 2600,
+            "subject_system": "Library"
+          },
+          {
+            "raw_minus_reported": 3,
+            "raw_records": 2688,
+            "reported_records": 2685,
+            "subject_system": "Traffic-Control"
+          }
+        ]
+      },
+      "reported_outputs": {
+        "classification": "supplied reported/frozen summaries; retained separately from this reanalysis",
+        "execution_policy": "No imported scripts, SQL or pickle files executed/deserialized by this analysis",
+        "location": "results/*.csv and results/ReinforceORM_All_Results.xlsx",
+        "reproduction_behavior": "RQ1-RQ3 export stored PKLs; build_frozen_states.py contains paper table constants; RQ4 runner includes simulated objectives and convergence formulas"
+      },
+      "rocket_audit": {
+        "flags_policy": "Preserved original flags; separately recomputed actual nondominance. No supplied values or files were changed.",
+        "generator_script": "reproduction/build_rocket_controller_artifact.py",
+        "label_provenance": "formula_generated_objectives_not_database_measurements",
+        "marked_and_nondominated_count": 11,
+        "marked_but_dominated_ids": [
+          "RCO-0952",
+          "RCO-0975"
+        ],
+        "matches_recognized_bundled_generator_formula": true,
+        "recomputed_nondominated_count": 337,
+        "row_count": 2520,
+        "source": "Dataset/RQ4_Ablation_Study/rocket_controller/rocket_controller_tradespace_full.csv",
+        "source_sha256": "5aeccf3f5820e2e04a66fd46ccbe5d2e99f77875b485ded2d3e07d52f7c77b9b",
+        "status": "analyzed",
+        "supplied_marked_pareto_count": 13,
+        "unmarked_nondominated_count": 326
+      },
+      "scope": "Exact within-system nondominance over supplied raw cost records. No pooling across systems, schema averaging, new model training, end-to-end speedup claim or normalized paper hypervolume reproduction.",
+      "source_csv": "ReinforceORM_Old_Artifacts_Initial_Submission/Corelation_Analysis/All_Designs_Raw_Data.csv",
+      "source_sha256": "e677dc1113f655e822c64b156c529d02af7890f440c8d3d268fa13123b477e28",
+      "status": "completed",
+      "system_count": 15,
+      "units": {
+        "insert_time": "not_confirmed",
+        "query_time": "not_confirmed",
+        "storage": "not_confirmed"
+      },
+      "unknown_protocol": [
+        "objective units and measurement semantics",
+        "workload and generated-data distribution",
+        "database engine/version and environment",
+        "seed/run identity for repeated IDs"
+      ],
+      "verified_sql_join_pairs": 31057,
+      "verified_sql_join_records": 31137
+    },
+    "created_utc": "2026-10-21T04:15:25.958628+00:00",
+    "index": {
+      "artifact_count": 117824,
+      "by_kind": {
+        "archive": 18,
+        "document": 49,
+        "notebook": 604,
+        "object_model": 96,
+        "record": 36565,
+        "source": 158,
+        "sql": 80248,
+        "stored_state": 36,
+        "table": 31,
+        "workbook": 19
+      },
+      "by_source": {
+        "reinforceorm": 111663,
+        "ymap": 743,
+        "ymap_legacy": 5418
+      },
+      "by_system": {
+        "": 17065,
+        "bank": 2955,
+        "bank_txt": 2,
+        "banking": 13,
+        "blog_platform": 13,
+        "camping": 2476,
+        "camping_txt": 2,
+        "canteen": 7751,
+        "canteen_txt": 2,
+        "crm": 21,
+        "csos": 5222,
+        "csos_re": 3344,
+        "csos_txt": 2,
+        "customer_order": 34,
+        "customerorderobjectmodel": 2902,
+        "customerorderobjectmodel_txt": 2,
+        "decider": 3065,
+        "decider_txt": 2,
+        "dominated": 120,
+        "e_commerce": 8147,
+        "ecommerce": 11074,
+        "ecommerce_txt": 2,
+        "erp_system": 389,
+        "flagship": 3161,
+        "flagship_txt": 2,
+        "healthcare": 17,
+        "hospital": 12475,
+        "hospital_information_system": 197,
+        "hospital_mgmt": 24,
+        "hospital_mgmt_txt": 2,
+        "library": 2710,
+        "librarymanagement": 5592,
+        "librarymanagement_txt": 2,
+        "manifest": 1,
+        "onlinestore": 2918,
+        "onlinestore_txt": 2,
+        "order_process": 2060,
+        "order_process_txt": 2,
+        "order_processing": 777,
+        "ore": 5,
+        "pareto_optimal": 120,
+        "readme_md": 1,
+        "rocket_controller": 2526,
+        "rocket_controller_operations": 1,
+        "rocket_controller_pareto_optimal_csv": 1,
+        "rocket_controller_tradespace": 1,
+        "solution": 1121,
+        "store": 8227,
+        "store_txt": 2,
+        "traffic_control": 8227,
+        "traffic_control_txt": 2,
+        "travel_booking": 21,
+        "university": 2987,
+        "university_payroll": 33,
+        "university_txt": 2
+      },
+      "catalogue": "Dataset/catalog.sqlite",
+      "duplicate_sql_occurrences": 41642,
+      "format": "ymap_combined_dataset_v1",
+      "measurement_policy": "A stored file or parsed schema does not establish measured performance or a verified label join",
+      "source_and_method_namespaces_are_distinct": true,
+      "sql_count": 80248,
+      "sql_identity": "SHA-256 byte identity; no semantic equivalence claim",
+      "unique_sql_contents": 38606
+    },
+    "output": "/workspace/scratch/b47cd7394855/work/YMap_Research_Framework/results/YMap/reproduction_runs/validated_release",
+    "root": "/workspace/scratch/b47cd7394855/work/YMap_Research_Framework",
+    "scope": "Current-input historical inventory and supported analysis; no manuscript constant checks, frozen-state deserialization, new database profiling, or fabricated objective labels",
+    "status": "completed",
+    "timings": {
+      "analysis_seconds": 5.2421701139992365,
+      "index_seconds": 14.911095403000218,
+      "total_seconds": 28.839762063000308,
+      "verify_seconds": 8.686487552999097
+    },
+    "verification": {
+      "catalogue_content_hashes_checked": 0,
+      "failure_count": 0,
+      "failures": [],
+      "imported_source_files_checked": 110865,
+      "paper_results_reproduced": false,
+      "passed": true,
+      "source_preservation_check": "Original ZIP CRC32 and size for each imported file"
+    }
+  },
+  "installed_checks": [
+    {
+      "check": "installed_doctor",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_dataset_summary",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_dataset_list",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_show_and_dot_Dataset_alias",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_nested_archive_SQL_read",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_canonical_SQL_export",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_export_preserves_existing_output",
+      "passed": true,
+      "exit_code": 2
+    },
+    {
+      "check": "installed_unknown_id_error",
+      "passed": true,
+      "exit_code": 2
+    },
+    {
+      "check": "installed_catalogue_cannot_overwrite_imported_model",
+      "passed": true,
+      "exit_code": 2
+    },
+    {
+      "check": "installed_table_reader_0_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_1_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_2_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_3_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_4_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_5_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_6_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_7_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_8_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_9_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_10_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_11_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_12_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_13_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_14_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_15_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_16_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_17_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_18_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_19_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_20_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_21_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_22_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_23_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_24_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_25_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_26_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_27_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_28_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_29_workbook",
+      "passed": true,
+      "exit_code": 2
+    },
+    {
+      "check": "installed_table_reader_30_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_31_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_32_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_33_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_34_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_35_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_36_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_37_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_38_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_39_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_40_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_41_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_42_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_43_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_44_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_45_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_46_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_47_table",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_48_workbook",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "check": "installed_table_reader_49_workbook",
+      "passed": true,
+      "exit_code": 0
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "format": "wheel",
+  "version": "0.3.0",
+  "installed_outside_source_tree": true,
+  "module_path": "/workspace/scratch/b47cd7394855/verification_install_v03/lib/python3.12/site-packages/ymap_research/__init__.py",
+  "example_count": 11,
+  "java_source_present": true,
+  "commands_passed": [
+    "ymap_research doctor",
+    "ymap_research demo"
+  ],
+  "wheel_sha256": "ad253cfbbbde1ff33c27c42d4007b23b7bcdbe064f593621e0b7d1148eea871c",
+  "demo_is_research_evidence": false
+}

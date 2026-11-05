@@ -1,0 +1,95 @@
+{
+  "domain": "banking",
+  "classes": [
+    {
+      "name": "Party",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Person",
+      "extends": "Party",
+      "attributes": [
+        {
+          "name": "ssn_hash",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "extends": "Party",
+      "attributes": [
+        {
+          "name": "tax_id_hash",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Account",
+      "attributes": [
+        {
+          "name": "account_no",
+          "type": "string"
+        },
+        {
+          "name": "balance",
+          "type": "decimal"
+        }
+      ]
+    },
+    {
+      "name": "CheckingAccount",
+      "extends": "Account",
+      "attributes": [
+        {
+          "name": "overdraft_limit",
+          "type": "decimal"
+        }
+      ]
+    },
+    {
+      "name": "SavingsAccount",
+      "extends": "Account",
+      "attributes": [
+        {
+          "name": "interest_rate",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Transaction",
+      "attributes": [
+        {
+          "name": "amount",
+          "type": "decimal"
+        },
+        {
+          "name": "posted_at",
+          "type": "datetime"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "PartyAccounts",
+      "source": "Party",
+      "target": "Account",
+      "multiplicity": "many-to-many"
+    },
+    {
+      "name": "AccountTransactions",
+      "source": "Account",
+      "target": "Transaction",
+      "multiplicity": "one-to-many"
+    }
+  ],
+  "name": "banking"
+}

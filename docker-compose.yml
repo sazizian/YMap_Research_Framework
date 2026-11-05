@@ -1,0 +1,19 @@
+# Optional local development database. Password comes from your local environment.
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: ymap
+      POSTGRES_USER: ymap
+      POSTGRES_PASSWORD: ${YMAP_DB_PASSWORD:?Set YMAP_DB_PASSWORD locally before starting}
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - ymap_database:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ymap -d ymap"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  ymap_database:

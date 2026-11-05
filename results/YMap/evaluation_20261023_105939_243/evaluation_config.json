@@ -1,0 +1,35 @@
+{
+  "mode": "research",
+  "models": [
+    "linear",
+    "ridge",
+    "random_forest",
+    "extra_trees",
+    "mlp"
+  ],
+  "ensemble_base": "extra_trees",
+  "ensemble_size": 5,
+  "model_parameters": {
+    "random_forest": {
+      "n_estimators": 100
+    },
+    "extra_trees": {
+      "n_estimators": 100
+    },
+    "mlp": {
+      "hidden_layer_sizes": [
+        64,
+        32
+      ],
+      "max_iter": 500
+    }
+  },
+  "seed": 42,
+  "risk_lambda": 1.0,
+  "calibration_alpha": 0.1,
+  "weights": [
+    0.3333333333,
+    0.3333333333,
+    0.3333333334
+  ]
+}

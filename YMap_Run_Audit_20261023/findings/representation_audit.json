@@ -1,0 +1,6311 @@
+{
+  "candidate_count": 728,
+  "raw_repetitions": 4368,
+  "consistency_checks": {
+    "canonical_candidate_valid": 728,
+    "measured_candidate_exactly_matches_input": 728,
+    "measured_sql_matches_input": 728,
+    "summary_realization_matches_fixture": 728,
+    "query_spec_exactly_regenerates": 728,
+    "expected_query_results_match_logical_oracle": 728,
+    "owned_schema_cleanup_dropped": 728,
+    "raw_repetition_results_match_logical_oracle": 4368
+  },
+  "errors": [],
+  "feature_names": [
+    "association_count",
+    "association_table_count",
+    "check_count",
+    "class_count",
+    "column_count",
+    "foreign_key_count",
+    "inheritance_depth",
+    "inheritance_table_count",
+    "joined_count",
+    "nullable_column_count",
+    "pk_column_count",
+    "single_table_count",
+    "table_count",
+    "table_per_class_count",
+    "trigger_count",
+    "unique_count"
+  ],
+  "unique_feature_vectors": 226,
+  "collision_groups": 112,
+  "candidates_in_collisions": 614,
+  "cross_system_collision_groups": 4,
+  "exact_physical_declaration_duplicate_groups": 0,
+  "per_system": [
+    {
+      "object_model": "banking",
+      "candidates": 8,
+      "feature_vectors": 8,
+      "collision_candidates": 0,
+      "largest_collision_group": 1,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 8
+    },
+    {
+      "object_model": "blog_platform",
+      "candidates": 8,
+      "feature_vectors": 8,
+      "collision_candidates": 0,
+      "largest_collision_group": 1,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 8
+    },
+    {
+      "object_model": "crm",
+      "candidates": 16,
+      "feature_vectors": 12,
+      "collision_candidates": 8,
+      "largest_collision_group": 2,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 16
+    },
+    {
+      "object_model": "customer_order",
+      "candidates": 4,
+      "feature_vectors": 4,
+      "collision_candidates": 0,
+      "largest_collision_group": 1,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 4
+    },
+    {
+      "object_model": "ecommerce",
+      "candidates": 24,
+      "feature_vectors": 16,
+      "collision_candidates": 14,
+      "largest_collision_group": 3,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 24
+    },
+    {
+      "object_model": "erp_system",
+      "candidates": 384,
+      "feature_vectors": 44,
+      "collision_candidates": 374,
+      "largest_collision_group": 35,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 384
+    },
+    {
+      "object_model": "healthcare",
+      "candidates": 12,
+      "feature_vectors": 9,
+      "collision_candidates": 6,
+      "largest_collision_group": 2,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 12
+    },
+    {
+      "object_model": "hospital_information_system",
+      "candidates": 192,
+      "feature_vectors": 80,
+      "collision_candidates": 160,
+      "largest_collision_group": 6,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 192
+    },
+    {
+      "object_model": "library",
+      "candidates": 16,
+      "feature_vectors": 16,
+      "collision_candidates": 0,
+      "largest_collision_group": 1,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 16
+    },
+    {
+      "object_model": "travel_booking",
+      "candidates": 16,
+      "feature_vectors": 12,
+      "collision_candidates": 8,
+      "largest_collision_group": 2,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 16
+    },
+    {
+      "object_model": "university",
+      "candidates": 48,
+      "feature_vectors": 21,
+      "collision_candidates": 38,
+      "largest_collision_group": 6,
+      "fixture_byte_hashes": 1,
+      "query_spec_hashes": 48
+    }
+  ],
+  "empirical_feature_bounds": {
+    "insert_ms": {
+      "best_empirical_same_feature_prediction_rmse": 196.52579391917956,
+      "empirical_r2_ceiling": 0.5938719821358296,
+      "interpretation": "Optimistic in-sample group-mean bound on these measured medians; includes measurement variation, not a causal or generalization claim."
+    },
+    "query_ms": {
+      "best_empirical_same_feature_prediction_rmse": 0.8747658116676493,
+      "empirical_r2_ceiling": 0.34888545747116273,
+      "interpretation": "Optimistic in-sample group-mean bound on these measured medians; includes measurement variation, not a causal or generalization claim."
+    },
+    "storage_mb": {
+      "best_empirical_same_feature_prediction_rmse": 0.01894031896577168,
+      "empirical_r2_ceiling": 0.9880914803390793,
+      "interpretation": "Optimistic in-sample group-mean bound on these measured medians; includes measurement variation, not a causal or generalization claim."
+    }
+  },
+  "collision_details": [
+    {
+      "schemas": [
+        "erp_system_1a24c2e2e0e3e66d",
+        "erp_system_dd0fd059c2521c4a",
+        "erp_system_8c7f79946f60c859",
+        "erp_system_f2cde112ce294c74",
+        "erp_system_72d46af7519d3255",
+        "erp_system_3100d611b0e53ac3",
+        "erp_system_e68aa440492c322a",
+        "erp_system_2f4fd895f582b142",
+        "erp_system_8cb646499aa39805",
+        "erp_system_4dab05cf3a0c6e36",
+        "erp_system_8e34b3429ed521ca",
+        "erp_system_c26bc5bb8b0d5627",
+        "erp_system_570134fbcafa618c",
+        "erp_system_4fa3fe3f6859e695",
+        "erp_system_8c8742d78a02eac2",
+        "erp_system_8e3b2b7dcca41270",
+        "erp_system_6e91d4c4ab995dfa",
+        "erp_system_07b509e6feb0adfb",
+        "erp_system_5a237ffd2f90f0f3",
+        "erp_system_7e7ca029e2dcde83",
+        "erp_system_7bddf0b8410bcd59",
+        "erp_system_4f92a0f127b22532",
+        "erp_system_23d48af6ae377378",
+        "erp_system_56b2837361deec93",
+        "erp_system_2de3e117d0e6b2d2",
+        "erp_system_7b39e93931194c12",
+        "erp_system_ecde07eb88aa5b2f",
+        "erp_system_3e948b0cb4a27b2a",
+        "erp_system_032c9a29ba6e442b",
+        "erp_system_fff2c9995fae9d93",
+        "erp_system_d85fb7144bb18ba7",
+        "erp_system_2066da4ad3c7e3d7",
+        "erp_system_2b3530924e361521",
+        "erp_system_6b9b0bdf4e9e59ec",
+        "erp_system_1c1d3ca5bd7ac781"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 5,
+        "check_count": 8,
+        "class_count": 12,
+        "column_count": 46,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 0,
+        "nullable_column_count": 4,
+        "pk_column_count": 22,
+        "single_table_count": 0,
+        "table_count": 17,
+        "table_per_class_count": 1,
+        "trigger_count": 6,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          387.795,
+          1546.3765
+        ],
+        "query_ms": [
+          2.1632727272727275,
+          7.676033333333334
+        ],
+        "storage_mb": [
+          0.720896,
+          0.8192
+        ]
+      },
+      "physical_row_counts": [
+        1900
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        33785
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_473b97d046ee3bd6",
+        "erp_system_75c49bb846c5898d",
+        "erp_system_cd756423edfd611a",
+        "erp_system_1efcd76f7d4bef43",
+        "erp_system_dea5894a9bcb46ff",
+        "erp_system_4de4d93b37f46301",
+        "erp_system_7a59a9dffe8aab73",
+        "erp_system_5516023092bfa14c",
+        "erp_system_3cdac36608fbffd4",
+        "erp_system_1a7cb5af2b9dffb7",
+        "erp_system_31627378f2e0541f",
+        "erp_system_ca56a552ffb5f188",
+        "erp_system_879a10edd00d78f8",
+        "erp_system_dd63dc9530679886",
+        "erp_system_f5ded9801da8230c",
+        "erp_system_6cdfd18c4cce869e",
+        "erp_system_ca2804855f543e7d",
+        "erp_system_2c72ad12c4e8478f",
+        "erp_system_dad89661f0dc9228",
+        "erp_system_eb0e437c057a6298",
+        "erp_system_458d75b3440018d0",
+        "erp_system_3da1b81617c3eb8e",
+        "erp_system_519129cefd93161b",
+        "erp_system_0de0f9b04722eb96",
+        "erp_system_c0d94b857d141ebc",
+        "erp_system_c0860a11834a4a71",
+        "erp_system_bfe7380fdc001b68",
+        "erp_system_f61ba8cac5df5369",
+        "erp_system_3f8b4a3b33c94bfe",
+        "erp_system_8a6156263a063853",
+        "erp_system_e394beaeca883e36",
+        "erp_system_808fe2f3d50664a2",
+        "erp_system_0fa9f6211c08347a",
+        "erp_system_131df2e7bb53c648",
+        "erp_system_f58f3ed26dd10695"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 6,
+        "check_count": 6,
+        "class_count": 12,
+        "column_count": 47,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 0,
+        "nullable_column_count": 3,
+        "pk_column_count": 24,
+        "single_table_count": 0,
+        "table_count": 18,
+        "table_per_class_count": 1,
+        "trigger_count": 8,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          321.0414,
+          1885.8583
+        ],
+        "query_ms": [
+          1.933809090909091,
+          6.351381818181818
+        ],
+        "storage_mb": [
+          0.761856,
+          0.86016
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        33785
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_22258cfb74f798b3",
+        "erp_system_e48f44fa0031ceab",
+        "erp_system_b2c2ec1c174ec2ca",
+        "erp_system_3176b5ae878fc4c4",
+        "erp_system_14889570c6141d3f",
+        "erp_system_cc30d15d52c7ba3c",
+        "erp_system_7bebda4784dd2054",
+        "erp_system_c1c4b110739d2e2d",
+        "erp_system_2d0b4d1c13d07318",
+        "erp_system_3ff14f3ad68d318e",
+        "erp_system_b2c7aacce71ac610",
+        "erp_system_08288bd3d08f4eea",
+        "erp_system_5b120753b8c7e345",
+        "erp_system_f04dcd22597be9cf",
+        "erp_system_7a12931bb10fcffd",
+        "erp_system_e0882d5a49d33391",
+        "erp_system_05b4d077fdae202f",
+        "erp_system_f3222827dbaa01f1",
+        "erp_system_0719e0472b77b88d",
+        "erp_system_77909074a599c2c9",
+        "erp_system_dd0bb65c6d68843a"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 4,
+        "check_count": 10,
+        "class_count": 12,
+        "column_count": 45,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 0,
+        "nullable_column_count": 5,
+        "pk_column_count": 20,
+        "single_table_count": 0,
+        "table_count": 16,
+        "table_per_class_count": 1,
+        "trigger_count": 4,
+        "unique_count": 2
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          375.1371,
+          2139.1858
+        ],
+        "query_ms": [
+          3.232112121212121,
+          13.4712
+        ],
+        "storage_mb": [
+          0.712704,
+          0.77824
+        ]
+      },
+      "physical_row_counts": [
+        1800
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        33785
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_ae34a8149c55942b",
+        "erp_system_c27348189daa0812",
+        "erp_system_15790555f0280ff9",
+        "erp_system_995b907f5066dc5d",
+        "erp_system_5aa89c9d36d45afa",
+        "erp_system_561efacf1dec9422",
+        "erp_system_63a0c621f6dd024e",
+        "erp_system_bbb91de26a78671d",
+        "erp_system_78c24cbcc9748b4f",
+        "erp_system_8ed459de645eebd4",
+        "erp_system_bbf0f139b40da0fb",
+        "erp_system_82ed55b01a6b4e0f",
+        "erp_system_a6e1a1e092adab0f",
+        "erp_system_31104472c3164268",
+        "erp_system_5de6c5d442c945c6",
+        "erp_system_36e0426819b6639e",
+        "erp_system_b963970e6073bc1e",
+        "erp_system_e1309e31f5bc9e6d",
+        "erp_system_be61340672da493d",
+        "erp_system_186929c7dcbe6773",
+        "erp_system_42a8bb91857fc358"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 7,
+        "check_count": 4,
+        "class_count": 12,
+        "column_count": 48,
+        "foreign_key_count": 16,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 0,
+        "nullable_column_count": 2,
+        "pk_column_count": 26,
+        "single_table_count": 0,
+        "table_count": 19,
+        "table_per_class_count": 1,
+        "trigger_count": 10,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          390.8588,
+          1945.3724
+        ],
+        "query_ms": [
+          2.0976454545454546,
+          7.100666666666666
+        ],
+        "storage_mb": [
+          0.802816,
+          0.868352
+        ]
+      },
+      "physical_row_counts": [
+        2100
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        33785
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_6a5e07b22aa78ad2",
+        "erp_system_6909c8c7dd8858f9",
+        "erp_system_7c1f2e474c553cfd",
+        "erp_system_8e90ea1ec7ef33f9",
+        "erp_system_483bdb5a7a57bab1",
+        "erp_system_1b4f765ea2187c5a",
+        "erp_system_ad2aa8452d7c3e75",
+        "erp_system_0fa4521b8c18e48d",
+        "erp_system_5663b4239c794856",
+        "erp_system_e0bdc0346c62412f",
+        "erp_system_982605efa92222da",
+        "erp_system_4a9298a080c5c38f",
+        "erp_system_679e7076af705c2b",
+        "erp_system_d57706f673b61c48",
+        "erp_system_638c48051441d677",
+        "erp_system_8d819694fb971e57",
+        "erp_system_7395997cd45543cc",
+        "erp_system_7ae31722a4280405",
+        "erp_system_9982a313bb7d2383",
+        "erp_system_306fdd69599bf82d"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 5,
+        "check_count": 19,
+        "class_count": 12,
+        "column_count": 43,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 9,
+        "pk_column_count": 19,
+        "single_table_count": 1,
+        "table_count": 14,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          304.0434,
+          806.4443
+        ],
+        "query_ms": [
+          2.2203848484848483,
+          7.357366666666667
+        ],
+        "storage_mb": [
+          0.65536,
+          0.688128
+        ]
+      },
+      "physical_row_counts": [
+        1900
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_cd73798fa5ef8512",
+        "erp_system_fc32626d33775861",
+        "erp_system_9725542f4f38dbd6",
+        "erp_system_ba4a02040a6e5bb3",
+        "erp_system_79290d89a113e748",
+        "erp_system_e24c6cead0d60757",
+        "erp_system_a89611601786c3fe",
+        "erp_system_dd460418477f63aa",
+        "erp_system_db6a2c08b1d3dccf",
+        "erp_system_a2b299910cbc697b",
+        "erp_system_7bd3bf77fdf22543",
+        "erp_system_125afaabdd7e6315",
+        "erp_system_fc9d4cdb24409aff",
+        "erp_system_86b85f138b79b279",
+        "erp_system_6b599fb383126b46",
+        "erp_system_f63cf0830ba3dd4e",
+        "erp_system_64684f508a838097",
+        "erp_system_e32030934baa7d75",
+        "erp_system_8fea6dd4bc104f0e",
+        "erp_system_08bebb67dec30714"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 6,
+        "check_count": 17,
+        "class_count": 12,
+        "column_count": 44,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 8,
+        "pk_column_count": 21,
+        "single_table_count": 1,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          336.1997,
+          795.1609
+        ],
+        "query_ms": [
+          2.335669696969697,
+          5.247790909090909
+        ],
+        "storage_mb": [
+          0.69632,
+          0.729088
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_f40521329fc73210",
+        "erp_system_8f1f1356a9f02931",
+        "erp_system_e0f7a2e9f879d07f",
+        "erp_system_01bea56f6fe7be93",
+        "erp_system_27491215e7195971",
+        "erp_system_f5a2f17cb73c18e5",
+        "erp_system_1724d87405a09dec",
+        "erp_system_ec9b75abc5fdf0de",
+        "erp_system_44142d8ee7de735b",
+        "erp_system_5f962aedea0c4c2d",
+        "erp_system_1267f125b4401081",
+        "erp_system_f020f561695610a3",
+        "erp_system_43c278c0c0b5a1fb",
+        "erp_system_502bfd9259931208",
+        "erp_system_53212c75f3473f54",
+        "erp_system_d1267fc506017610",
+        "erp_system_500447ee89a7d060",
+        "erp_system_549b08b5fc5a459f",
+        "erp_system_33e716d675156172",
+        "erp_system_8b3c8854bad31f07"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 5,
+        "check_count": 14,
+        "class_count": 12,
+        "column_count": 49,
+        "foreign_key_count": 17,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 5,
+        "pk_column_count": 22,
+        "single_table_count": 0,
+        "table_count": 17,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          307.6079,
+          864.5713
+        ],
+        "query_ms": [
+          2.073509090909091,
+          6.426866666666666
+        ],
+        "storage_mb": [
+          0.827392,
+          0.86016
+        ]
+      },
+      "physical_row_counts": [
+        2200
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_bc49ab6215ea4fd6",
+        "erp_system_e03a5dd1faf5f5a9",
+        "erp_system_795b9f67bab3bbb0",
+        "erp_system_76254e248a452cd3",
+        "erp_system_6e396e421f04a308",
+        "erp_system_5d109dada14f570b",
+        "erp_system_42bbe9ed6a8c5231",
+        "erp_system_0266c4b118384682",
+        "erp_system_a234c6248ac751cf",
+        "erp_system_2856220876350019",
+        "erp_system_c049e0cf85ebe18d",
+        "erp_system_b5ab883755f4ba8c",
+        "erp_system_5b919b288a20c6ff",
+        "erp_system_185c4ccf24247a39",
+        "erp_system_ed343b00e45584b4",
+        "erp_system_7098808b585a42d2",
+        "erp_system_d6da488331f0b8e2",
+        "erp_system_4d51878f5bd79e2e",
+        "erp_system_b500904807fde304",
+        "erp_system_00022f2db66659da"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 6,
+        "check_count": 12,
+        "class_count": 12,
+        "column_count": 50,
+        "foreign_key_count": 18,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 4,
+        "pk_column_count": 24,
+        "single_table_count": 0,
+        "table_count": 18,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 8
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          331.1624,
+          1049.7109
+        ],
+        "query_ms": [
+          1.973160606060606,
+          7.050109090909091
+        ],
+        "storage_mb": [
+          0.868352,
+          0.90112
+        ]
+      },
+      "physical_row_counts": [
+        2300
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_bb13350428ae4747",
+        "erp_system_7d163f54f5fb2c2f",
+        "erp_system_9db7f4638ab9122b",
+        "erp_system_676a793f108194f2",
+        "erp_system_cd2872bfcaa71530",
+        "erp_system_b724826dbef74d1c",
+        "erp_system_19b2f03832db428f",
+        "erp_system_07fe57f01fa129b2",
+        "erp_system_be6d2643a1308f42",
+        "erp_system_d1268c8f8278cc7b"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 4,
+        "check_count": 21,
+        "class_count": 12,
+        "column_count": 42,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 10,
+        "pk_column_count": 17,
+        "single_table_count": 1,
+        "table_count": 13,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          365.708,
+          833.771
+        ],
+        "query_ms": [
+          2.6931818181818183,
+          5.143545454545454
+        ],
+        "storage_mb": [
+          0.6144,
+          0.647168
+        ]
+      },
+      "physical_row_counts": [
+        1800
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_44352a217011173c",
+        "erp_system_763ef32c383f2b91",
+        "erp_system_4fb47c0d62a0b177",
+        "erp_system_084f73b83372834e",
+        "erp_system_2b9f21dda4d15054",
+        "erp_system_6ca03655738b3143",
+        "erp_system_e3ba024e444e6c1b",
+        "erp_system_16da28ba599eeef2",
+        "erp_system_b18c9a40c7a3e036",
+        "erp_system_e5b7c210e3587669"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 4,
+        "check_count": 21,
+        "class_count": 12,
+        "column_count": 42,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 11,
+        "pk_column_count": 17,
+        "single_table_count": 1,
+        "table_count": 13,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          331.1333,
+          749.5157
+        ],
+        "query_ms": [
+          2.7933757575757574,
+          7.912245454545455
+        ],
+        "storage_mb": [
+          0.638976,
+          0.671744
+        ]
+      },
+      "physical_row_counts": [
+        1800
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_0d964539871f861e",
+        "erp_system_218419b8167d1c6e",
+        "erp_system_a8085bc35829da27",
+        "erp_system_eef054cbe87fdcfb",
+        "erp_system_488f313b7f22132b",
+        "erp_system_339fb6bf04395ee2",
+        "erp_system_f60c4d65e4a21802",
+        "erp_system_516e630aded7d94a",
+        "erp_system_ce530e3e064d6063",
+        "erp_system_989d379c39b47ffa"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 5,
+        "check_count": 19,
+        "class_count": 12,
+        "column_count": 43,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 10,
+        "pk_column_count": 19,
+        "single_table_count": 1,
+        "table_count": 14,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          419.8313,
+          713.0635
+        ],
+        "query_ms": [
+          3.1301060606060607,
+          5.698336363636364
+        ],
+        "storage_mb": [
+          0.679936,
+          0.712704
+        ]
+      },
+      "physical_row_counts": [
+        1900
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_761da10e3bb62383",
+        "erp_system_c95c06a2ea7dc314",
+        "erp_system_82cf00f49369c7f5",
+        "erp_system_b26a4899c6c8e035",
+        "erp_system_fbdad0257ca69f26",
+        "erp_system_c3d379aae3b6836e",
+        "erp_system_70cac2a13de31d09",
+        "erp_system_bd96f4a1990aca86",
+        "erp_system_d54ae089cbf2c809",
+        "erp_system_3dc24a8dea832068"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 7,
+        "check_count": 15,
+        "class_count": 12,
+        "column_count": 45,
+        "foreign_key_count": 16,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 7,
+        "pk_column_count": 23,
+        "single_table_count": 1,
+        "table_count": 16,
+        "table_per_class_count": 0,
+        "trigger_count": 10,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          360.0439,
+          775.8503
+        ],
+        "query_ms": [
+          2.3032363636363637,
+          5.388339393939394
+        ],
+        "storage_mb": [
+          0.73728,
+          0.770048
+        ]
+      },
+      "physical_row_counts": [
+        2100
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_9c3f70da78ff26b9",
+        "erp_system_6c5e2d59d4c2c5fc",
+        "erp_system_e89dc7c5844673b3",
+        "erp_system_bc59a1917bf84da0",
+        "erp_system_1434e2634de4ea6a",
+        "erp_system_9b7a4f248d9690d6",
+        "erp_system_6800c60491c65043",
+        "erp_system_ccbffcf25a02c264",
+        "erp_system_0d4a2190e0790e90",
+        "erp_system_bd5936f5db7b724e"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 6,
+        "check_count": 17,
+        "class_count": 12,
+        "column_count": 44,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 7,
+        "pk_column_count": 21,
+        "single_table_count": 1,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          332.2108,
+          758.9734
+        ],
+        "query_ms": [
+          2.4458818181818183,
+          5.376203030303031
+        ],
+        "storage_mb": [
+          0.671744,
+          0.704512
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_48d9d4c4a6416902",
+        "erp_system_812a50d23429526e",
+        "erp_system_0fcc2fcd15b9ee14",
+        "erp_system_cd8c7cf1e31062b2",
+        "erp_system_da584600d0f781d2",
+        "erp_system_5bf7d0bd5876638e",
+        "erp_system_7a3fed93b11b0a31",
+        "erp_system_8f262b4d24df4b67",
+        "erp_system_baebbe866f43a719",
+        "erp_system_66d7df4082c6240f"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 7,
+        "check_count": 15,
+        "class_count": 12,
+        "column_count": 45,
+        "foreign_key_count": 16,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 6,
+        "pk_column_count": 23,
+        "single_table_count": 1,
+        "table_count": 16,
+        "table_per_class_count": 0,
+        "trigger_count": 10,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          406.5325,
+          730.9495
+        ],
+        "query_ms": [
+          3.025512121212121,
+          4.245542424242424
+        ],
+        "storage_mb": [
+          0.712704,
+          0.745472
+        ]
+      },
+      "physical_row_counts": [
+        2100
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_1a969e9c55a1fd2e",
+        "erp_system_27606c79bda5386e",
+        "erp_system_2a52e80892f3e120",
+        "erp_system_f8085eaa584d40b5",
+        "erp_system_717f89b2bb428813",
+        "erp_system_f0ae7dad5b383c1b",
+        "erp_system_b641e33cc2251232",
+        "erp_system_ae34fd6903f5f87d",
+        "erp_system_6c30c91719e75602",
+        "erp_system_c48c2f19ea8187a1"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 4,
+        "check_count": 16,
+        "class_count": 12,
+        "column_count": 48,
+        "foreign_key_count": 16,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 6,
+        "pk_column_count": 20,
+        "single_table_count": 0,
+        "table_count": 16,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          266.6605,
+          795.0621
+        ],
+        "query_ms": [
+          1.8171181818181819,
+          4.294309090909091
+        ],
+        "storage_mb": [
+          0.786432,
+          0.8192
+        ]
+      },
+      "physical_row_counts": [
+        2100
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_b33eda9436080870",
+        "erp_system_a069bafe2518e534",
+        "erp_system_a2b8d51441e37ec8",
+        "erp_system_3c77d1cd38699794",
+        "erp_system_f78e33f0faa4dbbb",
+        "erp_system_f0b5bd59b146caf1",
+        "erp_system_013eec2763cff87a",
+        "erp_system_bebdfbd144913873",
+        "erp_system_8b39cf7586f5a3f8",
+        "erp_system_3fe7ebdf597d9b75"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 4,
+        "check_count": 16,
+        "class_count": 12,
+        "column_count": 48,
+        "foreign_key_count": 16,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 7,
+        "pk_column_count": 20,
+        "single_table_count": 0,
+        "table_count": 16,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          378.3049,
+          921.1324
+        ],
+        "query_ms": [
+          2.556718181818182,
+          5.2408090909090905
+        ],
+        "storage_mb": [
+          0.811008,
+          0.843776
+        ]
+      },
+      "physical_row_counts": [
+        2100
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_b565e300ec74a21b",
+        "erp_system_5b4639814092210c",
+        "erp_system_ee49138385fbfeb6",
+        "erp_system_5796571af6cc516f",
+        "erp_system_4710f8c332aa2115",
+        "erp_system_a817ebddffee8a4f",
+        "erp_system_35ee76765cd485aa",
+        "erp_system_5b00683fbbb16a0d",
+        "erp_system_2b660200744bedfd",
+        "erp_system_cf7205f1c8b66880"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 5,
+        "check_count": 14,
+        "class_count": 12,
+        "column_count": 49,
+        "foreign_key_count": 17,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 6,
+        "pk_column_count": 22,
+        "single_table_count": 0,
+        "table_count": 17,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          483.7272,
+          958.8722
+        ],
+        "query_ms": [
+          2.884769696969697,
+          5.210284848484848
+        ],
+        "storage_mb": [
+          0.851968,
+          0.884736
+        ]
+      },
+      "physical_row_counts": [
+        2200
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_6991fe568d010dd8",
+        "erp_system_00159d9f1b4dfc69",
+        "erp_system_33a2307709a6ccde",
+        "erp_system_afa874e607793640",
+        "erp_system_9f7e079d57c1d25e",
+        "erp_system_f2b716e3061391cc",
+        "erp_system_e0faab400b2a675f",
+        "erp_system_fa728b27077bbcfa",
+        "erp_system_7812d2631c4b5de0",
+        "erp_system_290cb2c951a973d3"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 7,
+        "check_count": 10,
+        "class_count": 12,
+        "column_count": 51,
+        "foreign_key_count": 19,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 3,
+        "pk_column_count": 26,
+        "single_table_count": 0,
+        "table_count": 19,
+        "table_per_class_count": 0,
+        "trigger_count": 10,
+        "unique_count": 9
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          307.6381,
+          1002.8719
+        ],
+        "query_ms": [
+          1.7283121212121213,
+          4.606448484848485
+        ],
+        "storage_mb": [
+          0.909312,
+          0.94208
+        ]
+      },
+      "physical_row_counts": [
+        2400
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_907ecca08076ebd2",
+        "erp_system_141e715fdc374bd0",
+        "erp_system_582955719bacec11",
+        "erp_system_5237ecc33131480c",
+        "erp_system_41759530a5ebb90a",
+        "erp_system_70e5bd970a776616",
+        "erp_system_33dc9fc371e970c7",
+        "erp_system_4386d2bcd43aae92",
+        "erp_system_1da5942d6b4654c9",
+        "erp_system_57cf0c146dc93318"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 6,
+        "check_count": 12,
+        "class_count": 12,
+        "column_count": 50,
+        "foreign_key_count": 18,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 3,
+        "pk_column_count": 24,
+        "single_table_count": 0,
+        "table_count": 18,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 8
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          439.1327,
+          887.6607
+        ],
+        "query_ms": [
+          2.412342424242424,
+          4.222215151515152
+        ],
+        "storage_mb": [
+          0.843776,
+          0.876544
+        ]
+      },
+      "physical_row_counts": [
+        2300
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_5d3125da15376ca6",
+        "erp_system_92e65fce08548a15",
+        "erp_system_10298c266684dbad",
+        "erp_system_792af9b7f63d2861",
+        "erp_system_69327bf7ed787271",
+        "erp_system_518cbc8130d12588",
+        "erp_system_2fc1c15716925ba9",
+        "erp_system_607462a2ab8ab98d",
+        "erp_system_c5efb731d5e46a99",
+        "erp_system_85c1f8838aae30a6"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 7,
+        "check_count": 10,
+        "class_count": 12,
+        "column_count": 51,
+        "foreign_key_count": 19,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 2,
+        "pk_column_count": 26,
+        "single_table_count": 0,
+        "table_count": 19,
+        "table_per_class_count": 0,
+        "trigger_count": 10,
+        "unique_count": 9
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          339.1168,
+          747.7691
+        ],
+        "query_ms": [
+          1.7885,
+          4.453230303030303
+        ],
+        "storage_mb": [
+          0.884736,
+          0.917504
+        ]
+      },
+      "physical_row_counts": [
+        2400
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_d701babfe3786d81",
+        "erp_system_7a20a09992454d8e",
+        "erp_system_ce61815365b21317",
+        "erp_system_f7d3e82bbf778e20",
+        "erp_system_591f6ebef4327dee",
+        "erp_system_0055e92b49af4e97",
+        "erp_system_8f976b2513e4b895"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 3,
+        "check_count": 12,
+        "class_count": 12,
+        "column_count": 44,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 0,
+        "nullable_column_count": 6,
+        "pk_column_count": 18,
+        "single_table_count": 0,
+        "table_count": 15,
+        "table_per_class_count": 1,
+        "trigger_count": 2,
+        "unique_count": 1
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          298.4726,
+          969.689
+        ],
+        "query_ms": [
+          2.6652878787878787,
+          5.698630303030303
+        ],
+        "storage_mb": [
+          0.704512,
+          0.73728
+        ]
+      },
+      "physical_row_counts": [
+        1700
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        33785
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_0701ce74ceeea243",
+        "erp_system_5a109352b09cf835",
+        "erp_system_f80974d8fe97b2e9",
+        "erp_system_f7a60b10a588e212",
+        "erp_system_37c6d04746dca611",
+        "erp_system_0f8813ccb32c8020",
+        "erp_system_64c54d1b37bed99d"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 8,
+        "check_count": 2,
+        "class_count": 12,
+        "column_count": 49,
+        "foreign_key_count": 17,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 0,
+        "nullable_column_count": 1,
+        "pk_column_count": 28,
+        "single_table_count": 0,
+        "table_count": 20,
+        "table_per_class_count": 1,
+        "trigger_count": 12,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          619.5225,
+          1323.0792
+        ],
+        "query_ms": [
+          2.171027272727273,
+          7.526309090909091
+        ],
+        "storage_mb": [
+          0.843776,
+          0.876544
+        ]
+      },
+      "physical_row_counts": [
+        2200
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        33785
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_cd430f89686cd8dd",
+        "hospital_information_system_463a72910d4f300e",
+        "hospital_information_system_2e85fbf24af9343e",
+        "hospital_information_system_071147be978fb095",
+        "hospital_information_system_d71fb844464ae23a",
+        "hospital_information_system_ceb6b4ee4632203b"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 28,
+        "class_count": 11,
+        "column_count": 39,
+        "foreign_key_count": 11,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 13,
+        "pk_column_count": 15,
+        "single_table_count": 2,
+        "table_count": 11,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          312.3927,
+          957.5384
+        ],
+        "query_ms": [
+          1.7544379310344826,
+          3.7197241379310344
+        ],
+        "storage_mb": [
+          0.647168,
+          0.729088
+        ]
+      },
+      "physical_row_counts": [
+        1700,
+        1900
+      ],
+      "trigger_events": [
+        600,
+        800
+      ],
+      "physical_text_bytes": [
+        47917,
+        50617
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_e98c9b57add51c75",
+        "hospital_information_system_7c575b8c76ba6b41",
+        "hospital_information_system_eaaa0c45f23f7796",
+        "hospital_information_system_0277ac47e6ca3b6a",
+        "hospital_information_system_b5f3c393926f90bf",
+        "hospital_information_system_89cbf27920baa123"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 26,
+        "class_count": 11,
+        "column_count": 40,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 11,
+        "pk_column_count": 17,
+        "single_table_count": 2,
+        "table_count": 12,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          643.7432,
+          1192.7318
+        ],
+        "query_ms": [
+          2.735848275862069,
+          4.170537931034483
+        ],
+        "storage_mb": [
+          0.688128,
+          0.770048
+        ]
+      },
+      "physical_row_counts": [
+        1800,
+        2000
+      ],
+      "trigger_events": [
+        800,
+        1000
+      ],
+      "physical_text_bytes": [
+        47917,
+        50617
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_7159b2bafc545dd5",
+        "hospital_information_system_068838fa4c561a4f",
+        "hospital_information_system_17bf63b613928dcc",
+        "hospital_information_system_d79c93ca447d08e4",
+        "hospital_information_system_a7cf12cca0a6c92b",
+        "hospital_information_system_91d280630b4b0b5c"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 22,
+        "class_count": 11,
+        "column_count": 43,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 9,
+        "pk_column_count": 17,
+        "single_table_count": 1,
+        "table_count": 13,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          393.1437,
+          1008.4914
+        ],
+        "query_ms": [
+          2.7313724137931032,
+          4.2437862068965515
+        ],
+        "storage_mb": [
+          0.73728,
+          0.851968
+        ]
+      },
+      "physical_row_counts": [
+        1900,
+        2100
+      ],
+      "trigger_events": [
+        400,
+        800
+      ],
+      "physical_text_bytes": [
+        49417,
+        52117
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_44b9869c15a6a056",
+        "hospital_information_system_491b5da42aa3ea84",
+        "hospital_information_system_5773c6c2e161e7be",
+        "hospital_information_system_9ca9a3c00a8db64e",
+        "hospital_information_system_5e4dd5510627d649",
+        "hospital_information_system_11c509eaea56dd72"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 20,
+        "class_count": 11,
+        "column_count": 44,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 7,
+        "pk_column_count": 19,
+        "single_table_count": 1,
+        "table_count": 14,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 8
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          367.0278,
+          1046.5737
+        ],
+        "query_ms": [
+          1.7213724137931035,
+          3.894351724137931
+        ],
+        "storage_mb": [
+          0.77824,
+          0.892928
+        ]
+      },
+      "physical_row_counts": [
+        2000,
+        2200
+      ],
+      "trigger_events": [
+        600,
+        1000
+      ],
+      "physical_text_bytes": [
+        49417,
+        52117
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_5ff36b2c548f4286",
+        "hospital_information_system_17299aeaa6d92996",
+        "hospital_information_system_785539150438899e",
+        "hospital_information_system_511e379c50e8de87",
+        "hospital_information_system_8e54ffac61884d43",
+        "hospital_information_system_810181f81383e96a"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 24,
+        "class_count": 11,
+        "column_count": 43,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 10,
+        "pk_column_count": 17,
+        "single_table_count": 1,
+        "table_count": 13,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          359.3316,
+          969.2612
+        ],
+        "query_ms": [
+          2.3251241379310343,
+          3.3569793103448275
+        ],
+        "storage_mb": [
+          0.770048,
+          0.86016
+        ]
+      },
+      "physical_row_counts": [
+        1900,
+        2100
+      ],
+      "trigger_events": [
+        600,
+        800
+      ],
+      "physical_text_bytes": [
+        50217,
+        52917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_d1208f8c04140899",
+        "hospital_information_system_9f3c00c33a88912d",
+        "hospital_information_system_879f750fdef80e4c",
+        "hospital_information_system_71afff54f9004f5d",
+        "hospital_information_system_095938a2d722dd27",
+        "hospital_information_system_d8e776ec7af7f462"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 22,
+        "class_count": 11,
+        "column_count": 44,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 8,
+        "pk_column_count": 19,
+        "single_table_count": 1,
+        "table_count": 14,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 8
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          327.039,
+          1241.5672
+        ],
+        "query_ms": [
+          1.4753241379310345,
+          3.7108068965517242
+        ],
+        "storage_mb": [
+          0.811008,
+          0.90112
+        ]
+      },
+      "physical_row_counts": [
+        2000,
+        2200
+      ],
+      "trigger_events": [
+        800,
+        1000
+      ],
+      "physical_text_bytes": [
+        50217,
+        52917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_2e5f923a391198ef",
+        "hospital_information_system_202758a786e24c0c",
+        "hospital_information_system_c0337b5ef870d7c8",
+        "hospital_information_system_a1b6daccc981935b",
+        "hospital_information_system_477c61b7229f98ba",
+        "hospital_information_system_ec9ed0038ef0cdc7"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 18,
+        "class_count": 11,
+        "column_count": 47,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 2,
+        "nullable_column_count": 6,
+        "pk_column_count": 19,
+        "single_table_count": 0,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 9
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          1008.9423,
+          1279.9824
+        ],
+        "query_ms": [
+          3.345565517241379,
+          3.995151724137931
+        ],
+        "storage_mb": [
+          0.86016,
+          0.98304
+        ]
+      },
+      "physical_row_counts": [
+        2100,
+        2300
+      ],
+      "trigger_events": [
+        400,
+        800
+      ],
+      "physical_text_bytes": [
+        51717,
+        54417
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_7afbb09c4a30d3d0",
+        "hospital_information_system_60b0a014daaa604f",
+        "hospital_information_system_834f4f48a766a84a",
+        "hospital_information_system_0f83ffac8d2b9aa6",
+        "hospital_information_system_98c56109e42f61eb",
+        "hospital_information_system_942ff1e18d3fd521"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 16,
+        "class_count": 11,
+        "column_count": 48,
+        "foreign_key_count": 16,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 2,
+        "nullable_column_count": 4,
+        "pk_column_count": 21,
+        "single_table_count": 0,
+        "table_count": 16,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 10
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          1057.1922,
+          1356.9942
+        ],
+        "query_ms": [
+          3.144386206896552,
+          4.664313793103449
+        ],
+        "storage_mb": [
+          0.90112,
+          1.024
+        ]
+      },
+      "physical_row_counts": [
+        2200,
+        2400
+      ],
+      "trigger_events": [
+        600,
+        1000
+      ],
+      "physical_text_bytes": [
+        51717,
+        54417
+      ]
+    },
+    {
+      "schemas": [
+        "university_adc55321bda991af",
+        "university_f5dce6a0e1a93296",
+        "university_112f0037e935d0af",
+        "university_aa4b5b93bf5dd3d2",
+        "university_df041d41e20a4875",
+        "university_7b3b2b6dd30068bc"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 3,
+        "check_count": 4,
+        "class_count": 7,
+        "column_count": 29,
+        "foreign_key_count": 8,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 3,
+        "pk_column_count": 13,
+        "single_table_count": 0,
+        "table_count": 10,
+        "table_per_class_count": 1,
+        "trigger_count": 4,
+        "unique_count": 2
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          459.9547,
+          926.5504
+        ],
+        "query_ms": [
+          3.001531578947368,
+          6.118615789473684
+        ],
+        "storage_mb": [
+          0.483328,
+          0.483328
+        ]
+      },
+      "physical_row_counts": [
+        1100
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        25500
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_0380d24e07861917",
+        "erp_system_2ba744ff7c1f3cb1",
+        "erp_system_fd0b014c8dd28512",
+        "erp_system_1f7c6554cc861037",
+        "erp_system_b4da182ee65f0ef8"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 3,
+        "check_count": 23,
+        "class_count": 12,
+        "column_count": 41,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 12,
+        "pk_column_count": 15,
+        "single_table_count": 1,
+        "table_count": 12,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 2
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          233.5834,
+          546.4863
+        ],
+        "query_ms": [
+          2.7178424242424244,
+          4.479087878787879
+        ],
+        "storage_mb": [
+          0.598016,
+          0.630784
+        ]
+      },
+      "physical_row_counts": [
+        1700
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_725fd01cecf2af6e",
+        "erp_system_7de6d1278591ad42",
+        "erp_system_a2a198f75fdabd65",
+        "erp_system_85816e5ab3f4a871",
+        "erp_system_93d9c24a601c5e97"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 6,
+        "check_count": 17,
+        "class_count": 12,
+        "column_count": 44,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 9,
+        "pk_column_count": 21,
+        "single_table_count": 1,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          249.9901,
+          672.5753
+        ],
+        "query_ms": [
+          1.7259939393939394,
+          4.500639393939394
+        ],
+        "storage_mb": [
+          0.720896,
+          0.753664
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_101090cb6e194414",
+        "erp_system_f4be1c1296ad2acc",
+        "erp_system_65f270eb0019d292",
+        "erp_system_a46b981e37fd76ad",
+        "erp_system_492afb9f5ee72c82"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 5,
+        "check_count": 19,
+        "class_count": 12,
+        "column_count": 43,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 8,
+        "pk_column_count": 19,
+        "single_table_count": 1,
+        "table_count": 14,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          315.133,
+          590.6115
+        ],
+        "query_ms": [
+          2.1950363636363637,
+          3.9193636363636366
+        ],
+        "storage_mb": [
+          0.630784,
+          0.663552
+        ]
+      },
+      "physical_row_counts": [
+        1900
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_a62c447ec7f9bb24",
+        "erp_system_f3d09ed89ce9aeae",
+        "erp_system_71d4a0ccfce3600e",
+        "erp_system_4196978558101445",
+        "erp_system_db16e7a052eb99ee"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 8,
+        "check_count": 13,
+        "class_count": 12,
+        "column_count": 46,
+        "foreign_key_count": 17,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 5,
+        "pk_column_count": 25,
+        "single_table_count": 1,
+        "table_count": 17,
+        "table_per_class_count": 0,
+        "trigger_count": 12,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          307.0471,
+          1127.3436
+        ],
+        "query_ms": [
+          2.2774272727272726,
+          5.931427272727273
+        ],
+        "storage_mb": [
+          0.753664,
+          0.786432
+        ]
+      },
+      "physical_row_counts": [
+        2200
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_b3d043a103d5dbc6",
+        "erp_system_066bffd914721ac9",
+        "erp_system_42191c232b90114f",
+        "erp_system_447bbcd01ceedf60",
+        "erp_system_e1ffd90dc08ccc53"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 3,
+        "check_count": 18,
+        "class_count": 12,
+        "column_count": 47,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 8,
+        "pk_column_count": 18,
+        "single_table_count": 0,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          355.3182,
+          500.2505
+        ],
+        "query_ms": [
+          2.7759666666666667,
+          3.7952181818181816
+        ],
+        "storage_mb": [
+          0.770048,
+          0.802816
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_b230dcf3dd6bfb83",
+        "erp_system_0602208515f6c18d",
+        "erp_system_13fea9851d3a5b91",
+        "erp_system_bb774abcc18e085a",
+        "erp_system_bce550937bb68764"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 6,
+        "check_count": 12,
+        "class_count": 12,
+        "column_count": 50,
+        "foreign_key_count": 18,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 5,
+        "pk_column_count": 24,
+        "single_table_count": 0,
+        "table_count": 18,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 8
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          305.2182,
+          941.0494
+        ],
+        "query_ms": [
+          1.7076848484848486,
+          4.17929696969697
+        ],
+        "storage_mb": [
+          0.892928,
+          0.925696
+        ]
+      },
+      "physical_row_counts": [
+        2300
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_11fea3707352e6c8",
+        "erp_system_d77772cf477d3fa1",
+        "erp_system_99d49695266b56c1",
+        "erp_system_dd5c1709f477c9ca",
+        "erp_system_ea492f880f696e23"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 5,
+        "check_count": 14,
+        "class_count": 12,
+        "column_count": 49,
+        "foreign_key_count": 17,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 4,
+        "pk_column_count": 22,
+        "single_table_count": 0,
+        "table_count": 17,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          289.3874,
+          1043.7315
+        ],
+        "query_ms": [
+          1.6244121212121212,
+          4.7931606060606065
+        ],
+        "storage_mb": [
+          0.802816,
+          0.835584
+        ]
+      },
+      "physical_row_counts": [
+        2200
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_68d86900f166973d",
+        "erp_system_f1486e758232fa57",
+        "erp_system_1fb3abd9f22e085a",
+        "erp_system_7f53f055fa2060b4",
+        "erp_system_92466cab3278155f"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 8,
+        "check_count": 8,
+        "class_count": 12,
+        "column_count": 52,
+        "foreign_key_count": 20,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 1,
+        "pk_column_count": 28,
+        "single_table_count": 0,
+        "table_count": 20,
+        "table_per_class_count": 0,
+        "trigger_count": 12,
+        "unique_count": 10
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          663.9174,
+          1359.8793
+        ],
+        "query_ms": [
+          3.1844969696969696,
+          6.270621212121212
+        ],
+        "storage_mb": [
+          0.925696,
+          0.958464
+        ]
+      },
+      "physical_row_counts": [
+        2500
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "university_7bdd5442c6939467",
+        "university_a66c2022eb27c310",
+        "university_1c6b86aad819752f",
+        "university_2e8fc0ffa87ec133"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 2,
+        "check_count": 6,
+        "class_count": 7,
+        "column_count": 28,
+        "foreign_key_count": 7,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 4,
+        "pk_column_count": 11,
+        "single_table_count": 0,
+        "table_count": 9,
+        "table_per_class_count": 1,
+        "trigger_count": 2,
+        "unique_count": 1
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          559.4396,
+          704.7502
+        ],
+        "query_ms": [
+          3.6517947368421053,
+          6.124468421052631
+        ],
+        "storage_mb": [
+          0.442368,
+          0.442368
+        ]
+      },
+      "physical_row_counts": [
+        1000
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        25500
+      ]
+    },
+    {
+      "schemas": [
+        "university_a06b3f4c0bc87644",
+        "university_3ee66cdb1a714c30",
+        "university_c96e046987fde641",
+        "university_265a20b1686c5bbd"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 4,
+        "check_count": 2,
+        "class_count": 7,
+        "column_count": 30,
+        "foreign_key_count": 9,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 2,
+        "pk_column_count": 15,
+        "single_table_count": 0,
+        "table_count": 11,
+        "table_per_class_count": 1,
+        "trigger_count": 6,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          625.689,
+          901.6187
+        ],
+        "query_ms": [
+          3.1417105263157894,
+          4.646268421052632
+        ],
+        "storage_mb": [
+          0.524288,
+          0.524288
+        ]
+      },
+      "physical_row_counts": [
+        1200
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        25500
+      ]
+    },
+    {
+      "schemas": [
+        "ecommerce_381ae6ac936118c8",
+        "ecommerce_24150dcbf193030a",
+        "ecommerce_6c1707ebd7d4a7c5"
+      ],
+      "systems": [
+        "ecommerce"
+      ],
+      "features": {
+        "association_count": 4,
+        "association_table_count": 2,
+        "check_count": 4,
+        "class_count": 7,
+        "column_count": 28,
+        "foreign_key_count": 6,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 2,
+        "pk_column_count": 11,
+        "single_table_count": 0,
+        "table_count": 9,
+        "table_per_class_count": 1,
+        "trigger_count": 2,
+        "unique_count": 2
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          139.0709,
+          196.0774
+        ],
+        "query_ms": [
+          2.8659777777777777,
+          3.5689166666666665
+        ],
+        "storage_mb": [
+          0.344064,
+          0.344064
+        ]
+      },
+      "physical_row_counts": [
+        1000
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        12792
+      ]
+    },
+    {
+      "schemas": [
+        "ecommerce_7425dfdc48f070b9",
+        "ecommerce_72b922d17a6f56e0",
+        "ecommerce_6cea4433f600bd11"
+      ],
+      "systems": [
+        "ecommerce"
+      ],
+      "features": {
+        "association_count": 4,
+        "association_table_count": 3,
+        "check_count": 2,
+        "class_count": 7,
+        "column_count": 29,
+        "foreign_key_count": 7,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 1,
+        "pk_column_count": 13,
+        "single_table_count": 0,
+        "table_count": 10,
+        "table_per_class_count": 1,
+        "trigger_count": 4,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          143.3291,
+          515.4643
+        ],
+        "query_ms": [
+          2.3637277777777776,
+          7.178111111111111
+        ],
+        "storage_mb": [
+          0.385024,
+          0.385024
+        ]
+      },
+      "physical_row_counts": [
+        1100
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        12792
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_4389a47c842b5062",
+        "hospital_information_system_ea89fde28a2d9e99",
+        "hospital_information_system_398c8933ac3b4c3d"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 3,
+        "check_count": 29,
+        "class_count": 11,
+        "column_count": 37,
+        "foreign_key_count": 10,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 14,
+        "pk_column_count": 13,
+        "single_table_count": 2,
+        "table_count": 10,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          347.6559,
+          616.8671
+        ],
+        "query_ms": [
+          2.273851724137931,
+          3.2136275862068966
+        ],
+        "storage_mb": [
+          0.598016,
+          0.630784
+        ]
+      },
+      "physical_row_counts": [
+        1600
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        47117
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_1c3171cf7dd5e525",
+        "hospital_information_system_d0ec0efedd3e2de2",
+        "hospital_information_system_77908881be4b221d"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 27,
+        "class_count": 11,
+        "column_count": 38,
+        "foreign_key_count": 11,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 12,
+        "pk_column_count": 15,
+        "single_table_count": 2,
+        "table_count": 11,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          424.2701,
+          897.3223
+        ],
+        "query_ms": [
+          2.6959724137931036,
+          4.034665517241379
+        ],
+        "storage_mb": [
+          0.638976,
+          0.671744
+        ]
+      },
+      "physical_row_counts": [
+        1700
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        47117
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_4e362864759b0cde",
+        "hospital_information_system_a6dfe20d0564342b",
+        "hospital_information_system_1c1b16c308cfc796"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 27,
+        "class_count": 11,
+        "column_count": 41,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 12,
+        "pk_column_count": 17,
+        "single_table_count": 2,
+        "table_count": 12,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          827.5885,
+          927.2066
+        ],
+        "query_ms": [
+          2.5899,
+          3.311451724137931
+        ],
+        "storage_mb": [
+          0.745472,
+          0.77824
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        51417
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_5f3a4cdeda4ee150",
+        "hospital_information_system_b56a8970a02d3405",
+        "hospital_information_system_18c454056c2a6dc2"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 6,
+        "check_count": 25,
+        "class_count": 11,
+        "column_count": 42,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 10,
+        "pk_column_count": 19,
+        "single_table_count": 2,
+        "table_count": 13,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          708.4354,
+          1419.8552
+        ],
+        "query_ms": [
+          2.4192344827586205,
+          3.853206896551724
+        ],
+        "storage_mb": [
+          0.786432,
+          0.8192
+        ]
+      },
+      "physical_row_counts": [
+        2100
+      ],
+      "trigger_events": [
+        1400
+      ],
+      "physical_text_bytes": [
+        51417
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_b2afa3470386e2f9",
+        "hospital_information_system_e06a28b30b6a9559",
+        "hospital_information_system_03806175282642a1"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 3,
+        "check_count": 23,
+        "class_count": 11,
+        "column_count": 41,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 10,
+        "pk_column_count": 15,
+        "single_table_count": 1,
+        "table_count": 12,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          343.162,
+          666.9109
+        ],
+        "query_ms": [
+          2.2396724137931034,
+          3.93781724137931
+        ],
+        "storage_mb": [
+          0.720896,
+          0.753664
+        ]
+      },
+      "physical_row_counts": [
+        1800
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        48617
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_259a213613ba3d07",
+        "hospital_information_system_515eb36fc448f8b2",
+        "hospital_information_system_cabe3c229a065665"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 21,
+        "class_count": 11,
+        "column_count": 42,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 8,
+        "pk_column_count": 17,
+        "single_table_count": 1,
+        "table_count": 13,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          659.1277,
+          965.9982
+        ],
+        "query_ms": [
+          2.7078413793103446,
+          4.4195
+        ],
+        "storage_mb": [
+          0.761856,
+          0.794624
+        ]
+      },
+      "physical_row_counts": [
+        1900
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        48617
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_1c539ca5cacec580",
+        "hospital_information_system_a6deb2cebc0a13a1",
+        "hospital_information_system_8620355e6e8dc4e8"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 21,
+        "class_count": 11,
+        "column_count": 45,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 8,
+        "pk_column_count": 19,
+        "single_table_count": 1,
+        "table_count": 14,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 8
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          382.7053,
+          1102.093
+        ],
+        "query_ms": [
+          1.8393379310344826,
+          3.266158620689655
+        ],
+        "storage_mb": [
+          0.835584,
+          0.868352
+        ]
+      },
+      "physical_row_counts": [
+        2200
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        52917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_28e7725ff98ebbe2",
+        "hospital_information_system_8638f2870a356ee4",
+        "hospital_information_system_dc39305cfa7b5165"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 6,
+        "check_count": 19,
+        "class_count": 11,
+        "column_count": 46,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 6,
+        "pk_column_count": 21,
+        "single_table_count": 1,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 9
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          396.6136,
+          1061.3213
+        ],
+        "query_ms": [
+          2.11038275862069,
+          3.039606896551724
+        ],
+        "storage_mb": [
+          0.876544,
+          0.909312
+        ]
+      },
+      "physical_row_counts": [
+        2300
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        52917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_486c1dd4f30a0250",
+        "hospital_information_system_25016e47d00f9a74",
+        "hospital_information_system_f9e2bcb3e4ed0e78"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 3,
+        "check_count": 16,
+        "class_count": 11,
+        "column_count": 38,
+        "foreign_key_count": 10,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 9,
+        "pk_column_count": 15,
+        "single_table_count": 1,
+        "table_count": 12,
+        "table_per_class_count": 1,
+        "trigger_count": 2,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          584.6211,
+          908.848
+        ],
+        "query_ms": [
+          3.3514724137931036,
+          4.275386206896552
+        ],
+        "storage_mb": [
+          0.647168,
+          0.647168
+        ]
+      },
+      "physical_row_counts": [
+        1600
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        40617
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_980b6b2aa12dda88",
+        "hospital_information_system_d9a5b420e4ce6de2",
+        "hospital_information_system_f8b7182093c440ad"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 14,
+        "class_count": 11,
+        "column_count": 39,
+        "foreign_key_count": 11,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 8,
+        "pk_column_count": 17,
+        "single_table_count": 1,
+        "table_count": 13,
+        "table_per_class_count": 1,
+        "trigger_count": 4,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          257.4548,
+          513.4422
+        ],
+        "query_ms": [
+          1.6374655172413792,
+          2.6359689655172414
+        ],
+        "storage_mb": [
+          0.688128,
+          0.688128
+        ]
+      },
+      "physical_row_counts": [
+        1700
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        40617
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_16d14cde01f00139",
+        "hospital_information_system_6c9333ecb48b04e0",
+        "hospital_information_system_c0afc5963a7f830b"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 14,
+        "class_count": 11,
+        "column_count": 39,
+        "foreign_key_count": 11,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 7,
+        "pk_column_count": 17,
+        "single_table_count": 1,
+        "table_count": 13,
+        "table_per_class_count": 1,
+        "trigger_count": 4,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          643.6332,
+          782.504
+        ],
+        "query_ms": [
+          2.9294862068965517,
+          3.5053724137931033
+        ],
+        "storage_mb": [
+          0.663552,
+          0.663552
+        ]
+      },
+      "physical_row_counts": [
+        1700
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        40617
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_192798bbe5647b8d",
+        "hospital_information_system_657b481b48dc0844",
+        "hospital_information_system_3be3a201b655829e"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 12,
+        "class_count": 11,
+        "column_count": 40,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 6,
+        "pk_column_count": 19,
+        "single_table_count": 1,
+        "table_count": 14,
+        "table_per_class_count": 1,
+        "trigger_count": 6,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          350.0986,
+          791.2883
+        ],
+        "query_ms": [
+          2.1223137931034484,
+          4.181937931034483
+        ],
+        "storage_mb": [
+          0.704512,
+          0.704512
+        ]
+      },
+      "physical_row_counts": [
+        1800
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        40617
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_7a4d88d304ff2ead",
+        "hospital_information_system_add18364bf072081",
+        "hospital_information_system_ac66347e8cbc9e57"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 15,
+        "class_count": 11,
+        "column_count": 40,
+        "foreign_key_count": 11,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 8,
+        "pk_column_count": 17,
+        "single_table_count": 1,
+        "table_count": 13,
+        "table_per_class_count": 1,
+        "trigger_count": 4,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          560.959,
+          970.2659
+        ],
+        "query_ms": [
+          2.1926862068965516,
+          3.492506896551724
+        ],
+        "storage_mb": [
+          0.745472,
+          0.745472
+        ]
+      },
+      "physical_row_counts": [
+        1900
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        44117
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_a6487b9e8ff48426",
+        "hospital_information_system_5cbd6d5fbb53fada",
+        "hospital_information_system_6197cf5a643aa16a"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 13,
+        "class_count": 11,
+        "column_count": 41,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 7,
+        "pk_column_count": 19,
+        "single_table_count": 1,
+        "table_count": 14,
+        "table_per_class_count": 1,
+        "trigger_count": 6,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          881.5953,
+          1059.1995
+        ],
+        "query_ms": [
+          2.949844827586207,
+          3.3140724137931032
+        ],
+        "storage_mb": [
+          0.786432,
+          0.786432
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        44117
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_539d0cd32187e72f",
+        "hospital_information_system_efb831a51ae4c430",
+        "hospital_information_system_95cd6b2afc7fb6be"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 13,
+        "class_count": 11,
+        "column_count": 41,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 6,
+        "pk_column_count": 19,
+        "single_table_count": 1,
+        "table_count": 14,
+        "table_per_class_count": 1,
+        "trigger_count": 6,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          597.8934,
+          1190.3794
+        ],
+        "query_ms": [
+          2.780348275862069,
+          3.678255172413793
+        ],
+        "storage_mb": [
+          0.761856,
+          0.761856
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        44117
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_4528b00a4faf3362",
+        "hospital_information_system_c0fa6bc69f7d4a92",
+        "hospital_information_system_366b3ce5511ebc3d"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 6,
+        "check_count": 11,
+        "class_count": 11,
+        "column_count": 42,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 5,
+        "pk_column_count": 21,
+        "single_table_count": 1,
+        "table_count": 15,
+        "table_per_class_count": 1,
+        "trigger_count": 8,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          344.5358,
+          731.5773
+        ],
+        "query_ms": [
+          1.6115,
+          2.6932379310344827
+        ],
+        "storage_mb": [
+          0.802816,
+          0.802816
+        ]
+      },
+      "physical_row_counts": [
+        2100
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        44117
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_d460cda2018cfea6",
+        "hospital_information_system_42895514ab65660a",
+        "hospital_information_system_3c20e2b3d3c7531f"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 3,
+        "check_count": 25,
+        "class_count": 11,
+        "column_count": 41,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 11,
+        "pk_column_count": 15,
+        "single_table_count": 1,
+        "table_count": 12,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          825.2222,
+          855.1695
+        ],
+        "query_ms": [
+          3.325037931034483,
+          3.379813793103448
+        ],
+        "storage_mb": [
+          0.720896,
+          0.753664
+        ]
+      },
+      "physical_row_counts": [
+        1800
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        49417
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_0bd3eeeec73b0dde",
+        "hospital_information_system_4a75c6f9d73e6cac",
+        "hospital_information_system_cd6b0fcfe3ec0caa"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 23,
+        "class_count": 11,
+        "column_count": 42,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 9,
+        "pk_column_count": 17,
+        "single_table_count": 1,
+        "table_count": 13,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          280.6585,
+          889.168
+        ],
+        "query_ms": [
+          1.7008586206896552,
+          3.7489586206896552
+        ],
+        "storage_mb": [
+          0.761856,
+          0.794624
+        ]
+      },
+      "physical_row_counts": [
+        1900
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        49417
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_7f5726e58054183e",
+        "hospital_information_system_643fcaed2748d35f",
+        "hospital_information_system_362ecc1cb094e241"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 23,
+        "class_count": 11,
+        "column_count": 45,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 9,
+        "pk_column_count": 19,
+        "single_table_count": 1,
+        "table_count": 14,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 8
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          466.5148,
+          1159.4927
+        ],
+        "query_ms": [
+          1.5067758620689655,
+          3.511334482758621
+        ],
+        "storage_mb": [
+          0.876544,
+          0.909312
+        ]
+      },
+      "physical_row_counts": [
+        2200
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        53717
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_98011ea1ed3884f9",
+        "hospital_information_system_c7c9aca8359ef6df",
+        "hospital_information_system_c63c97c66a4f2e4b"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 6,
+        "check_count": 21,
+        "class_count": 11,
+        "column_count": 46,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 7,
+        "pk_column_count": 21,
+        "single_table_count": 1,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 9
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          430.0942,
+          1193.9493
+        ],
+        "query_ms": [
+          1.5586379310344827,
+          3.3690103448275863
+        ],
+        "storage_mb": [
+          0.917504,
+          0.950272
+        ]
+      },
+      "physical_row_counts": [
+        2300
+      ],
+      "trigger_events": [
+        1400
+      ],
+      "physical_text_bytes": [
+        53717
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_a358ca0e7699fa35",
+        "hospital_information_system_d4506281e3fa2cc4",
+        "hospital_information_system_1ab6e0ddd49d0ae4"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 3,
+        "check_count": 19,
+        "class_count": 11,
+        "column_count": 45,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 2,
+        "nullable_column_count": 7,
+        "pk_column_count": 17,
+        "single_table_count": 0,
+        "table_count": 14,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 8
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          954.6116,
+          1094.0943
+        ],
+        "query_ms": [
+          3.0575724137931033,
+          3.6769241379310342
+        ],
+        "storage_mb": [
+          0.843776,
+          0.876544
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        50917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_40a79b638f4142ca",
+        "hospital_information_system_1691c2462e2ec8a8",
+        "hospital_information_system_5d983a96dd424907"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 17,
+        "class_count": 11,
+        "column_count": 46,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 2,
+        "nullable_column_count": 5,
+        "pk_column_count": 19,
+        "single_table_count": 0,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 9
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          1073.5817,
+          1169.188
+        ],
+        "query_ms": [
+          3.7825344827586207,
+          4.050931034482758
+        ],
+        "storage_mb": [
+          0.884736,
+          0.917504
+        ]
+      },
+      "physical_row_counts": [
+        2100
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        50917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_ee5a95cfd687333e",
+        "hospital_information_system_4645378bd5d08af8",
+        "hospital_information_system_196ce01728e5c16b"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 17,
+        "class_count": 11,
+        "column_count": 49,
+        "foreign_key_count": 16,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 2,
+        "nullable_column_count": 5,
+        "pk_column_count": 21,
+        "single_table_count": 0,
+        "table_count": 16,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 10
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          492.5691,
+          1361.1704
+        ],
+        "query_ms": [
+          2.378862068965517,
+          4.078279310344827
+        ],
+        "storage_mb": [
+          0.966656,
+          0.999424
+        ]
+      },
+      "physical_row_counts": [
+        2400
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        55217
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_68c1aee5f2463754",
+        "hospital_information_system_7f54ab11c3d8151b",
+        "hospital_information_system_b698ddc17d35d830"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 6,
+        "check_count": 15,
+        "class_count": 11,
+        "column_count": 50,
+        "foreign_key_count": 17,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 2,
+        "nullable_column_count": 3,
+        "pk_column_count": 23,
+        "single_table_count": 0,
+        "table_count": 17,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 11
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          1026.7048,
+          1425.853
+        ],
+        "query_ms": [
+          3.2454379310344827,
+          4.856268965517241
+        ],
+        "storage_mb": [
+          1.007616,
+          1.040384
+        ]
+      },
+      "physical_row_counts": [
+        2500
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        55217
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_5471f438d76b4365",
+        "hospital_information_system_2b310d5bde1cc83a",
+        "hospital_information_system_d7cb5712f481faf4"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 3,
+        "check_count": 12,
+        "class_count": 11,
+        "column_count": 42,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 1,
+        "nullable_column_count": 6,
+        "pk_column_count": 17,
+        "single_table_count": 0,
+        "table_count": 14,
+        "table_per_class_count": 1,
+        "trigger_count": 2,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          801.0709,
+          974.6475
+        ],
+        "query_ms": [
+          3.0278793103448276,
+          3.6344379310344825
+        ],
+        "storage_mb": [
+          0.770048,
+          0.770048
+        ]
+      },
+      "physical_row_counts": [
+        1800
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        42917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_0920bacec31fc9ba",
+        "hospital_information_system_d30a0ef60e6f6606",
+        "hospital_information_system_71da7e4e3862d848"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 10,
+        "class_count": 11,
+        "column_count": 43,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 1,
+        "nullable_column_count": 5,
+        "pk_column_count": 19,
+        "single_table_count": 0,
+        "table_count": 15,
+        "table_per_class_count": 1,
+        "trigger_count": 4,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          307.2523,
+          1086.3896
+        ],
+        "query_ms": [
+          1.7596103448275862,
+          3.907841379310345
+        ],
+        "storage_mb": [
+          0.811008,
+          0.811008
+        ]
+      },
+      "physical_row_counts": [
+        1900
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        42917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_83b0e91cc7a21db1",
+        "hospital_information_system_0687978d31f9a630",
+        "hospital_information_system_d677dc51d6603f31"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 10,
+        "class_count": 11,
+        "column_count": 43,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 1,
+        "nullable_column_count": 4,
+        "pk_column_count": 19,
+        "single_table_count": 0,
+        "table_count": 15,
+        "table_per_class_count": 1,
+        "trigger_count": 4,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          342.6595,
+          1052.446
+        ],
+        "query_ms": [
+          1.9952206896551725,
+          2.7779275862068964
+        ],
+        "storage_mb": [
+          0.786432,
+          0.786432
+        ]
+      },
+      "physical_row_counts": [
+        1900
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        42917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_7cb410def0f8cd8c",
+        "hospital_information_system_7209eb8d290b2211",
+        "hospital_information_system_c8b429c4f589d677"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 8,
+        "class_count": 11,
+        "column_count": 44,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 1,
+        "nullable_column_count": 3,
+        "pk_column_count": 21,
+        "single_table_count": 0,
+        "table_count": 16,
+        "table_per_class_count": 1,
+        "trigger_count": 6,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          988.3491,
+          1150.5366
+        ],
+        "query_ms": [
+          2.9072827586206897,
+          4.123431034482759
+        ],
+        "storage_mb": [
+          0.827392,
+          0.827392
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        42917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_57d38906fc0b5387",
+        "hospital_information_system_5e05a0b71d3e9bb7",
+        "hospital_information_system_cbd4b198e3c4c96c"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 4,
+        "check_count": 11,
+        "class_count": 11,
+        "column_count": 44,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 1,
+        "nullable_column_count": 5,
+        "pk_column_count": 19,
+        "single_table_count": 0,
+        "table_count": 15,
+        "table_per_class_count": 1,
+        "trigger_count": 4,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          924.2087,
+          1037.8534
+        ],
+        "query_ms": [
+          2.016151724137931,
+          3.164551724137931
+        ],
+        "storage_mb": [
+          0.876544,
+          0.876544
+        ]
+      },
+      "physical_row_counts": [
+        2100
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        46417
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_3b6704f24cf8ec62",
+        "hospital_information_system_3c0c3ed63b708228",
+        "hospital_information_system_b9afbcc53de071a0"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 9,
+        "class_count": 11,
+        "column_count": 45,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 1,
+        "nullable_column_count": 4,
+        "pk_column_count": 21,
+        "single_table_count": 0,
+        "table_count": 16,
+        "table_per_class_count": 1,
+        "trigger_count": 6,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          454.3438,
+          1037.4781
+        ],
+        "query_ms": [
+          2.0989689655172414,
+          3.426641379310345
+        ],
+        "storage_mb": [
+          0.917504,
+          0.917504
+        ]
+      },
+      "physical_row_counts": [
+        2200
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        46417
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_1b351c7073b76a84",
+        "hospital_information_system_4d51c8b33fb4c2a4",
+        "hospital_information_system_cb1336783f6da79a"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 5,
+        "check_count": 9,
+        "class_count": 11,
+        "column_count": 45,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 1,
+        "nullable_column_count": 3,
+        "pk_column_count": 21,
+        "single_table_count": 0,
+        "table_count": 16,
+        "table_per_class_count": 1,
+        "trigger_count": 6,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          1089.0479,
+          1249.5717
+        ],
+        "query_ms": [
+          2.9653758620689654,
+          3.671255172413793
+        ],
+        "storage_mb": [
+          0.892928,
+          0.892928
+        ]
+      },
+      "physical_row_counts": [
+        2200
+      ],
+      "trigger_events": [
+        1000
+      ],
+      "physical_text_bytes": [
+        46417
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_06063150555d1a55",
+        "hospital_information_system_2008056bc2b2a066",
+        "hospital_information_system_f8f7b8bfad5448cc"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 6,
+        "check_count": 7,
+        "class_count": 11,
+        "column_count": 46,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 1,
+        "nullable_column_count": 2,
+        "pk_column_count": 23,
+        "single_table_count": 0,
+        "table_count": 17,
+        "table_per_class_count": 1,
+        "trigger_count": 8,
+        "unique_count": 8
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          1122.7768,
+          1245.1505
+        ],
+        "query_ms": [
+          3.1781275862068967,
+          3.8904551724137932
+        ],
+        "storage_mb": [
+          0.933888,
+          0.933888
+        ]
+      },
+      "physical_row_counts": [
+        2300
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        46417
+      ]
+    },
+    {
+      "schemas": [
+        "library_8a8b4cf5ce9bc578",
+        "travel_booking_e71f4b837bc23e1f",
+        "travel_booking_8f3531b8e26a2f1e"
+      ],
+      "systems": [
+        "library",
+        "travel_booking"
+      ],
+      "features": {
+        "association_count": 3,
+        "association_table_count": 2,
+        "check_count": 10,
+        "class_count": 6,
+        "column_count": 18,
+        "foreign_key_count": 5,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 4,
+        "pk_column_count": 8,
+        "single_table_count": 1,
+        "table_count": 6,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          286.3769,
+          525.0914
+        ],
+        "query_ms": [
+          2.842233333333333,
+          4.054573333333333
+        ],
+        "storage_mb": [
+          0.294912,
+          0.393216
+        ]
+      },
+      "physical_row_counts": [
+        800,
+        1000
+      ],
+      "trigger_events": [
+        400,
+        800
+      ],
+      "physical_text_bytes": [
+        16520,
+        18292
+      ]
+    },
+    {
+      "schemas": [
+        "library_e07ded6bd390f861",
+        "travel_booking_e62dfa52d9924458",
+        "travel_booking_ad38a708d50f7cb6"
+      ],
+      "systems": [
+        "library",
+        "travel_booking"
+      ],
+      "features": {
+        "association_count": 3,
+        "association_table_count": 2,
+        "check_count": 6,
+        "class_count": 6,
+        "column_count": 22,
+        "foreign_key_count": 7,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 1,
+        "pk_column_count": 10,
+        "single_table_count": 0,
+        "table_count": 8,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          246.2094,
+          752.9775
+        ],
+        "query_ms": [
+          2.52154,
+          3.6997466666666665
+        ],
+        "storage_mb": [
+          0.385024,
+          0.548864
+        ]
+      },
+      "physical_row_counts": [
+        1000,
+        1200
+      ],
+      "trigger_events": [
+        400,
+        800
+      ],
+      "physical_text_bytes": [
+        17420,
+        20492
+      ]
+    },
+    {
+      "schemas": [
+        "university_c2faf1dd1a4a006f",
+        "university_507c0bc2e280378d",
+        "university_71ea0b89ad9cf805"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 2,
+        "check_count": 17,
+        "class_count": 7,
+        "column_count": 25,
+        "foreign_key_count": 7,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 9,
+        "pk_column_count": 9,
+        "single_table_count": 1,
+        "table_count": 7,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 2
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          195.7664,
+          473.5975
+        ],
+        "query_ms": [
+          2.4435263157894735,
+          4.241694736842105
+        ],
+        "storage_mb": [
+          0.376832,
+          0.4096
+        ]
+      },
+      "physical_row_counts": [
+        1000
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        29600
+      ]
+    },
+    {
+      "schemas": [
+        "university_e30d1eee1df01529",
+        "university_a48452d9f6375843",
+        "university_9fa161a3867217d6"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 3,
+        "check_count": 15,
+        "class_count": 7,
+        "column_count": 26,
+        "foreign_key_count": 8,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 7,
+        "pk_column_count": 11,
+        "single_table_count": 1,
+        "table_count": 8,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          183.3913,
+          734.4862
+        ],
+        "query_ms": [
+          1.5025684210526316,
+          4.4949
+        ],
+        "storage_mb": [
+          0.425984,
+          0.425984
+        ]
+      },
+      "physical_row_counts": [
+        1100
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        29600
+      ]
+    },
+    {
+      "schemas": [
+        "university_d33cd326c0639d76",
+        "university_328285166e40285d",
+        "university_0bdf3d1da6644f30"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 3,
+        "check_count": 15,
+        "class_count": 7,
+        "column_count": 26,
+        "foreign_key_count": 8,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 8,
+        "pk_column_count": 11,
+        "single_table_count": 1,
+        "table_count": 8,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          169.5358,
+          629.5685
+        ],
+        "query_ms": [
+          1.8247,
+          4.464657894736842
+        ],
+        "storage_mb": [
+          0.417792,
+          0.45056
+        ]
+      },
+      "physical_row_counts": [
+        1100
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        29600
+      ]
+    },
+    {
+      "schemas": [
+        "university_0edf2e519d8f957f",
+        "university_fc804434b0eb51bb",
+        "university_eadf487bbd146072"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 4,
+        "check_count": 13,
+        "class_count": 7,
+        "column_count": 27,
+        "foreign_key_count": 9,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 6,
+        "pk_column_count": 13,
+        "single_table_count": 1,
+        "table_count": 9,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          507.1378,
+          760.2445
+        ],
+        "query_ms": [
+          2.928147368421053,
+          5.220973684210526
+        ],
+        "storage_mb": [
+          0.466944,
+          0.466944
+        ]
+      },
+      "physical_row_counts": [
+        1200
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        29600
+      ]
+    },
+    {
+      "schemas": [
+        "university_2070b7a488758513",
+        "university_230324256aa54da9",
+        "university_dcccaee14a081d63"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 2,
+        "check_count": 11,
+        "class_count": 7,
+        "column_count": 29,
+        "foreign_key_count": 9,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 5,
+        "pk_column_count": 11,
+        "single_table_count": 0,
+        "table_count": 9,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          553.1494,
+          680.0574
+        ],
+        "query_ms": [
+          3.117921052631579,
+          4.452536842105263
+        ],
+        "storage_mb": [
+          0.466944,
+          0.499712
+        ]
+      },
+      "physical_row_counts": [
+        1200
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        31000
+      ]
+    },
+    {
+      "schemas": [
+        "university_c9362d6d20081256",
+        "university_e0f177854aa6ed84",
+        "university_9c084ca57997e368"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 3,
+        "check_count": 9,
+        "class_count": 7,
+        "column_count": 30,
+        "foreign_key_count": 10,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 3,
+        "pk_column_count": 13,
+        "single_table_count": 0,
+        "table_count": 10,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          334.7426,
+          833.0719
+        ],
+        "query_ms": [
+          2.626436842105263,
+          4.325542105263158
+        ],
+        "storage_mb": [
+          0.516096,
+          0.516096
+        ]
+      },
+      "physical_row_counts": [
+        1300
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        31000
+      ]
+    },
+    {
+      "schemas": [
+        "university_90df4075b768c09c",
+        "university_0b124abab9c97d1f",
+        "university_c82a85a7c6cb360a"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 3,
+        "check_count": 9,
+        "class_count": 7,
+        "column_count": 30,
+        "foreign_key_count": 10,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 4,
+        "pk_column_count": 13,
+        "single_table_count": 0,
+        "table_count": 10,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          651.4463,
+          953.2519
+        ],
+        "query_ms": [
+          3.4179105263157896,
+          4.254857894736842
+        ],
+        "storage_mb": [
+          0.507904,
+          0.540672
+        ]
+      },
+      "physical_row_counts": [
+        1300
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        31000
+      ]
+    },
+    {
+      "schemas": [
+        "university_02a7a4c49ff20692",
+        "university_3b9e3eca51873ea8",
+        "university_c547d431b81b87f2"
+      ],
+      "systems": [
+        "university"
+      ],
+      "features": {
+        "association_count": 5,
+        "association_table_count": 4,
+        "check_count": 7,
+        "class_count": 7,
+        "column_count": 31,
+        "foreign_key_count": 11,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 2,
+        "pk_column_count": 15,
+        "single_table_count": 0,
+        "table_count": 11,
+        "table_per_class_count": 0,
+        "trigger_count": 6,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          449.431,
+          898.4623
+        ],
+        "query_ms": [
+          2.8014,
+          4.132373684210526
+        ],
+        "storage_mb": [
+          0.557056,
+          0.557056
+        ]
+      },
+      "physical_row_counts": [
+        1400
+      ],
+      "trigger_events": [
+        600
+      ],
+      "physical_text_bytes": [
+        31000
+      ]
+    },
+    {
+      "schemas": [
+        "crm_755fbd7641a573d5",
+        "crm_1fd4485735925b4c"
+      ],
+      "systems": [
+        "crm"
+      ],
+      "features": {
+        "association_count": 3,
+        "association_table_count": 1,
+        "check_count": 13,
+        "class_count": 6,
+        "column_count": 19,
+        "foreign_key_count": 4,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 6,
+        "pk_column_count": 6,
+        "single_table_count": 1,
+        "table_count": 5,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 2
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          110.0,
+          175.1499
+        ],
+        "query_ms": [
+          2.206653333333333,
+          2.875033333333333
+        ],
+        "storage_mb": [
+          0.294912,
+          0.32768
+        ]
+      },
+      "physical_row_counts": [
+        700
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        22546
+      ]
+    },
+    {
+      "schemas": [
+        "crm_1677e1fd06f79e14",
+        "crm_d43804b47b3453a0"
+      ],
+      "systems": [
+        "crm"
+      ],
+      "features": {
+        "association_count": 3,
+        "association_table_count": 2,
+        "check_count": 12,
+        "class_count": 6,
+        "column_count": 21,
+        "foreign_key_count": 5,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 5,
+        "pk_column_count": 8,
+        "single_table_count": 1,
+        "table_count": 6,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          180.7071,
+          268.8649
+        ],
+        "query_ms": [
+          1.81512,
+          2.6761266666666668
+        ],
+        "storage_mb": [
+          0.401408,
+          0.434176
+        ]
+      },
+      "physical_row_counts": [
+        1000
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        25146
+      ]
+    },
+    {
+      "schemas": [
+        "crm_094f9162bf8047b2",
+        "crm_90667b6cc74d7a23"
+      ],
+      "systems": [
+        "crm"
+      ],
+      "features": {
+        "association_count": 3,
+        "association_table_count": 1,
+        "check_count": 9,
+        "class_count": 6,
+        "column_count": 23,
+        "foreign_key_count": 6,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 3,
+        "pk_column_count": 8,
+        "single_table_count": 0,
+        "table_count": 7,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          128.7591,
+          249.6557
+        ],
+        "query_ms": [
+          1.9378866666666668,
+          3.5231
+        ],
+        "storage_mb": [
+          0.393216,
+          0.425984
+        ]
+      },
+      "physical_row_counts": [
+        900
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        24446
+      ]
+    },
+    {
+      "schemas": [
+        "crm_3f5036e82c7d8c36",
+        "crm_872a0b76ef44db13"
+      ],
+      "systems": [
+        "crm"
+      ],
+      "features": {
+        "association_count": 3,
+        "association_table_count": 2,
+        "check_count": 8,
+        "class_count": 6,
+        "column_count": 25,
+        "foreign_key_count": 7,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 2,
+        "pk_column_count": 10,
+        "single_table_count": 0,
+        "table_count": 8,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          269.7091,
+          404.693
+        ],
+        "query_ms": [
+          2.68634,
+          3.3481866666666664
+        ],
+        "storage_mb": [
+          0.49152,
+          0.524288
+        ]
+      },
+      "physical_row_counts": [
+        1200
+      ],
+      "trigger_events": [
+        800
+      ],
+      "physical_text_bytes": [
+        27046
+      ]
+    },
+    {
+      "schemas": [
+        "ecommerce_df29f4c5bb5383f2",
+        "ecommerce_4e1d69e3ff7c71f1"
+      ],
+      "systems": [
+        "ecommerce"
+      ],
+      "features": {
+        "association_count": 4,
+        "association_table_count": 2,
+        "check_count": 15,
+        "class_count": 7,
+        "column_count": 25,
+        "foreign_key_count": 6,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 7,
+        "pk_column_count": 9,
+        "single_table_count": 1,
+        "table_count": 7,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 3
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          220.6148,
+          305.8196
+        ],
+        "query_ms": [
+          2.5872722222222224,
+          4.017738888888889
+        ],
+        "storage_mb": [
+          0.36864,
+          0.401408
+        ]
+      },
+      "physical_row_counts": [
+        1000
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        16092
+      ]
+    },
+    {
+      "schemas": [
+        "ecommerce_83358d3658076265",
+        "ecommerce_d82201abbe252f33"
+      ],
+      "systems": [
+        "ecommerce"
+      ],
+      "features": {
+        "association_count": 4,
+        "association_table_count": 3,
+        "check_count": 13,
+        "class_count": 7,
+        "column_count": 26,
+        "foreign_key_count": 7,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 6,
+        "pk_column_count": 11,
+        "single_table_count": 1,
+        "table_count": 8,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          282.0949,
+          332.9777
+        ],
+        "query_ms": [
+          3.181227777777778,
+          3.9232444444444443
+        ],
+        "storage_mb": [
+          0.4096,
+          0.442368
+        ]
+      },
+      "physical_row_counts": [
+        1100
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        16092
+      ]
+    },
+    {
+      "schemas": [
+        "ecommerce_53698317fb2a0082",
+        "ecommerce_296c319b656e60d2"
+      ],
+      "systems": [
+        "ecommerce"
+      ],
+      "features": {
+        "association_count": 4,
+        "association_table_count": 2,
+        "check_count": 9,
+        "class_count": 7,
+        "column_count": 29,
+        "foreign_key_count": 8,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 3,
+        "pk_column_count": 11,
+        "single_table_count": 0,
+        "table_count": 9,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          204.9259,
+          251.1117
+        ],
+        "query_ms": [
+          2.7389888888888887,
+          4.157483333333333
+        ],
+        "storage_mb": [
+          0.458752,
+          0.49152
+        ]
+      },
+      "physical_row_counts": [
+        1200
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        17392
+      ]
+    },
+    {
+      "schemas": [
+        "ecommerce_2f76bbf7511823e1",
+        "ecommerce_984f10de52bcadbd"
+      ],
+      "systems": [
+        "ecommerce"
+      ],
+      "features": {
+        "association_count": 4,
+        "association_table_count": 3,
+        "check_count": 7,
+        "class_count": 7,
+        "column_count": 30,
+        "foreign_key_count": 9,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 2,
+        "pk_column_count": 13,
+        "single_table_count": 0,
+        "table_count": 10,
+        "table_per_class_count": 0,
+        "trigger_count": 4,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          284.1077,
+          367.1686
+        ],
+        "query_ms": [
+          3.9163666666666668,
+          4.071955555555555
+        ],
+        "storage_mb": [
+          0.499712,
+          0.53248
+        ]
+      },
+      "physical_row_counts": [
+        1300
+      ],
+      "trigger_events": [
+        400
+      ],
+      "physical_text_bytes": [
+        17392
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_fd825fdfd5780f3f",
+        "erp_system_9e1f553f63466297"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 3,
+        "check_count": 23,
+        "class_count": 12,
+        "column_count": 41,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 11,
+        "pk_column_count": 15,
+        "single_table_count": 1,
+        "table_count": 12,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 2
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          236.8819,
+          817.3176
+        ],
+        "query_ms": [
+          1.594730303030303,
+          6.103881818181819
+        ],
+        "storage_mb": [
+          0.606208,
+          0.606208
+        ]
+      },
+      "physical_row_counts": [
+        1700
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_6855a0e166c29b62",
+        "erp_system_a6832ff7af3ddff4"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 8,
+        "check_count": 13,
+        "class_count": 12,
+        "column_count": 46,
+        "foreign_key_count": 17,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 6,
+        "pk_column_count": 25,
+        "single_table_count": 1,
+        "table_count": 17,
+        "table_per_class_count": 0,
+        "trigger_count": 12,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          679.0584,
+          916.8013
+        ],
+        "query_ms": [
+          3.896839393939394,
+          4.802842424242424
+        ],
+        "storage_mb": [
+          0.77824,
+          0.77824
+        ]
+      },
+      "physical_row_counts": [
+        2200
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        37885
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_409053e925c7af76",
+        "erp_system_61bf104d4f134763"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 3,
+        "check_count": 18,
+        "class_count": 12,
+        "column_count": 47,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 7,
+        "pk_column_count": 18,
+        "single_table_count": 0,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 5
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          336.6442,
+          664.5143
+        ],
+        "query_ms": [
+          2.312960606060606,
+          3.7740727272727272
+        ],
+        "storage_mb": [
+          0.77824,
+          0.77824
+        ]
+      },
+      "physical_row_counts": [
+        2000
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "erp_system_dd3d5c99ccdd4251",
+        "erp_system_9a7696c6d2c64cc7"
+      ],
+      "systems": [
+        "erp_system"
+      ],
+      "features": {
+        "association_count": 9,
+        "association_table_count": 8,
+        "check_count": 8,
+        "class_count": 12,
+        "column_count": 52,
+        "foreign_key_count": 20,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 3,
+        "joined_count": 1,
+        "nullable_column_count": 2,
+        "pk_column_count": 28,
+        "single_table_count": 0,
+        "table_count": 20,
+        "table_per_class_count": 0,
+        "trigger_count": 12,
+        "unique_count": 10
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          457.1325,
+          536.1915
+        ],
+        "query_ms": [
+          1.8879484848484849,
+          3.0414666666666665
+        ],
+        "storage_mb": [
+          0.950272,
+          0.950272
+        ]
+      },
+      "physical_row_counts": [
+        2500
+      ],
+      "trigger_events": [
+        1200
+      ],
+      "physical_text_bytes": [
+        40085
+      ]
+    },
+    {
+      "schemas": [
+        "healthcare_db99bbb0766c1a74",
+        "healthcare_3bdef3ac17ef8fbc"
+      ],
+      "systems": [
+        "healthcare"
+      ],
+      "features": {
+        "association_count": 4,
+        "association_table_count": 3,
+        "check_count": 13,
+        "class_count": 6,
+        "column_count": 23,
+        "foreign_key_count": 7,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 6,
+        "pk_column_count": 10,
+        "single_table_count": 1,
+        "table_count": 7,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 2
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          361.0089,
+          451.4844
+        ],
+        "query_ms": [
+          2.684225,
+          4.1780625
+        ],
+        "storage_mb": [
+          0.442368,
+          0.442368
+        ]
+      },
+      "physical_row_counts": [
+        1100
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        27184
+      ]
+    },
+    {
+      "schemas": [
+        "healthcare_c4658c18f7be243d",
+        "healthcare_93de6f4675932341"
+      ],
+      "systems": [
+        "healthcare"
+      ],
+      "features": {
+        "association_count": 4,
+        "association_table_count": 3,
+        "check_count": 7,
+        "class_count": 6,
+        "column_count": 27,
+        "foreign_key_count": 9,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 2,
+        "pk_column_count": 12,
+        "single_table_count": 0,
+        "table_count": 9,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          307.3155,
+          637.7065
+        ],
+        "query_ms": [
+          2.87755625,
+          4.55968125
+        ],
+        "storage_mb": [
+          0.53248,
+          0.53248
+        ]
+      },
+      "physical_row_counts": [
+        1300
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        28784
+      ]
+    },
+    {
+      "schemas": [
+        "healthcare_aa52a9412affcdde",
+        "healthcare_b0e84d51a0a7b4fc"
+      ],
+      "systems": [
+        "healthcare"
+      ],
+      "features": {
+        "association_count": 4,
+        "association_table_count": 3,
+        "check_count": 2,
+        "class_count": 6,
+        "column_count": 26,
+        "foreign_key_count": 7,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 0,
+        "nullable_column_count": 1,
+        "pk_column_count": 12,
+        "single_table_count": 0,
+        "table_count": 9,
+        "table_per_class_count": 1,
+        "trigger_count": 2,
+        "unique_count": 1
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          328.4166,
+          439.7281
+        ],
+        "query_ms": [
+          3.1943562500000002,
+          3.3207375
+        ],
+        "storage_mb": [
+          0.475136,
+          0.475136
+        ]
+      },
+      "physical_row_counts": [
+        1100
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        23384
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_72bd7d4077ed7ffd",
+        "hospital_information_system_6abd46b5225149a0"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 3,
+        "check_count": 30,
+        "class_count": 11,
+        "column_count": 38,
+        "foreign_key_count": 10,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 15,
+        "pk_column_count": 13,
+        "single_table_count": 2,
+        "table_count": 10,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          687.9301,
+          743.8914
+        ],
+        "query_ms": [
+          3.3240206896551725,
+          3.4047448275862067
+        ],
+        "storage_mb": [
+          0.630784,
+          0.679936
+        ]
+      },
+      "physical_row_counts": [
+        1600,
+        1800
+      ],
+      "trigger_events": [
+        400,
+        600
+      ],
+      "physical_text_bytes": [
+        47917,
+        50617
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_cefab4e51742b02b",
+        "hospital_information_system_da13e90253c72637"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 6,
+        "check_count": 24,
+        "class_count": 11,
+        "column_count": 41,
+        "foreign_key_count": 13,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 9,
+        "pk_column_count": 19,
+        "single_table_count": 2,
+        "table_count": 13,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 7
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          915.6467,
+          1062.0322
+        ],
+        "query_ms": [
+          3.5894068965517243,
+          3.706562068965517
+        ],
+        "storage_mb": [
+          0.73728,
+          0.786432
+        ]
+      },
+      "physical_row_counts": [
+        1900,
+        2100
+      ],
+      "trigger_events": [
+        1000,
+        1200
+      ],
+      "physical_text_bytes": [
+        47917,
+        50617
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_adabb10ebab63923",
+        "hospital_information_system_d844342e085d00d3"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 3,
+        "check_count": 24,
+        "class_count": 11,
+        "column_count": 42,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 11,
+        "pk_column_count": 15,
+        "single_table_count": 1,
+        "table_count": 12,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          752.0807,
+          1083.8453
+        ],
+        "query_ms": [
+          3.5494827586206896,
+          3.8574206896551724
+        ],
+        "storage_mb": [
+          0.720896,
+          0.802816
+        ]
+      },
+      "physical_row_counts": [
+        1800,
+        2000
+      ],
+      "trigger_events": [
+        200,
+        600
+      ],
+      "physical_text_bytes": [
+        49417,
+        52117
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_20d0149709ded279",
+        "hospital_information_system_7a75cbf97ca3191f"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 6,
+        "check_count": 18,
+        "class_count": 11,
+        "column_count": 45,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 5,
+        "pk_column_count": 21,
+        "single_table_count": 1,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 9
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          1041.8109,
+          1072.3004
+        ],
+        "query_ms": [
+          2.999751724137931,
+          3.7725793103448275
+        ],
+        "storage_mb": [
+          0.827392,
+          0.909312
+        ]
+      },
+      "physical_row_counts": [
+        2100,
+        2300
+      ],
+      "trigger_events": [
+        800,
+        1200
+      ],
+      "physical_text_bytes": [
+        49417,
+        52117
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_41ad3654df15372f",
+        "hospital_information_system_de0fe88cdb06d93c"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 3,
+        "check_count": 26,
+        "class_count": 11,
+        "column_count": 42,
+        "foreign_key_count": 12,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 12,
+        "pk_column_count": 15,
+        "single_table_count": 1,
+        "table_count": 12,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 6
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          747.3055,
+          796.6699
+        ],
+        "query_ms": [
+          3.0779241379310345,
+          3.3086827586206895
+        ],
+        "storage_mb": [
+          0.753664,
+          0.811008
+        ]
+      },
+      "physical_row_counts": [
+        1800,
+        2000
+      ],
+      "trigger_events": [
+        400,
+        600
+      ],
+      "physical_text_bytes": [
+        50217,
+        52917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_89b79f1594d8cad6",
+        "hospital_information_system_b09f87dbd8883208"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 6,
+        "check_count": 20,
+        "class_count": 11,
+        "column_count": 45,
+        "foreign_key_count": 15,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 6,
+        "pk_column_count": 21,
+        "single_table_count": 1,
+        "table_count": 15,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 9
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          1119.4165,
+          1225.8588
+        ],
+        "query_ms": [
+          3.488393103448276,
+          4.261110344827586
+        ],
+        "storage_mb": [
+          0.86016,
+          0.917504
+        ]
+      },
+      "physical_row_counts": [
+        2100,
+        2300
+      ],
+      "trigger_events": [
+        1000,
+        1200
+      ],
+      "physical_text_bytes": [
+        50217,
+        52917
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_796b7876e785c556",
+        "hospital_information_system_9cdad014e3effd7c"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 3,
+        "check_count": 20,
+        "class_count": 11,
+        "column_count": 46,
+        "foreign_key_count": 14,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 2,
+        "nullable_column_count": 8,
+        "pk_column_count": 17,
+        "single_table_count": 0,
+        "table_count": 14,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 8
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          593.5043,
+          1131.9174
+        ],
+        "query_ms": [
+          2.091,
+          3.685231034482759
+        ],
+        "storage_mb": [
+          0.843776,
+          0.933888
+        ]
+      },
+      "physical_row_counts": [
+        2000,
+        2200
+      ],
+      "trigger_events": [
+        200,
+        600
+      ],
+      "physical_text_bytes": [
+        51717,
+        54417
+      ]
+    },
+    {
+      "schemas": [
+        "hospital_information_system_0be44ddb2a4315d0",
+        "hospital_information_system_106a1fb40d4b2eb1"
+      ],
+      "systems": [
+        "hospital_information_system"
+      ],
+      "features": {
+        "association_count": 7,
+        "association_table_count": 6,
+        "check_count": 14,
+        "class_count": 11,
+        "column_count": 49,
+        "foreign_key_count": 17,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 4,
+        "joined_count": 2,
+        "nullable_column_count": 2,
+        "pk_column_count": 23,
+        "single_table_count": 0,
+        "table_count": 17,
+        "table_per_class_count": 0,
+        "trigger_count": 8,
+        "unique_count": 11
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          1077.2824,
+          1173.8279
+        ],
+        "query_ms": [
+          3.2396413793103447,
+          3.4579
+        ],
+        "storage_mb": [
+          0.950272,
+          1.040384
+        ]
+      },
+      "physical_row_counts": [
+        2300,
+        2500
+      ],
+      "trigger_events": [
+        800,
+        1200
+      ],
+      "physical_text_bytes": [
+        51717,
+        54417
+      ]
+    },
+    {
+      "schemas": [
+        "library_3bc0c4db1d239b2a",
+        "travel_booking_eab4b403ef150a76"
+      ],
+      "systems": [
+        "library",
+        "travel_booking"
+      ],
+      "features": {
+        "association_count": 3,
+        "association_table_count": 1,
+        "check_count": 12,
+        "class_count": 6,
+        "column_count": 17,
+        "foreign_key_count": 4,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 5,
+        "pk_column_count": 6,
+        "single_table_count": 1,
+        "table_count": 5,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 2
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          353.6264,
+          471.4915
+        ],
+        "query_ms": [
+          3.59678,
+          3.84158
+        ],
+        "storage_mb": [
+          0.253952,
+          0.352256
+        ]
+      },
+      "physical_row_counts": [
+        700,
+        900
+      ],
+      "trigger_events": [
+        200,
+        600
+      ],
+      "physical_text_bytes": [
+        16520,
+        18292
+      ]
+    },
+    {
+      "schemas": [
+        "library_e9dab085f0707367",
+        "travel_booking_d6516ffbeffe74c4"
+      ],
+      "systems": [
+        "library",
+        "travel_booking"
+      ],
+      "features": {
+        "association_count": 3,
+        "association_table_count": 1,
+        "check_count": 8,
+        "class_count": 6,
+        "column_count": 21,
+        "foreign_key_count": 6,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 2,
+        "pk_column_count": 8,
+        "single_table_count": 0,
+        "table_count": 7,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          432.7845,
+          755.64
+        ],
+        "query_ms": [
+          3.2818866666666664,
+          4.878466666666666
+        ],
+        "storage_mb": [
+          0.344064,
+          0.507904
+        ]
+      },
+      "physical_row_counts": [
+        900,
+        1100
+      ],
+      "trigger_events": [
+        200,
+        600
+      ],
+      "physical_text_bytes": [
+        17420,
+        20492
+      ]
+    },
+    {
+      "schemas": [
+        "travel_booking_f0f30ea08a504472",
+        "travel_booking_b9680775c592b487"
+      ],
+      "systems": [
+        "travel_booking"
+      ],
+      "features": {
+        "association_count": 3,
+        "association_table_count": 1,
+        "check_count": 11,
+        "class_count": 6,
+        "column_count": 16,
+        "foreign_key_count": 4,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 0,
+        "joined_count": 0,
+        "nullable_column_count": 5,
+        "pk_column_count": 6,
+        "single_table_count": 1,
+        "table_count": 5,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 2
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          300.3224,
+          375.1435
+        ],
+        "query_ms": [
+          3.2315666666666667,
+          4.1701733333333335
+        ],
+        "storage_mb": [
+          0.253952,
+          0.28672
+        ]
+      },
+      "physical_row_counts": [
+        700
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        14792
+      ]
+    },
+    {
+      "schemas": [
+        "travel_booking_aaa1a40b1e3d21ef",
+        "travel_booking_b766acabf31f5b0e"
+      ],
+      "systems": [
+        "travel_booking"
+      ],
+      "features": {
+        "association_count": 3,
+        "association_table_count": 1,
+        "check_count": 7,
+        "class_count": 6,
+        "column_count": 20,
+        "foreign_key_count": 6,
+        "inheritance_depth": 1,
+        "inheritance_table_count": 2,
+        "joined_count": 1,
+        "nullable_column_count": 2,
+        "pk_column_count": 8,
+        "single_table_count": 0,
+        "table_count": 7,
+        "table_per_class_count": 0,
+        "trigger_count": 2,
+        "unique_count": 4
+      },
+      "cost_ranges": {
+        "insert_ms": [
+          452.7803,
+          563.9048
+        ],
+        "query_ms": [
+          3.5009733333333335,
+          3.9288266666666667
+        ],
+        "storage_mb": [
+          0.4096,
+          0.442368
+        ]
+      },
+      "physical_row_counts": [
+        900
+      ],
+      "trigger_events": [
+        200
+      ],
+      "physical_text_bytes": [
+        16992
+      ]
+    }
+  ],
+  "constant_features": [
+    "inheritance_depth"
+  ],
+  "collision_group_distinctions_omitted_by_16_features": {
+    "physical_insert_rows": 20,
+    "deferred_trigger_insert_events": 20,
+    "physical_text_payload_bytes": 20,
+    "type_counts": 4,
+    "workload_sql_join_count": 2,
+    "workload_sql_union_all_count": 4
+  },
+  "held_out_feature_extrapolation": [
+    {
+      "object_model": "banking",
+      "held_out_candidates": 8,
+      "candidates_outside_at_least_one_training_feature_range": 0,
+      "outside_counts_by_feature": {}
+    },
+    {
+      "object_model": "blog_platform",
+      "held_out_candidates": 8,
+      "candidates_outside_at_least_one_training_feature_range": 0,
+      "outside_counts_by_feature": {}
+    },
+    {
+      "object_model": "crm",
+      "held_out_candidates": 16,
+      "candidates_outside_at_least_one_training_feature_range": 0,
+      "outside_counts_by_feature": {}
+    },
+    {
+      "object_model": "customer_order",
+      "held_out_candidates": 4,
+      "candidates_outside_at_least_one_training_feature_range": 4,
+      "outside_counts_by_feature": {
+        "association_count": 4,
+        "class_count": 4,
+        "column_count": 4,
+        "foreign_key_count": 3,
+        "pk_column_count": 2,
+        "table_count": 3
+      }
+    },
+    {
+      "object_model": "ecommerce",
+      "held_out_candidates": 24,
+      "candidates_outside_at_least_one_training_feature_range": 0,
+      "outside_counts_by_feature": {}
+    },
+    {
+      "object_model": "erp_system",
+      "held_out_candidates": 384,
+      "candidates_outside_at_least_one_training_feature_range": 384,
+      "outside_counts_by_feature": {
+        "association_count": 384,
+        "association_table_count": 24,
+        "class_count": 384,
+        "column_count": 8,
+        "foreign_key_count": 29,
+        "pk_column_count": 59,
+        "table_count": 58,
+        "trigger_count": 24
+      }
+    },
+    {
+      "object_model": "healthcare",
+      "held_out_candidates": 12,
+      "candidates_outside_at_least_one_training_feature_range": 0,
+      "outside_counts_by_feature": {}
+    },
+    {
+      "object_model": "hospital_information_system",
+      "held_out_candidates": 192,
+      "candidates_outside_at_least_one_training_feature_range": 29,
+      "outside_counts_by_feature": {
+        "check_count": 28,
+        "nullable_column_count": 7,
+        "unique_count": 1
+      }
+    },
+    {
+      "object_model": "library",
+      "held_out_candidates": 16,
+      "candidates_outside_at_least_one_training_feature_range": 0,
+      "outside_counts_by_feature": {}
+    },
+    {
+      "object_model": "travel_booking",
+      "held_out_candidates": 16,
+      "candidates_outside_at_least_one_training_feature_range": 0,
+      "outside_counts_by_feature": {}
+    },
+    {
+      "object_model": "university",
+      "held_out_candidates": 48,
+      "candidates_outside_at_least_one_training_feature_range": 0,
+      "outside_counts_by_feature": {}
+    }
+  ]
+}

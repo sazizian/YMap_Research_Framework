@@ -1,0 +1,42 @@
+{
+  "domain": "illustrative",
+  "classes": [
+    {
+      "name": "Customer",
+      "attributes": [
+        {
+          "name": "customer_name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "PreferredCustomer",
+      "extends": "Customer",
+      "attributes": [
+        {
+          "name": "discount",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "attributes": [
+        {
+          "name": "order_value",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "CustomerOrders",
+      "source": "Customer",
+      "target": "Order",
+      "multiplicity": "one-to-many"
+    }
+  ],
+  "name": "customer_order"
+}

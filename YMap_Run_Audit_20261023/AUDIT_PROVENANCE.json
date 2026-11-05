@@ -1,0 +1,10 @@
+{
+  "input_archive": "evaluation_review_20261023_113149_551.zip",
+  "input_archive_sha256": "83a67c172be448724e690be2dd0ac0c80ad5e37be23d2f715ff28d6ed5f55783",
+  "input_archive_size_bytes": 28346846,
+  "audit_scope": "Recorded-artifact consistency and descriptive diagnostics; no database access, retraining or performance-label modifications.",
+  "software_scope": "YMap Research Framework 0.4.0 current structural-baseline run",
+  "source_run": "runs/all_systems_20261022_205921_551",
+  "evaluation_run": "results/YMap/evaluation_20261023_105939_243",
+  "supplemental_checks": "Recomputed top-one preference diagnostics are newly named derived metrics, not replacements of original reported scores."
+}

@@ -1,0 +1,762 @@
+{
+  "candidate_count": 84,
+  "model_count": 11,
+  "reports": [
+    {
+      "schema_id": "banking_b195d16e227086a5",
+      "object_model": "banking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 7,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "banking_7383ed146492fdd4",
+      "object_model": "banking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "banking_d911f43a2ae2bec1",
+      "object_model": "banking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 11,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "banking_50fa28f4937b7f67",
+      "object_model": "banking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 16,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "banking_aeb867ce9c5fb14f",
+      "object_model": "banking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 11,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "banking_d3f5662b5be916ec",
+      "object_model": "banking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 16,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "banking_014073a696d621d2",
+      "object_model": "banking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 15,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "banking_ba6f6d7885b5df45",
+      "object_model": "banking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 20,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "blog_platform_19b96d0d538c2080",
+      "object_model": "blog_platform",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 9,
+      "queries": 13,
+      "database_execution": false
+    },
+    {
+      "schema_id": "blog_platform_08da47396d0c4175",
+      "object_model": "blog_platform",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 14,
+      "queries": 13,
+      "database_execution": false
+    },
+    {
+      "schema_id": "blog_platform_6c733322b420890c",
+      "object_model": "blog_platform",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 14,
+      "queries": 13,
+      "database_execution": false
+    },
+    {
+      "schema_id": "blog_platform_bdbc9b8d0f8b1e79",
+      "object_model": "blog_platform",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 19,
+      "queries": 13,
+      "database_execution": false
+    },
+    {
+      "schema_id": "blog_platform_c3c813754b441d84",
+      "object_model": "blog_platform",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 11,
+      "queries": 13,
+      "database_execution": false
+    },
+    {
+      "schema_id": "blog_platform_6561adfaabf75d96",
+      "object_model": "blog_platform",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 16,
+      "queries": 13,
+      "database_execution": false
+    },
+    {
+      "schema_id": "blog_platform_f2c21e670b97156b",
+      "object_model": "blog_platform",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 16,
+      "queries": 13,
+      "database_execution": false
+    },
+    {
+      "schema_id": "blog_platform_3f1f9a2257e150fd",
+      "object_model": "blog_platform",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 21,
+      "queries": 13,
+      "database_execution": false
+    },
+    {
+      "schema_id": "crm_313f7da17131533a",
+      "object_model": "crm",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 7,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "crm_8b6988ea4d40fc5f",
+      "object_model": "crm",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "crm_755fbd7641a573d5",
+      "object_model": "crm",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "crm_1677e1fd06f79e14",
+      "object_model": "crm",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "crm_1fd4485735925b4c",
+      "object_model": "crm",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "crm_d43804b47b3453a0",
+      "object_model": "crm",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "crm_dcabdc01a2a549d5",
+      "object_model": "crm",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "crm_0353d28742e7213a",
+      "object_model": "crm",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 22,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "customer_order_44e8f7adbb12b1ba",
+      "object_model": "customer_order",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 3,
+      "queries": 7,
+      "database_execution": false
+    },
+    {
+      "schema_id": "customer_order_3568e2bce0954448",
+      "object_model": "customer_order",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 8,
+      "queries": 7,
+      "database_execution": false
+    },
+    {
+      "schema_id": "customer_order_4820c166992456fe",
+      "object_model": "customer_order",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 5,
+      "queries": 7,
+      "database_execution": false
+    },
+    {
+      "schema_id": "customer_order_b2a7370c6d04ffc1",
+      "object_model": "customer_order",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 10,
+      "queries": 7,
+      "database_execution": false
+    },
+    {
+      "schema_id": "ecommerce_b47e88415251aeec",
+      "object_model": "ecommerce",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 11,
+      "queries": 18,
+      "database_execution": false
+    },
+    {
+      "schema_id": "ecommerce_763aae0e45f131e9",
+      "object_model": "ecommerce",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 16,
+      "queries": 18,
+      "database_execution": false
+    },
+    {
+      "schema_id": "ecommerce_df29f4c5bb5383f2",
+      "object_model": "ecommerce",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 16,
+      "queries": 18,
+      "database_execution": false
+    },
+    {
+      "schema_id": "ecommerce_83358d3658076265",
+      "object_model": "ecommerce",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 21,
+      "queries": 18,
+      "database_execution": false
+    },
+    {
+      "schema_id": "ecommerce_4e1d69e3ff7c71f1",
+      "object_model": "ecommerce",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 16,
+      "queries": 18,
+      "database_execution": false
+    },
+    {
+      "schema_id": "ecommerce_d82201abbe252f33",
+      "object_model": "ecommerce",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 21,
+      "queries": 18,
+      "database_execution": false
+    },
+    {
+      "schema_id": "ecommerce_6074ae48bce1831e",
+      "object_model": "ecommerce",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 21,
+      "queries": 18,
+      "database_execution": false
+    },
+    {
+      "schema_id": "ecommerce_d68befd791e9d08b",
+      "object_model": "ecommerce",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 26,
+      "queries": 18,
+      "database_execution": false
+    },
+    {
+      "schema_id": "erp_system_b464f5aabd1e7be3",
+      "object_model": "erp_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 22,
+      "queries": 33,
+      "database_execution": false
+    },
+    {
+      "schema_id": "erp_system_0380d24e07861917",
+      "object_model": "erp_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 27,
+      "queries": 33,
+      "database_execution": false
+    },
+    {
+      "schema_id": "erp_system_fd825fdfd5780f3f",
+      "object_model": "erp_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 27,
+      "queries": 33,
+      "database_execution": false
+    },
+    {
+      "schema_id": "erp_system_bb13350428ae4747",
+      "object_model": "erp_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 32,
+      "queries": 33,
+      "database_execution": false
+    },
+    {
+      "schema_id": "erp_system_2ba744ff7c1f3cb1",
+      "object_model": "erp_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 27,
+      "queries": 33,
+      "database_execution": false
+    },
+    {
+      "schema_id": "erp_system_44352a217011173c",
+      "object_model": "erp_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 32,
+      "queries": 33,
+      "database_execution": false
+    },
+    {
+      "schema_id": "erp_system_7d163f54f5fb2c2f",
+      "object_model": "erp_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 32,
+      "queries": 33,
+      "database_execution": false
+    },
+    {
+      "schema_id": "erp_system_6a5e07b22aa78ad2",
+      "object_model": "erp_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 37,
+      "queries": 33,
+      "database_execution": false
+    },
+    {
+      "schema_id": "healthcare_7b0f58e6a148ae29",
+      "object_model": "healthcare",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "healthcare_db99bbb0766c1a74",
+      "object_model": "healthcare",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "healthcare_3bdef3ac17ef8fbc",
+      "object_model": "healthcare",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "healthcare_380ea6db2390980b",
+      "object_model": "healthcare",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 22,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "healthcare_7af384ca5ee1b509",
+      "object_model": "healthcare",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 16,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "healthcare_c4658c18f7be243d",
+      "object_model": "healthcare",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 21,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "healthcare_93de6f4675932341",
+      "object_model": "healthcare",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 21,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "healthcare_8d832963c314f419",
+      "object_model": "healthcare",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 26,
+      "queries": 16,
+      "database_execution": false
+    },
+    {
+      "schema_id": "hospital_information_system_10008a80fa10bbcc",
+      "object_model": "hospital_information_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 18,
+      "queries": 29,
+      "database_execution": false
+    },
+    {
+      "schema_id": "hospital_information_system_4389a47c842b5062",
+      "object_model": "hospital_information_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 23,
+      "queries": 29,
+      "database_execution": false
+    },
+    {
+      "schema_id": "hospital_information_system_ea89fde28a2d9e99",
+      "object_model": "hospital_information_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 23,
+      "queries": 29,
+      "database_execution": false
+    },
+    {
+      "schema_id": "hospital_information_system_1c3171cf7dd5e525",
+      "object_model": "hospital_information_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 28,
+      "queries": 29,
+      "database_execution": false
+    },
+    {
+      "schema_id": "hospital_information_system_398c8933ac3b4c3d",
+      "object_model": "hospital_information_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 23,
+      "queries": 29,
+      "database_execution": false
+    },
+    {
+      "schema_id": "hospital_information_system_d0ec0efedd3e2de2",
+      "object_model": "hospital_information_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 28,
+      "queries": 29,
+      "database_execution": false
+    },
+    {
+      "schema_id": "hospital_information_system_77908881be4b221d",
+      "object_model": "hospital_information_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 28,
+      "queries": 29,
+      "database_execution": false
+    },
+    {
+      "schema_id": "hospital_information_system_5f853e342a90dfe9",
+      "object_model": "hospital_information_system",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 33,
+      "queries": 29,
+      "database_execution": false
+    },
+    {
+      "schema_id": "library_8caf1d52c0e9b7af",
+      "object_model": "library",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 7,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "library_aae5829564301280",
+      "object_model": "library",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "library_3bc0c4db1d239b2a",
+      "object_model": "library",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "library_8a8b4cf5ce9bc578",
+      "object_model": "library",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "library_68963af34aa9af0a",
+      "object_model": "library",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "library_602fd7231984eab4",
+      "object_model": "library",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "library_e5fbd637cf3d899d",
+      "object_model": "library",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "library_642c57c568600f8b",
+      "object_model": "library",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 22,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "travel_booking_3d14b0d107b793db",
+      "object_model": "travel_booking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 7,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "travel_booking_f0f30ea08a504472",
+      "object_model": "travel_booking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "travel_booking_b9680775c592b487",
+      "object_model": "travel_booking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "travel_booking_1a100e0dd6ac583f",
+      "object_model": "travel_booking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "travel_booking_eab4b403ef150a76",
+      "object_model": "travel_booking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "travel_booking_e71f4b837bc23e1f",
+      "object_model": "travel_booking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "travel_booking_8f3531b8e26a2f1e",
+      "object_model": "travel_booking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "travel_booking_681b9aa3525fb6b0",
+      "object_model": "travel_booking",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 22,
+      "queries": 15,
+      "database_execution": false
+    },
+    {
+      "schema_id": "university_f1f0cb4d8f1ca205",
+      "object_model": "university",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 12,
+      "queries": 19,
+      "database_execution": false
+    },
+    {
+      "schema_id": "university_c2faf1dd1a4a006f",
+      "object_model": "university",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 19,
+      "database_execution": false
+    },
+    {
+      "schema_id": "university_bd18894b2baac49a",
+      "object_model": "university",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 19,
+      "database_execution": false
+    },
+    {
+      "schema_id": "university_e30d1eee1df01529",
+      "object_model": "university",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 22,
+      "queries": 19,
+      "database_execution": false
+    },
+    {
+      "schema_id": "university_507c0bc2e280378d",
+      "object_model": "university",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 17,
+      "queries": 19,
+      "database_execution": false
+    },
+    {
+      "schema_id": "university_d33cd326c0639d76",
+      "object_model": "university",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 22,
+      "queries": 19,
+      "database_execution": false
+    },
+    {
+      "schema_id": "university_a48452d9f6375843",
+      "object_model": "university",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 22,
+      "queries": 19,
+      "database_execution": false
+    },
+    {
+      "schema_id": "university_0edf2e519d8f957f",
+      "object_model": "university",
+      "validation": "static_postgresql_and_plpgsql_parse_only",
+      "parser_version": "v8.7",
+      "ddl_statements": 27,
+      "queries": 19,
+      "database_execution": false
+    }
+  ]
+}

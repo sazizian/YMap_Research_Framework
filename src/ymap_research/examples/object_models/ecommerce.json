@@ -1,0 +1,113 @@
+{
+  "domain": "e-commerce",
+  "classes": [
+    {
+      "name": "User",
+      "attributes": [
+        {
+          "name": "email",
+          "type": "string"
+        },
+        {
+          "name": "created_at",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "extends": "User",
+      "attributes": [
+        {
+          "name": "loyalty_points",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "extends": "User",
+      "attributes": [
+        {
+          "name": "role_level",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "attributes": [
+        {
+          "name": "sku",
+          "type": "string"
+        },
+        {
+          "name": "price",
+          "type": "decimal"
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "attributes": [
+        {
+          "name": "status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "attributes": [
+        {
+          "name": "total",
+          "type": "decimal"
+        },
+        {
+          "name": "ordered_at",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "name": "Review",
+      "attributes": [
+        {
+          "name": "rating",
+          "type": "int"
+        },
+        {
+          "name": "body",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "CustomerOrders",
+      "source": "Customer",
+      "target": "Order",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "OrderProducts",
+      "source": "Order",
+      "target": "Product",
+      "multiplicity": "many-to-many"
+    },
+    {
+      "name": "ProductReviews",
+      "source": "Product",
+      "target": "Review",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "CustomerCart",
+      "source": "Customer",
+      "target": "Cart",
+      "multiplicity": "one-to-one"
+    }
+  ],
+  "name": "ecommerce"
+}

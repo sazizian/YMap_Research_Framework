@@ -1,0 +1,12 @@
+object_model,candidates,feature_vectors,collision_candidates,largest_collision_group,fixture_byte_hashes,query_spec_hashes
+banking,8,8,0,1,1,8
+blog_platform,8,8,0,1,1,8
+crm,16,12,8,2,1,16
+customer_order,4,4,0,1,1,4
+ecommerce,24,16,14,3,1,24
+erp_system,384,44,374,35,1,384
+healthcare,12,9,6,2,1,12
+hospital_information_system,192,80,160,6,1,192
+library,16,16,0,1,1,16
+travel_booking,16,12,8,2,1,16
+university,48,21,38,6,1,48

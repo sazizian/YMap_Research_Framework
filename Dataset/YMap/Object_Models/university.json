@@ -1,0 +1,116 @@
+{
+  "domain": "education",
+  "classes": [
+    {
+      "name": "Person",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Student",
+      "extends": "Person",
+      "attributes": [
+        {
+          "name": "student_no",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Faculty",
+      "extends": "Person",
+      "attributes": [
+        {
+          "name": "rank",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Course",
+      "attributes": [
+        {
+          "name": "code",
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Section",
+      "attributes": [
+        {
+          "name": "term",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Assignment",
+      "attributes": [
+        {
+          "name": "points",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Submission",
+      "attributes": [
+        {
+          "name": "submitted_at",
+          "type": "datetime"
+        },
+        {
+          "name": "score",
+          "type": "float",
+          "nullable": true
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "name": "CourseSections",
+      "source": "Course",
+      "target": "Section",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "FacultySections",
+      "source": "Faculty",
+      "target": "Section",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "StudentSections",
+      "source": "Student",
+      "target": "Section",
+      "multiplicity": "many-to-many"
+    },
+    {
+      "name": "SectionAssignments",
+      "source": "Section",
+      "target": "Assignment",
+      "multiplicity": "one-to-many"
+    },
+    {
+      "name": "AssignmentSubmissions",
+      "source": "Assignment",
+      "target": "Submission",
+      "multiplicity": "one-to-many"
+    }
+  ],
+  "name": "university"
+}

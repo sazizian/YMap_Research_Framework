@@ -1,0 +1,16 @@
+subject_system,raw_record_count,distinct_solution_ids,unique_objective_vectors,nondominated_record_count,distinct_ids_with_nondominated_records,repeated_id_groups,conflicting_id_groups,verified_sql_join_records
+Bank,62,30,62,7,7,21,21,62
+CSOS,2320,2320,2318,13,13,0,0,2320
+Camping,44,29,44,7,6,14,14,44
+Canteen,2688,2688,2688,11,11,0,0,2688
+Customer - Order,9,8,9,2,2,1,1,9
+Decider,80,80,80,9,9,0,0,80
+E-Commerce,8144,8144,8133,20,20,0,0,8144
+Flagship,256,256,256,8,8,0,0,0
+Hospital,9600,9600,9583,16,16,0,0,9600
+Library,2688,2688,2687,8,8,0,0,2688
+Onlinestore,8,8,8,6,6,0,0,8
+Order-Processing,56,56,56,7,7,0,0,56
+Store,2686,2686,2678,20,20,0,0,2686
+Traffic-Control,2688,2688,2683,15,15,0,0,2688
+University-Payroll,64,32,64,10,8,32,32,64

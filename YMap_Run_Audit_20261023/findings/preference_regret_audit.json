@@ -1,0 +1,154 @@
+{
+  "all_existing_regret_values_match_reconstructed_best_in_returned_set": true,
+  "csv": "preference_regret_by_method_system.csv",
+  "csv_sha256": "84c68644f5a53576d21e07196c89d8b00fb5279320f6f34cb396c5f967f40c75",
+  "evaluation_directory": "/workspace/scratch/b47cd7394855/work/evaluation_review_20261023/evaluation_20261023_105939_243",
+  "interpretation": "Descriptive reconstruction from one saved run, not evidence that one model is superior. Best-in-returned-set regret assumes an oracle can identify the best measured utility inside that set; actual top1 regret evaluates the schema chosen using recorded predictions only.",
+  "macro_system_means": {
+    "ensemble_mean": {
+      "actual_top1_regret_test_normalized": 0.1042313532567694,
+      "actual_top1_regret_training_normalized": 0.04888973459747583,
+      "best_in_returned_set_regret_test_normalized": 0.050040663122825825,
+      "best_in_returned_set_regret_training_normalized": 0.030624677995793388,
+      "stored_preference_regret_json": 0.050040663122825825,
+      "system_count": 11,
+      "systems_where_top1_test_regret_exceeds_best_in_set": 5,
+      "systems_with_more_than_one_exact_top1_score_tie": 0
+    },
+    "ensemble_risk": {
+      "actual_top1_regret_test_normalized": 0.1042313532567694,
+      "actual_top1_regret_training_normalized": 0.04888973459747583,
+      "best_in_returned_set_regret_test_normalized": 0.050040663122825825,
+      "best_in_returned_set_regret_training_normalized": 0.030624677995793388,
+      "stored_preference_regret_json": 0.050040663122825825,
+      "system_count": 11,
+      "systems_where_top1_test_regret_exceeds_best_in_set": 5,
+      "systems_with_more_than_one_exact_top1_score_tie": 0
+    },
+    "extra_trees": {
+      "actual_top1_regret_test_normalized": 0.1042313532567694,
+      "actual_top1_regret_training_normalized": 0.04888973459747583,
+      "best_in_returned_set_regret_test_normalized": 0.050040663122825825,
+      "best_in_returned_set_regret_training_normalized": 0.030624677995793388,
+      "stored_preference_regret_json": 0.050040663122825825,
+      "system_count": 11,
+      "systems_where_top1_test_regret_exceeds_best_in_set": 5,
+      "systems_with_more_than_one_exact_top1_score_tie": 0
+    },
+    "linear": {
+      "actual_top1_regret_test_normalized": 0.1042313532567694,
+      "actual_top1_regret_training_normalized": 0.04888973459747583,
+      "best_in_returned_set_regret_test_normalized": 0.05663886194221308,
+      "best_in_returned_set_regret_training_normalized": 0.023676123247995028,
+      "stored_preference_regret_json": 0.05663886194221308,
+      "system_count": 11,
+      "systems_where_top1_test_regret_exceeds_best_in_set": 5,
+      "systems_with_more_than_one_exact_top1_score_tie": 0
+    },
+    "mlp": {
+      "actual_top1_regret_test_normalized": 0.13972068918005787,
+      "actual_top1_regret_training_normalized": 0.06045238091858962,
+      "best_in_returned_set_regret_test_normalized": 0.08079170205836893,
+      "best_in_returned_set_regret_training_normalized": 0.033669239610213335,
+      "stored_preference_regret_json": 0.08079170205836893,
+      "system_count": 11,
+      "systems_where_top1_test_regret_exceeds_best_in_set": 5,
+      "systems_with_more_than_one_exact_top1_score_tie": 0
+    },
+    "random_forest": {
+      "actual_top1_regret_test_normalized": 0.1042313532567694,
+      "actual_top1_regret_training_normalized": 0.04888973459747583,
+      "best_in_returned_set_regret_test_normalized": 0.08116757971670609,
+      "best_in_returned_set_regret_training_normalized": 0.037167339584352393,
+      "stored_preference_regret_json": 0.0811675797167061,
+      "system_count": 11,
+      "systems_where_top1_test_regret_exceeds_best_in_set": 3,
+      "systems_with_more_than_one_exact_top1_score_tie": 0
+    },
+    "ridge": {
+      "actual_top1_regret_test_normalized": 0.1042313532567694,
+      "actual_top1_regret_training_normalized": 0.04888973459747583,
+      "best_in_returned_set_regret_test_normalized": 0.0671287446144123,
+      "best_in_returned_set_regret_training_normalized": 0.02837857919346052,
+      "stored_preference_regret_json": 0.0671287446144123,
+      "system_count": 11,
+      "systems_where_top1_test_regret_exceeds_best_in_set": 4,
+      "systems_with_more_than_one_exact_top1_score_tie": 0
+    }
+  },
+  "match_tolerance": {
+    "absolute": 1e-10,
+    "relative": 1e-09
+  },
+  "method_count": 7,
+  "negative_mean_predictions_by_prediction_model": {
+    "ensemble5": {
+      "negative_mean_predictions": {
+        "insert_ms": 0,
+        "query_ms": 0,
+        "storage_mb": 0
+      },
+      "prediction_rows": 728
+    },
+    "extra_trees": {
+      "negative_mean_predictions": {
+        "insert_ms": 0,
+        "query_ms": 0,
+        "storage_mb": 0
+      },
+      "prediction_rows": 728
+    },
+    "linear": {
+      "negative_mean_predictions": {
+        "insert_ms": 3,
+        "query_ms": 0,
+        "storage_mb": 0
+      },
+      "prediction_rows": 728
+    },
+    "mlp": {
+      "negative_mean_predictions": {
+        "insert_ms": 4,
+        "query_ms": 0,
+        "storage_mb": 0
+      },
+      "prediction_rows": 728
+    },
+    "random_forest": {
+      "negative_mean_predictions": {
+        "insert_ms": 0,
+        "query_ms": 0,
+        "storage_mb": 0
+      },
+      "prediction_rows": 728
+    },
+    "ridge": {
+      "negative_mean_predictions": {
+        "insert_ms": 0,
+        "query_ms": 0,
+        "storage_mb": 0
+      },
+      "prediction_rows": 728
+    }
+  },
+  "negative_prediction_note": "Counts refer to saved mean point predictions. Shared ensemble5 predictions are counted once, not separately for mean/risk recommendation variants. No predictions are clipped or edited.",
+  "new_training_or_database_measurements": false,
+  "normalizations": {
+    "test_normalized": "Recorded full-test-pool metric minimum/scale; descriptive utility distinct from the selection's training-normalized objective weights.",
+    "training_normalized": "Recorded proper-training minimum/scale from fold_audit; consistent with selection utility scaling. Realized regret uses measured outcomes, not the predicted uncertainty penalty."
+  },
+  "row_count": 77,
+  "script_sha256": "b385ad24332344e5cd93aaf6c45a56ff740c92fd95834e4a6ad7963a803f890b",
+  "selection_rule": "Minimum recorded preference_scores within recorded returned indices; exact score ties resolved by lowest original candidate index. Test labels are never used to choose top1.",
+  "source_files_modified": false,
+  "source_files_sha256": {
+    "evaluation_config.json": "1c5694d4d4b765ffe94b54854d2f4b9b67f2baa698966555b40bb7bbe0e93c19",
+    "fold_audit.json": "7a78b52d52f8e18598632a311a824da9687e54d12bf53d6d5c460179e2f1bb19",
+    "oof_predictions.csv": "1f9c33066766fe76210f8abb8b66b72ac62ae6ed4666e60f77e424ea415816c0",
+    "per_system_metrics.csv": "40943e9a2bda2bacd774dbec48664d86695e704cf628b565bc68011530973726",
+    "recommendations.json": "817345e2422e0513c856208138d80637222bc9d0a77fde0ab02376035c6ff910"
+  },
+  "source_hashes_unchanged_after_read": true,
+  "source_system_count": 11,
+  "status": "completed"
+}

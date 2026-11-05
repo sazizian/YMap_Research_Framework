@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "purpose": "Software verification with tiny randomly initialized local checkpoints; no pretrained model quality or manuscript results claim",
+  "python_version": "3.12.14",
+  "dependencies": {
+    "torch": "2.14.1+cpu",
+    "transformers": "4.57.6",
+    "tokenizers": "0.22.2",
+    "safetensors": "0.8.0",
+    "numpy": "2.5.4",
+    "pandas": "2.2.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.8.0",
+    "psycopg": "3.3.6",
+    "pglast": "8.7",
+    "xgboost-cpu": "3.4.1"
+  },
+  "real_loader_model_families": [
+    "RoBERTa",
+    "T5",
+    "LLaMA"
+  ],
+  "pretrained_research_weights_tested": false,
+  "original_research_corpus_tested": false,
+  "successful_integration_tests": [
+    "test_all_real_views_train_and_roundtrip_together (test_neural.LocalCheckpointTests.test_all_real_views_train_and_roundtrip_together)",
+    "test_real_checkpoint_rejects_token_limit_above_capacity (test_neural.LocalCheckpointTests.test_real_checkpoint_rejects_token_limit_above_capacity)",
+    "test_real_local_backbones_pool_cache_and_preserve_batch_results (test_neural.LocalCheckpointTests.test_real_local_backbones_pool_cache_and_preserve_batch_results)",
+    "test_explicit_float32_tensors_ignore_global_float64_default (test_neural.NeuralCpuTests.test_explicit_float32_tensors_ignore_global_float64_default)",
+    "test_graph_symbolic_fit_train_scalers_and_tensor_only_roundtrip (test_neural.NeuralCpuTests.test_graph_symbolic_fit_train_scalers_and_tensor_only_roundtrip)",
+    "test_large_finite_features_use_float64_moment_accumulation (test_neural.NeuralCpuTests.test_large_finite_features_use_float64_moment_accumulation)",
+    "test_reproducible_symbolic_only_fit (test_neural.NeuralCpuTests.test_reproducible_symbolic_only_fit)",
+    "test_recommend_rejects_unsafe_or_duplicate_ids_before_model_loading (test_neural_wrapper.NeuralWrapperTests.test_recommend_rejects_unsafe_or_duplicate_ids_before_model_loading)",
+    "test_safe_ids_write_only_selected_ddl_inside_output_directory (test_neural_wrapper.NeuralWrapperTests.test_safe_ids_write_only_selected_ddl_inside_output_directory)",
+    "test_target_names_cannot_relabel_measurement_columns (test_neural_wrapper.NeuralWrapperTests.test_target_names_cannot_relabel_measurement_columns)"
+  ],
+  "test_log": "validation/unit_tests.log",
+  "file_sha256": {
+    "src/ymap_research/neural.py": "de6df3a52b3060b3c156a26010ef9241ed2db5f1f15e9b7c53dbde0138bfc6e4",
+    "src/ymap_research/representations.py": "184ec474fa8e4c307385d5e481179004a030ace19bea7f0aa3458808e913740f",
+    "src/ymap_research/common.py": "bea457b297b0187ce47e933fb584b8e8648c963c7c38de8d7c612962fb304e3c",
+    "src/ymap_research/inference.py": "f8ba93918ef0a634d6c567f753ecb1d8a86b0a5503fc8b3b8047b17d74b33144",
+    "scripts/neural_train_recommend.py": "bb956c4b8c34f2afe040842a843c010a61bd9f9085e3afe196c6616bfadb0d20"
+  }
+}

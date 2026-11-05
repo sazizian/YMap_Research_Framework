@@ -1,0 +1,65 @@
+{
+  "candidate_count": 728,
+  "per_system": {
+    "banking": 8,
+    "blog_platform": 8,
+    "crm": 16,
+    "customer_order": 4,
+    "ecommerce": 24,
+    "erp_system": 384,
+    "healthcare": 12,
+    "hospital_information_system": 192,
+    "library": 16,
+    "travel_booking": 16,
+    "university": 48
+  },
+  "backend": "python",
+  "per_system_unique_ddl_count": {
+    "banking": 8,
+    "blog_platform": 8,
+    "crm": 16,
+    "customer_order": 4,
+    "ecommerce": 24,
+    "erp_system": 384,
+    "healthcare": 12,
+    "hospital_information_system": 192,
+    "library": 16,
+    "travel_booking": 16,
+    "university": 48
+  },
+  "ddl_identity_note": "Exact emitted-DDL byte identity only; no SQL-semantic or graph-isomorphism equivalence claim; decision variants retained.",
+  "per_system_generation_seconds": {
+    "banking": 0.0037763429991173325,
+    "blog_platform": 0.0029635560003953287,
+    "crm": 0.006193694000103278,
+    "customer_order": 0.0009453019993088674,
+    "ecommerce": 0.010901247998845065,
+    "erp_system": 0.29165894299876527,
+    "healthcare": 0.005743239998992067,
+    "hospital_information_system": 0.1587180480000825,
+    "library": 0.008190885999283637,
+    "travel_booking": 0.0069756259999849135,
+    "university": 0.025069890998565825
+  },
+  "generation_workflow_seconds": 0.5217138380012329,
+  "timing_boundary": "Includes source reading, generation, structural checks, representations, serialization and DDL writing; excludes profiling/training/prediction/selection.",
+  "max_candidates_per_system": null,
+  "enumeration_note": "A cap is a deterministic prefix, not a representative random sample or exhaustive claim.",
+  "formal_boundary": "Python structural validation is not Alloy solving or a semantic-preservation proof.",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "scikit-learn": "1.8.0",
+      "PyYAML": "6.0.3",
+      "torch": null,
+      "transformers": null,
+      "psycopg": "3.3.6",
+      "xgboost": null
+    }
+  },
+  "sql_layout": "../All_SQL_Solutions/{object_model}/SQL_Solutions/{schema_id}.sql"
+}

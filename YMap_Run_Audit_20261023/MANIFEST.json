@@ -1,0 +1,105 @@
+{
+  "format": "ymap_run_audit_manifest_v1",
+  "files": [
+    {
+      "path": "AUDIT_PROVENANCE.json",
+      "bytes": 704,
+      "sha256": "55e52b33b0b08bf8a6f55bb4eb7b6777f1e0c63165a89d43d25d28a328e7d5bf"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 4669,
+      "sha256": "d2244c7bbb30604010237e52063d8a254a7ecf4c058f0e37f3183e3431a455a0"
+    },
+    {
+      "path": "Run_Audit_Report.html",
+      "bytes": 16253,
+      "sha256": "2f92bb1683fa9aef222c9949ab535a066fd1ba3b1d89e06dacf8b39f18423b53"
+    },
+    {
+      "path": "VALIDATION.json",
+      "bytes": 838,
+      "sha256": "88fee7bfca845c71f7658d75d8ec03c900945eeaa323b3a81dbc26743734799b"
+    },
+    {
+      "path": "findings/candidate_repeat_variability.csv",
+      "bytes": 130023,
+      "sha256": "c66d76f79ba0669f214e9b7a6a65405687491832e4ed8fd2c7dff3803d5581fd"
+    },
+    {
+      "path": "findings/evaluation_audit.json",
+      "bytes": 7626,
+      "sha256": "6b0db9a022c0dd6cf582b0dd6d082c5e8102f4cd677be61a36e4330ba8d748d5"
+    },
+    {
+      "path": "findings/evaluation_consistency.json",
+      "bytes": 7626,
+      "sha256": "6b0db9a022c0dd6cf582b0dd6d082c5e8102f4cd677be61a36e4330ba8d748d5"
+    },
+    {
+      "path": "findings/fixture_structure.json",
+      "bytes": 899462,
+      "sha256": "e9e6e37d91b8f3a1e7d95d8639a574ca6ce7cc2bb41744778691d95cc45195d0"
+    },
+    {
+      "path": "findings/measurement_audit.json",
+      "bytes": 75190,
+      "sha256": "1fe625e4dc9dcba48cec69617c4242b8fae2ef65d0d26611d74a6f727f4c38d3"
+    },
+    {
+      "path": "findings/per_system_feature_collisions.csv",
+      "bytes": 436,
+      "sha256": "9a00755d9a52b360c958e31168dad735e939cdfd39950e8b5533c598c1d6fbf2"
+    },
+    {
+      "path": "findings/preference_regret_audit.json",
+      "bytes": 7093,
+      "sha256": "9bedb3609837d8371ecaf45311056ab9d020ef37e743febd9f3107abbe3d3b6b"
+    },
+    {
+      "path": "findings/preference_regret_by_method_system.csv",
+      "bytes": 15515,
+      "sha256": "84c68644f5a53576d21e07196c89d8b00fb5279320f6f34cb396c5f967f40c75"
+    },
+    {
+      "path": "findings/representation_audit.json",
+      "bytes": 152042,
+      "sha256": "f6b833d4f501b7598ebb2dbfc14cdc09a4009b7b17214fb31b969fa6604fd8ce"
+    },
+    {
+      "path": "findings/representation_findings.json",
+      "bytes": 8881,
+      "sha256": "2eb99f9f7edcad809674b1ddca9a7d97fd80bad3b2dcf9b7e5571c505f5ef73f"
+    },
+    {
+      "path": "scripts/audit_evaluation.py",
+      "bytes": 16276,
+      "sha256": "af2cc9262f32714266bf1c41b4d3209c6ce5882ffdbdf5ed67469894dbe8b1d9"
+    },
+    {
+      "path": "scripts/audit_measurements.py",
+      "bytes": 15133,
+      "sha256": "56b12745fc5d248b174a703ec74ed4b7f9d2e70af882b2fae204a2fdb54d8562"
+    },
+    {
+      "path": "scripts/audit_representation.py",
+      "bytes": 13619,
+      "sha256": "e7098e8fcc527ec2de43f4c413f71a127513bf370c6c992632367e790caf980a"
+    },
+    {
+      "path": "scripts/collect_neural_readiness.py",
+      "bytes": 4108,
+      "sha256": "ac651b544c8221d2a0fd892ebf0a1fd8eaad3302e7636aea93f3c38507a5ddf7"
+    },
+    {
+      "path": "scripts/recompute_preference_regret.py",
+      "bytes": 12427,
+      "sha256": "b385ad24332344e5cd93aaf6c45a56ff740c92fd95834e4a6ad7963a803f890b"
+    },
+    {
+      "path": "scripts/test_recompute_preference_regret.py",
+      "bytes": 1752,
+      "sha256": "09d0f408083c6ce45484efa456fcda39666f9ba33062652d261c9b9dcb723759"
+    }
+  ]
+}

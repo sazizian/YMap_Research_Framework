@@ -1,0 +1,562 @@
+fold,test_group,prediction_model,variant,stage,seconds,member_count,boundary
+0,banking,linear,,feature_preparation,0.04173789999913424,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,linear,,fit,0.02868829999351874,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,linear,,test_prediction,0.0030512000084854662,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,linear,,calibration_prediction,0.0024432999780401587,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,linear,,prediction_metric_calculation,0.004200500028673559,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+0,banking,linear,linear,selection,0.0006906000198796391,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+0,banking,linear,linear,recommendation_metric_calculation,0.002306200040038675,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+0,banking,ridge,,feature_preparation,0.0375478999922052,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,ridge,,fit,0.006860300025437027,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,ridge,,test_prediction,0.0012107000220566988,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,ridge,,calibration_prediction,0.0017804999952204525,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,ridge,,prediction_metric_calculation,0.0032212999649345875,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+0,banking,ridge,ridge,selection,0.0004440000047907233,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+0,banking,ridge,ridge,recommendation_metric_calculation,0.0014096000231802464,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+0,banking,random_forest,,feature_preparation,0.037135799997486174,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,random_forest,,fit,0.38267740001901984,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,random_forest,,test_prediction,0.017091199988499284,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,random_forest,,calibration_prediction,0.02394740004092455,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,random_forest,,prediction_metric_calculation,0.005776400037575513,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+0,banking,random_forest,random_forest,selection,0.0006527999648824334,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+0,banking,random_forest,random_forest,recommendation_metric_calculation,0.002009499992709607,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+0,banking,extra_trees,,feature_preparation,0.03891539998585358,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,extra_trees,,fit,0.30368149996502325,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,extra_trees,,test_prediction,0.02669849997619167,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,extra_trees,,calibration_prediction,0.026665600016713142,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,extra_trees,,prediction_metric_calculation,0.004459699965082109,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+0,banking,extra_trees,extra_trees,selection,0.0004692000220529735,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+0,banking,extra_trees,extra_trees,recommendation_metric_calculation,0.0019889999530278146,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+0,banking,mlp,,feature_preparation,0.048699500039219856,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,mlp,,fit,1.5880384999909438,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,mlp,,test_prediction,0.0017989000189118087,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,mlp,,calibration_prediction,0.0014891000464558601,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+0,banking,mlp,,prediction_metric_calculation,0.004775000037625432,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+0,banking,mlp,mlp,selection,0.0006227000267244875,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+0,banking,mlp,mlp,recommendation_metric_calculation,0.001540800032671541,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+0,banking,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+0,banking,neural,,fit,43.00700719997985,1,Includes neural representation preparation and cache/device work inside the call
+0,banking,neural,,test_prediction,0.045220699976198375,1,Includes neural representation preparation and cache/device work inside the call
+0,banking,neural,,calibration_prediction,1.6122248000465333,1,Includes neural representation preparation and cache/device work inside the call
+0,banking,neural,,prediction_metric_calculation,0.003402200003620237,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+0,banking,neural,neural,selection,0.0005788000416941941,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+0,banking,neural,neural,recommendation_metric_calculation,0.0016596000059507787,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+0,banking,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+0,banking,ensemble5,,fit,173.94657929998357,5,Includes neural representation preparation and cache/device work inside the call
+0,banking,ensemble5,,test_prediction,0.18023550003999844,5,Includes neural representation preparation and cache/device work inside the call
+0,banking,ensemble5,,calibration_prediction,4.742031300032977,5,Includes neural representation preparation and cache/device work inside the call
+0,banking,ensemble5,,prediction_metric_calculation,0.005438800028059632,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+0,banking,ensemble5,ensemble_mean,selection,0.0004537000204436481,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+0,banking,ensemble5,ensemble_mean,recommendation_metric_calculation,0.0015575000434182584,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+0,banking,ensemble5,ensemble_risk,selection,0.0004295000107958913,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+0,banking,ensemble5,ensemble_risk,recommendation_metric_calculation,0.0015228000120259821,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+1,blog_platform,linear,,feature_preparation,0.025429399975109845,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,linear,,fit,0.006737099960446358,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,linear,,test_prediction,0.0012630000128410757,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,linear,,calibration_prediction,0.000986300001386553,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,linear,,prediction_metric_calculation,0.003254599985666573,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+1,blog_platform,linear,linear,selection,0.0006310000317171216,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+1,blog_platform,linear,linear,recommendation_metric_calculation,0.0022741000284440815,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+1,blog_platform,ridge,,feature_preparation,0.025124500039964914,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,ridge,,fit,0.00530720001552254,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,ridge,,test_prediction,0.0009456999832764268,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,ridge,,calibration_prediction,0.0007563999970443547,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,ridge,,prediction_metric_calculation,0.0031442000181414187,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+1,blog_platform,ridge,ridge,selection,0.0008029000018723309,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+1,blog_platform,ridge,ridge,recommendation_metric_calculation,0.002385100000537932,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+1,blog_platform,random_forest,,feature_preparation,0.037319299997761846,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,random_forest,,fit,0.3496578999911435,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,random_forest,,test_prediction,0.012200299999676645,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,random_forest,,calibration_prediction,0.013774199993349612,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,random_forest,,prediction_metric_calculation,0.0030239999759942293,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+1,blog_platform,random_forest,random_forest,selection,0.00042970001231878996,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+1,blog_platform,random_forest,random_forest,recommendation_metric_calculation,0.0019312999793328345,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+1,blog_platform,extra_trees,,feature_preparation,0.033751399954780936,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,extra_trees,,fit,0.23228090000338852,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,extra_trees,,test_prediction,0.012650399992708117,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,extra_trees,,calibration_prediction,0.015154599968809634,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,extra_trees,,prediction_metric_calculation,0.00299140001880005,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+1,blog_platform,extra_trees,extra_trees,selection,0.00040469999657943845,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+1,blog_platform,extra_trees,extra_trees,recommendation_metric_calculation,0.0014117999817244709,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+1,blog_platform,mlp,,feature_preparation,0.026030900015030056,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,mlp,,fit,0.557584099995438,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,mlp,,test_prediction,0.0008281000191345811,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,mlp,,calibration_prediction,0.0006529000238515437,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+1,blog_platform,mlp,,prediction_metric_calculation,0.002021100022830069,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+1,blog_platform,mlp,mlp,selection,0.00022090005222707987,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+1,blog_platform,mlp,mlp,recommendation_metric_calculation,0.0007004000362940133,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+1,blog_platform,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+1,blog_platform,neural,,fit,39.20342440000968,1,Includes neural representation preparation and cache/device work inside the call
+1,blog_platform,neural,,test_prediction,0.049103799974545836,1,Includes neural representation preparation and cache/device work inside the call
+1,blog_platform,neural,,calibration_prediction,0.322790400008671,1,Includes neural representation preparation and cache/device work inside the call
+1,blog_platform,neural,,prediction_metric_calculation,0.002633199968840927,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+1,blog_platform,neural,neural,selection,0.00039499998092651367,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+1,blog_platform,neural,neural,recommendation_metric_calculation,0.001539900025818497,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+1,blog_platform,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+1,blog_platform,ensemble5,,fit,203.94705570000224,5,Includes neural representation preparation and cache/device work inside the call
+1,blog_platform,ensemble5,,test_prediction,0.14626339997630566,5,Includes neural representation preparation and cache/device work inside the call
+1,blog_platform,ensemble5,,calibration_prediction,2.4550416999845766,5,Includes neural representation preparation and cache/device work inside the call
+1,blog_platform,ensemble5,,prediction_metric_calculation,0.011775600025430322,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+1,blog_platform,ensemble5,ensemble_mean,selection,0.0008853999897837639,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+1,blog_platform,ensemble5,ensemble_mean,recommendation_metric_calculation,0.0029426999972201884,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+1,blog_platform,ensemble5,ensemble_risk,selection,0.0006987000233493745,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+1,blog_platform,ensemble5,ensemble_risk,recommendation_metric_calculation,0.002736099995672703,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+2,crm,linear,,feature_preparation,0.04305510001722723,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,linear,,fit,0.012396299978718162,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,linear,,test_prediction,0.0019259999971836805,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,linear,,calibration_prediction,0.0016499999910593033,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,linear,,prediction_metric_calculation,0.003924400021787733,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+2,crm,linear,linear,selection,0.0016220000106841326,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+2,crm,linear,linear,recommendation_metric_calculation,0.005121299996972084,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+2,crm,ridge,,feature_preparation,0.05941390001680702,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,ridge,,fit,0.009496200014837086,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,ridge,,test_prediction,0.001276700000744313,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,ridge,,calibration_prediction,0.000977399991825223,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,ridge,,prediction_metric_calculation,0.0058323999983258545,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+2,crm,ridge,ridge,selection,0.002567300049122423,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+2,crm,ridge,ridge,recommendation_metric_calculation,0.005231900024227798,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+2,crm,random_forest,,feature_preparation,0.06753639999078587,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,random_forest,,fit,0.6597952999873087,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,random_forest,,test_prediction,0.017958799959160388,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,random_forest,,calibration_prediction,0.02459899999666959,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,random_forest,,prediction_metric_calculation,0.003864399972371757,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+2,crm,random_forest,random_forest,selection,0.0007223999709822237,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+2,crm,random_forest,random_forest,recommendation_metric_calculation,0.0017549999756738544,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+2,crm,extra_trees,,feature_preparation,0.053950199973769486,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,extra_trees,,fit,0.4623384000151418,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,extra_trees,,test_prediction,0.014541700016707182,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,extra_trees,,calibration_prediction,0.02411890000803396,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,extra_trees,,prediction_metric_calculation,0.006234699976630509,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+2,crm,extra_trees,extra_trees,selection,0.0012386000016704202,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+2,crm,extra_trees,extra_trees,recommendation_metric_calculation,0.002980799996294081,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+2,crm,mlp,,feature_preparation,0.05460560001665726,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,mlp,,fit,1.4153566000168212,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,mlp,,test_prediction,0.0021509999642148614,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,mlp,,calibration_prediction,0.0018921999726444483,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+2,crm,mlp,,prediction_metric_calculation,0.005000000004656613,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+2,crm,mlp,mlp,selection,0.001033299951814115,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+2,crm,mlp,mlp,recommendation_metric_calculation,0.0026591999921947718,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+2,crm,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+2,crm,neural,,fit,46.22589629999129,1,Includes neural representation preparation and cache/device work inside the call
+2,crm,neural,,test_prediction,0.025853300001472235,1,Includes neural representation preparation and cache/device work inside the call
+2,crm,neural,,calibration_prediction,0.06553119997261092,1,Includes neural representation preparation and cache/device work inside the call
+2,crm,neural,,prediction_metric_calculation,0.0011557000107131898,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+2,crm,neural,neural,selection,0.0006486999918706715,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+2,crm,neural,neural,recommendation_metric_calculation,0.0011736999731510878,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+2,crm,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+2,crm,ensemble5,,fit,162.43867569998838,5,Includes neural representation preparation and cache/device work inside the call
+2,crm,ensemble5,,test_prediction,0.09917609998956323,5,Includes neural representation preparation and cache/device work inside the call
+2,crm,ensemble5,,calibration_prediction,0.197479700029362,5,Includes neural representation preparation and cache/device work inside the call
+2,crm,ensemble5,,prediction_metric_calculation,0.0026087999576702714,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+2,crm,ensemble5,ensemble_mean,selection,0.00032729998929426074,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+2,crm,ensemble5,ensemble_mean,recommendation_metric_calculation,0.000750300008803606,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+2,crm,ensemble5,ensemble_risk,selection,0.00023410003632307053,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+2,crm,ensemble5,ensemble_risk,recommendation_metric_calculation,0.0007466999813914299,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+3,customer_order,linear,,feature_preparation,0.015029800008051097,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,linear,,fit,0.003433500009123236,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,linear,,test_prediction,0.00046090001706033945,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,linear,,calibration_prediction,0.00042340002255514264,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,linear,,prediction_metric_calculation,0.0012783999554812908,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+3,customer_order,linear,linear,selection,0.00015580002218484879,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+3,customer_order,linear,linear,recommendation_metric_calculation,0.0006350000039674342,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+3,customer_order,ridge,,feature_preparation,0.01426349999383092,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,ridge,,fit,0.0030821000109426677,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,ridge,,test_prediction,0.00044430000707507133,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,ridge,,calibration_prediction,0.00043809995986521244,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,ridge,,prediction_metric_calculation,0.0012279999791644514,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+3,customer_order,ridge,ridge,selection,0.00016900000628083944,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+3,customer_order,ridge,ridge,recommendation_metric_calculation,0.0006298000225797296,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+3,customer_order,random_forest,,feature_preparation,0.014449700014665723,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,random_forest,,fit,0.15547210001386702,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,random_forest,,test_prediction,0.007091899984516203,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,random_forest,,calibration_prediction,0.010544300021138042,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,random_forest,,prediction_metric_calculation,0.0012942999601364136,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+3,customer_order,random_forest,random_forest,selection,0.00020629999926313758,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+3,customer_order,random_forest,random_forest,recommendation_metric_calculation,0.0007178999949246645,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+3,customer_order,extra_trees,,feature_preparation,0.024102100054733455,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,extra_trees,,fit,0.12678190000588074,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,extra_trees,,test_prediction,0.006934700009878725,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,extra_trees,,calibration_prediction,0.009944099991116673,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,extra_trees,,prediction_metric_calculation,0.002624400018248707,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+3,customer_order,extra_trees,extra_trees,selection,0.0002961999853141606,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+3,customer_order,extra_trees,extra_trees,recommendation_metric_calculation,0.001038299989886582,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+3,customer_order,mlp,,feature_preparation,0.015826899965759367,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,mlp,,fit,0.317317099950742,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,mlp,,test_prediction,0.001087999960873276,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,mlp,,calibration_prediction,0.0015739999944344163,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+3,customer_order,mlp,,prediction_metric_calculation,0.0022675999789498746,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+3,customer_order,mlp,mlp,selection,0.0003040999872609973,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+3,customer_order,mlp,mlp,recommendation_metric_calculation,0.0011331999558024108,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+3,customer_order,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+3,customer_order,neural,,fit,28.85977699997602,1,Includes neural representation preparation and cache/device work inside the call
+3,customer_order,neural,,test_prediction,0.011742300004698336,1,Includes neural representation preparation and cache/device work inside the call
+3,customer_order,neural,,calibration_prediction,1.2509713000035845,1,Includes neural representation preparation and cache/device work inside the call
+3,customer_order,neural,,prediction_metric_calculation,0.002295200014486909,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+3,customer_order,neural,neural,selection,0.00026980001712217927,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+3,customer_order,neural,neural,recommendation_metric_calculation,0.0008458999800495803,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+3,customer_order,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+3,customer_order,ensemble5,,fit,141.83206789998803,5,Includes neural representation preparation and cache/device work inside the call
+3,customer_order,ensemble5,,test_prediction,0.05761850002454594,5,Includes neural representation preparation and cache/device work inside the call
+3,customer_order,ensemble5,,calibration_prediction,3.0647588000283577,5,Includes neural representation preparation and cache/device work inside the call
+3,customer_order,ensemble5,,prediction_metric_calculation,0.004119299992453307,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+3,customer_order,ensemble5,ensemble_mean,selection,0.00027979997685179114,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+3,customer_order,ensemble5,ensemble_mean,recommendation_metric_calculation,0.0009621000499464571,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+3,customer_order,ensemble5,ensemble_risk,selection,0.00020740000763908029,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+3,customer_order,ensemble5,ensemble_risk,recommendation_metric_calculation,0.0008988999761641026,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+4,ecommerce,linear,,feature_preparation,0.023971799993887544,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,linear,,fit,0.004755100002512336,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,linear,,test_prediction,0.0006001000292599201,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,linear,,calibration_prediction,0.0004783999756909907,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,linear,,prediction_metric_calculation,0.0014560000272467732,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+4,ecommerce,linear,linear,selection,0.0005174999823793769,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+4,ecommerce,linear,linear,recommendation_metric_calculation,0.001133000012487173,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+4,ecommerce,ridge,,feature_preparation,0.016335599997546524,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,ridge,,fit,0.003271699999459088,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,ridge,,test_prediction,0.0005100999842397869,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,ridge,,calibration_prediction,0.0005463999696075916,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,ridge,,prediction_metric_calculation,0.001421599998138845,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+4,ecommerce,ridge,ridge,selection,0.0005284999497234821,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+4,ecommerce,ridge,ridge,recommendation_metric_calculation,0.0011178000131621957,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+4,ecommerce,random_forest,,feature_preparation,0.02230280003277585,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,random_forest,,fit,0.18334039999172091,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,random_forest,,test_prediction,0.01106630003778264,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,random_forest,,calibration_prediction,0.013243199966382235,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,random_forest,,prediction_metric_calculation,0.002355300006456673,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+4,ecommerce,random_forest,random_forest,selection,0.00042019999818876386,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+4,ecommerce,random_forest,random_forest,recommendation_metric_calculation,0.00147280003875494,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+4,ecommerce,extra_trees,,feature_preparation,0.022724400041624904,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,extra_trees,,fit,0.12975060002645478,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,extra_trees,,test_prediction,0.006971099996007979,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,extra_trees,,calibration_prediction,0.008693700016010553,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,extra_trees,,prediction_metric_calculation,0.0014562999713234603,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+4,ecommerce,extra_trees,extra_trees,selection,0.0004401000333018601,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+4,ecommerce,extra_trees,extra_trees,recommendation_metric_calculation,0.0011140000424347818,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+4,ecommerce,mlp,,feature_preparation,0.012750499998219311,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,mlp,,fit,0.3706611000234261,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,mlp,,test_prediction,0.0007038000039756298,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,mlp,,calibration_prediction,0.0006572999991476536,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+4,ecommerce,mlp,,prediction_metric_calculation,0.0012260000221431255,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+4,ecommerce,mlp,mlp,selection,0.00044729997171089053,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+4,ecommerce,mlp,mlp,recommendation_metric_calculation,0.0009606999810785055,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+4,ecommerce,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+4,ecommerce,neural,,fit,33.522594599984586,1,Includes neural representation preparation and cache/device work inside the call
+4,ecommerce,neural,,test_prediction,0.10286220000125468,1,Includes neural representation preparation and cache/device work inside the call
+4,ecommerce,neural,,calibration_prediction,1.1447801000322215,1,Includes neural representation preparation and cache/device work inside the call
+4,ecommerce,neural,,prediction_metric_calculation,0.0027138000004924834,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+4,ecommerce,neural,neural,selection,0.0010023999493569136,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+4,ecommerce,neural,neural,recommendation_metric_calculation,0.001795999996829778,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+4,ecommerce,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+4,ecommerce,ensemble5,,fit,192.28379489999497,5,Includes neural representation preparation and cache/device work inside the call
+4,ecommerce,ensemble5,,test_prediction,0.5514920999994501,5,Includes neural representation preparation and cache/device work inside the call
+4,ecommerce,ensemble5,,calibration_prediction,5.575382799957879,5,Includes neural representation preparation and cache/device work inside the call
+4,ecommerce,ensemble5,,prediction_metric_calculation,0.008075800025835633,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+4,ecommerce,ensemble5,ensemble_mean,selection,0.0009377000387758017,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+4,ecommerce,ensemble5,ensemble_mean,recommendation_metric_calculation,0.002794700034428388,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+4,ecommerce,ensemble5,ensemble_risk,selection,0.0011345999664627016,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+4,ecommerce,ensemble5,ensemble_risk,recommendation_metric_calculation,0.003671600017696619,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+5,erp_system,linear,,feature_preparation,0.03941550001036376,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,linear,,fit,0.009087299986276776,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,linear,,test_prediction,0.0016165999695658684,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,linear,,calibration_prediction,0.0019481999916024506,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,linear,,prediction_metric_calculation,0.0037446999922394753,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+5,erp_system,linear,linear,selection,0.02692809997824952,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+5,erp_system,linear,linear,recommendation_metric_calculation,0.031093499972485006,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+5,erp_system,ridge,,feature_preparation,0.04596969997510314,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,ridge,,fit,0.006551800004672259,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,ridge,,test_prediction,0.001434899982996285,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,ridge,,calibration_prediction,0.001278500014450401,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,ridge,,prediction_metric_calculation,0.004485999990720302,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+5,erp_system,ridge,ridge,selection,0.027627800009213388,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+5,erp_system,ridge,ridge,recommendation_metric_calculation,0.03035049996105954,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+5,erp_system,random_forest,,feature_preparation,0.04729920002864674,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,random_forest,,fit,0.3441854999982752,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,random_forest,,test_prediction,0.023556699976325035,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,random_forest,,calibration_prediction,0.019404799968469888,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,random_forest,,prediction_metric_calculation,0.0042916000238619745,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+5,erp_system,random_forest,random_forest,selection,0.03392839996377006,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+5,erp_system,random_forest,random_forest,recommendation_metric_calculation,0.030527199967764318,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+5,erp_system,extra_trees,,feature_preparation,0.04692479997174814,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,extra_trees,,fit,0.2632797000114806,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,extra_trees,,test_prediction,0.024994099978357553,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,extra_trees,,calibration_prediction,0.022461999964434654,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,extra_trees,,prediction_metric_calculation,0.004951299983076751,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+5,erp_system,extra_trees,extra_trees,selection,0.06359490001341328,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+5,erp_system,extra_trees,extra_trees,recommendation_metric_calculation,0.07753090001642704,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+5,erp_system,mlp,,feature_preparation,0.11218850000295788,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,mlp,,fit,3.925553500012029,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,mlp,,test_prediction,0.0031495000002905726,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,mlp,,calibration_prediction,0.0020250999950803816,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+5,erp_system,mlp,,prediction_metric_calculation,0.004320800013374537,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+5,erp_system,mlp,mlp,selection,0.034971199987921864,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+5,erp_system,mlp,mlp,recommendation_metric_calculation,0.03841710003325716,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+5,erp_system,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+5,erp_system,neural,,fit,41.75096469995333,1,Includes neural representation preparation and cache/device work inside the call
+5,erp_system,neural,,test_prediction,4.299721700022928,1,Includes neural representation preparation and cache/device work inside the call
+5,erp_system,neural,,calibration_prediction,0.28977700002724305,1,Includes neural representation preparation and cache/device work inside the call
+5,erp_system,neural,,prediction_metric_calculation,0.005485999980010092,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+5,erp_system,neural,neural,selection,0.027743400016333908,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+5,erp_system,neural,neural,recommendation_metric_calculation,0.029265800025314093,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+5,erp_system,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+5,erp_system,ensemble5,,fit,97.34944849996828,5,Includes neural representation preparation and cache/device work inside the call
+5,erp_system,ensemble5,,test_prediction,6.695787100004964,5,Includes neural representation preparation and cache/device work inside the call
+5,erp_system,ensemble5,,calibration_prediction,0.7982500999933109,5,Includes neural representation preparation and cache/device work inside the call
+5,erp_system,ensemble5,,prediction_metric_calculation,0.009813599986955523,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+5,erp_system,ensemble5,ensemble_mean,selection,0.02516800002194941,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+5,erp_system,ensemble5,ensemble_mean,recommendation_metric_calculation,0.030004999949596822,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+5,erp_system,ensemble5,ensemble_risk,selection,0.028475300001446158,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+5,erp_system,ensemble5,ensemble_risk,recommendation_metric_calculation,0.0338447000249289,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+6,healthcare,linear,,feature_preparation,0.046049199998378754,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,linear,,fit,0.006749300053343177,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,linear,,test_prediction,0.0011919999960809946,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,linear,,calibration_prediction,0.0012215000460855663,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,linear,,prediction_metric_calculation,0.004241200047545135,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+6,healthcare,linear,linear,selection,0.0007621999830007553,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+6,healthcare,linear,linear,recommendation_metric_calculation,0.0018271000008098781,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+6,healthcare,ridge,,feature_preparation,0.03760340000735596,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,ridge,,fit,0.007515800010878593,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,ridge,,test_prediction,0.001145999995060265,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,ridge,,calibration_prediction,0.001400000008288771,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,ridge,,prediction_metric_calculation,0.0030750000150874257,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+6,healthcare,ridge,ridge,selection,0.000782499962951988,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+6,healthcare,ridge,ridge,recommendation_metric_calculation,0.0018348000012338161,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+6,healthcare,random_forest,,feature_preparation,0.04134620004333556,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,random_forest,,fit,0.32709529995918274,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,random_forest,,test_prediction,0.015589200018439442,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,random_forest,,calibration_prediction,0.020664500014390796,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,random_forest,,prediction_metric_calculation,0.003216399985831231,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+6,healthcare,random_forest,random_forest,selection,0.0006813000072725117,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+6,healthcare,random_forest,random_forest,recommendation_metric_calculation,0.0018133000121451914,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+6,healthcare,extra_trees,,feature_preparation,0.03610109997680411,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,extra_trees,,fit,0.18607420002808794,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,extra_trees,,test_prediction,0.015610400005243719,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,extra_trees,,calibration_prediction,0.025408299989067018,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,extra_trees,,prediction_metric_calculation,0.0028307000175118446,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+6,healthcare,extra_trees,extra_trees,selection,0.00039000000106170774,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+6,healthcare,extra_trees,extra_trees,recommendation_metric_calculation,0.0025107000255957246,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+6,healthcare,mlp,,feature_preparation,0.033427399990614504,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,mlp,,fit,0.7281408999697305,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,mlp,,test_prediction,0.0012184000224806368,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,mlp,,calibration_prediction,0.0015242999652400613,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+6,healthcare,mlp,,prediction_metric_calculation,0.0023610999924130738,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+6,healthcare,mlp,mlp,selection,0.00034089997643604875,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+6,healthcare,mlp,mlp,recommendation_metric_calculation,0.0010157999931834638,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+6,healthcare,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+6,healthcare,neural,,fit,17.126128699979745,1,Includes neural representation preparation and cache/device work inside the call
+6,healthcare,neural,,test_prediction,0.04455599997891113,1,Includes neural representation preparation and cache/device work inside the call
+6,healthcare,neural,,calibration_prediction,3.1423505999846384,1,Includes neural representation preparation and cache/device work inside the call
+6,healthcare,neural,,prediction_metric_calculation,0.0042773999739438295,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+6,healthcare,neural,neural,selection,0.0008275000145658851,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+6,healthcare,neural,neural,recommendation_metric_calculation,0.0023994999937713146,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+6,healthcare,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+6,healthcare,ensemble5,,fit,78.79622960003326,5,Includes neural representation preparation and cache/device work inside the call
+6,healthcare,ensemble5,,test_prediction,0.15587680001044646,5,Includes neural representation preparation and cache/device work inside the call
+6,healthcare,ensemble5,,calibration_prediction,12.28166749997763,5,Includes neural representation preparation and cache/device work inside the call
+6,healthcare,ensemble5,,prediction_metric_calculation,0.008571199956350029,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+6,healthcare,ensemble5,ensemble_mean,selection,0.0008309000404551625,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+6,healthcare,ensemble5,ensemble_mean,recommendation_metric_calculation,0.0021510000224225223,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+6,healthcare,ensemble5,ensemble_risk,selection,0.0006902000168338418,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+6,healthcare,ensemble5,ensemble_risk,recommendation_metric_calculation,0.0024434999795630574,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+7,hospital_information_system,linear,,feature_preparation,0.04191159998299554,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,linear,,fit,0.006841399997938424,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,linear,,test_prediction,0.0013670999906025827,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,linear,,calibration_prediction,0.0014540000120177865,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,linear,,prediction_metric_calculation,0.004862400004640222,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+7,hospital_information_system,linear,linear,selection,0.011031900008674711,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+7,hospital_information_system,linear,linear,recommendation_metric_calculation,0.011843399959616363,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+7,hospital_information_system,ridge,,feature_preparation,0.03824740002164617,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,ridge,,fit,0.0077031999826431274,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,ridge,,test_prediction,0.001744000008329749,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,ridge,,calibration_prediction,0.0017412000452168286,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,ridge,,prediction_metric_calculation,0.004138599964790046,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+7,hospital_information_system,ridge,ridge,selection,0.010961899999529123,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+7,hospital_information_system,ridge,ridge,recommendation_metric_calculation,0.012720800004899502,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+7,hospital_information_system,random_forest,,feature_preparation,0.03486070001963526,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,random_forest,,fit,0.21249900001566857,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,random_forest,,test_prediction,0.016879600007086992,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,random_forest,,calibration_prediction,0.01748719997704029,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,random_forest,,prediction_metric_calculation,0.003307500039227307,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+7,hospital_information_system,random_forest,random_forest,selection,0.00678590004099533,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+7,hospital_information_system,random_forest,random_forest,recommendation_metric_calculation,0.010586899996269494,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+7,hospital_information_system,extra_trees,,feature_preparation,0.028936200018506497,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,extra_trees,,fit,0.14430839999113232,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,extra_trees,,test_prediction,0.01675219996832311,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,extra_trees,,calibration_prediction,0.016990600037388504,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,extra_trees,,prediction_metric_calculation,0.003552999987732619,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+7,hospital_information_system,extra_trees,extra_trees,selection,0.011651700013317168,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+7,hospital_information_system,extra_trees,extra_trees,recommendation_metric_calculation,0.007705700001679361,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+7,hospital_information_system,mlp,,feature_preparation,0.03439889999572188,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,mlp,,fit,0.7097719000303186,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,mlp,,test_prediction,0.003068300022277981,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,mlp,,calibration_prediction,0.00302250002278015,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+7,hospital_information_system,mlp,,prediction_metric_calculation,0.003957300039473921,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+7,hospital_information_system,mlp,mlp,selection,0.009454000042751431,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+7,hospital_information_system,mlp,mlp,recommendation_metric_calculation,0.010611500008963048,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+7,hospital_information_system,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+7,hospital_information_system,neural,,fit,8.57275859999936,1,Includes neural representation preparation and cache/device work inside the call
+7,hospital_information_system,neural,,test_prediction,3.1671806999947876,1,Includes neural representation preparation and cache/device work inside the call
+7,hospital_information_system,neural,,calibration_prediction,3.749966699979268,1,Includes neural representation preparation and cache/device work inside the call
+7,hospital_information_system,neural,,prediction_metric_calculation,0.0047642000135965645,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+7,hospital_information_system,neural,neural,selection,0.01211509999120608,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+7,hospital_information_system,neural,neural,recommendation_metric_calculation,0.012477299955207855,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+7,hospital_information_system,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+7,hospital_information_system,ensemble5,,fit,44.237407799984794,5,Includes neural representation preparation and cache/device work inside the call
+7,hospital_information_system,ensemble5,,test_prediction,2.6105101999710314,5,Includes neural representation preparation and cache/device work inside the call
+7,hospital_information_system,ensemble5,,calibration_prediction,6.347507999977097,5,Includes neural representation preparation and cache/device work inside the call
+7,hospital_information_system,ensemble5,,prediction_metric_calculation,0.008093699987512082,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+7,hospital_information_system,ensemble5,ensemble_mean,selection,0.00785100000211969,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+7,hospital_information_system,ensemble5,ensemble_mean,recommendation_metric_calculation,0.007593599963001907,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+7,hospital_information_system,ensemble5,ensemble_risk,selection,0.009492199984379113,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+7,hospital_information_system,ensemble5,ensemble_risk,recommendation_metric_calculation,0.01063939998857677,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+8,library,linear,,feature_preparation,0.03621370001928881,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,linear,,fit,0.007411699974909425,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,linear,,test_prediction,0.0011555000091902912,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,linear,,calibration_prediction,0.0010426000226289034,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,linear,,prediction_metric_calculation,0.0031946999952197075,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+8,library,linear,linear,selection,0.0008035000064410269,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+8,library,linear,linear,recommendation_metric_calculation,0.0020098999957554042,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+8,library,ridge,,feature_preparation,0.025857700034976006,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,ridge,,fit,0.006334899982903153,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,ridge,,test_prediction,0.0013544000103138387,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,ridge,,calibration_prediction,0.00105489999987185,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,ridge,,prediction_metric_calculation,0.0033103000023402274,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+8,library,ridge,ridge,selection,0.0006802999996580184,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+8,library,ridge,ridge,recommendation_metric_calculation,0.001295299967750907,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+8,library,random_forest,,feature_preparation,0.038908999995328486,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,random_forest,,fit,0.38254439999582246,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,random_forest,,test_prediction,0.0180949000059627,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,random_forest,,calibration_prediction,0.01743550004903227,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,random_forest,,prediction_metric_calculation,0.003915700013749301,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+8,library,random_forest,random_forest,selection,0.0008609999786131084,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+8,library,random_forest,random_forest,recommendation_metric_calculation,0.002093199989758432,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+8,library,extra_trees,,feature_preparation,0.030081900011282414,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,extra_trees,,fit,0.28345360001549125,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,extra_trees,,test_prediction,0.01716420002048835,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,extra_trees,,calibration_prediction,0.01721770002041012,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,extra_trees,,prediction_metric_calculation,0.0032985000289045274,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+8,library,extra_trees,extra_trees,selection,0.0007707999902777374,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+8,library,extra_trees,extra_trees,recommendation_metric_calculation,0.0017551000346429646,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+8,library,mlp,,feature_preparation,0.040473799977917224,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,mlp,,fit,0.8258692999952473,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,mlp,,test_prediction,0.0014723999775014818,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,mlp,,calibration_prediction,0.0014287999947555363,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+8,library,mlp,,prediction_metric_calculation,0.0031075000297278166,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+8,library,mlp,mlp,selection,0.000763899995945394,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+8,library,mlp,mlp,recommendation_metric_calculation,0.0017077000229619443,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+8,library,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+8,library,neural,,fit,37.03380289999768,1,Includes neural representation preparation and cache/device work inside the call
+8,library,neural,,test_prediction,0.25408479996258393,1,Includes neural representation preparation and cache/device work inside the call
+8,library,neural,,calibration_prediction,0.7989153999951668,1,Includes neural representation preparation and cache/device work inside the call
+8,library,neural,,prediction_metric_calculation,0.003633800020907074,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+8,library,neural,neural,selection,0.0007792999967932701,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+8,library,neural,neural,recommendation_metric_calculation,0.008668700000271201,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+8,library,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+8,library,ensemble5,,fit,276.6480622999952,5,Includes neural representation preparation and cache/device work inside the call
+8,library,ensemble5,,test_prediction,0.3108328000525944,5,Includes neural representation preparation and cache/device work inside the call
+8,library,ensemble5,,calibration_prediction,1.2385122000123374,5,Includes neural representation preparation and cache/device work inside the call
+8,library,ensemble5,,prediction_metric_calculation,0.007280800025910139,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+8,library,ensemble5,ensemble_mean,selection,0.001083300041500479,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+8,library,ensemble5,ensemble_mean,recommendation_metric_calculation,0.0023756000446155667,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+8,library,ensemble5,ensemble_risk,selection,0.0011139000416733325,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+8,library,ensemble5,ensemble_risk,recommendation_metric_calculation,0.0019062000210396945,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+9,travel_booking,linear,,feature_preparation,0.03952519997255877,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,linear,,fit,0.008749600034207106,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,linear,,test_prediction,0.0014575999812223017,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,linear,,calibration_prediction,0.0012092000106349587,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,linear,,prediction_metric_calculation,0.003273800015449524,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+9,travel_booking,linear,linear,selection,0.0008098999969661236,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+9,travel_booking,linear,linear,recommendation_metric_calculation,0.0024688999983482063,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+9,travel_booking,ridge,,feature_preparation,0.03700040001422167,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,ridge,,fit,0.008060599968302995,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,ridge,,test_prediction,0.00088160001905635,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,ridge,,calibration_prediction,0.0010843999916687608,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,ridge,,prediction_metric_calculation,0.0038621999556198716,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+9,travel_booking,ridge,ridge,selection,0.0010634000063873827,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+9,travel_booking,ridge,ridge,recommendation_metric_calculation,0.0028924000216647983,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+9,travel_booking,random_forest,,feature_preparation,0.04517009999835864,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,random_forest,,fit,0.4159230999648571,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,random_forest,,test_prediction,0.016252600005827844,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,random_forest,,calibration_prediction,0.018701599969062954,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,random_forest,,prediction_metric_calculation,0.003632600011769682,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+9,travel_booking,random_forest,random_forest,selection,0.0009925999911502004,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+9,travel_booking,random_forest,random_forest,recommendation_metric_calculation,0.0026178999687545,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+9,travel_booking,extra_trees,,feature_preparation,0.04451460001291707,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,extra_trees,,fit,0.326387099979911,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,extra_trees,,test_prediction,0.019304700021166354,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,extra_trees,,calibration_prediction,0.018166799971368164,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,extra_trees,,prediction_metric_calculation,0.005212999996729195,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+9,travel_booking,extra_trees,extra_trees,selection,0.0009091999963857234,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+9,travel_booking,extra_trees,extra_trees,recommendation_metric_calculation,0.0025314000085927546,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+9,travel_booking,mlp,,feature_preparation,0.049445000011473894,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,mlp,,fit,1.0435873999958858,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,mlp,,test_prediction,0.0019385999767109752,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,mlp,,calibration_prediction,0.0018613000283949077,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+9,travel_booking,mlp,,prediction_metric_calculation,0.004180599993560463,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+9,travel_booking,mlp,mlp,selection,0.0008021999965421855,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+9,travel_booking,mlp,mlp,recommendation_metric_calculation,0.0015698999632149935,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+9,travel_booking,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+9,travel_booking,neural,,fit,61.3106276000035,1,Includes neural representation preparation and cache/device work inside the call
+9,travel_booking,neural,,test_prediction,0.11850020004203543,1,Includes neural representation preparation and cache/device work inside the call
+9,travel_booking,neural,,calibration_prediction,0.4190068999887444,1,Includes neural representation preparation and cache/device work inside the call
+9,travel_booking,neural,,prediction_metric_calculation,0.004375299962703139,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+9,travel_booking,neural,neural,selection,0.0010834999848157167,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+9,travel_booking,neural,neural,recommendation_metric_calculation,0.002580599975772202,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+9,travel_booking,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+9,travel_booking,ensemble5,,fit,282.53800549998414,5,Includes neural representation preparation and cache/device work inside the call
+9,travel_booking,ensemble5,,test_prediction,0.23322330001974478,5,Includes neural representation preparation and cache/device work inside the call
+9,travel_booking,ensemble5,,calibration_prediction,0.8278867000481114,5,Includes neural representation preparation and cache/device work inside the call
+9,travel_booking,ensemble5,,prediction_metric_calculation,0.006919400009792298,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+9,travel_booking,ensemble5,ensemble_mean,selection,0.0011178000131621957,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+9,travel_booking,ensemble5,ensemble_mean,recommendation_metric_calculation,0.001909000042360276,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+9,travel_booking,ensemble5,ensemble_risk,selection,0.000534699996933341,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+9,travel_booking,ensemble5,ensemble_risk,recommendation_metric_calculation,0.0014336000313051045,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+10,university,linear,,feature_preparation,0.04008940001949668,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,linear,,fit,0.006802900054026395,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,linear,,test_prediction,0.001007599988952279,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,linear,,calibration_prediction,0.000867099966853857,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,linear,,prediction_metric_calculation,0.00301510002464056,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+10,university,linear,linear,selection,0.0023790999548509717,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+10,university,linear,linear,recommendation_metric_calculation,0.003905799996573478,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+10,university,ridge,,feature_preparation,0.03221570001915097,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,ridge,,fit,0.007178500003647059,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,ridge,,test_prediction,0.001746599969919771,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,ridge,,calibration_prediction,0.0015389000182040036,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,ridge,,prediction_metric_calculation,0.003573399968445301,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+10,university,ridge,ridge,selection,0.0015921000158414245,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+10,university,ridge,ridge,recommendation_metric_calculation,0.0032350000110454857,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+10,university,random_forest,,feature_preparation,0.03705660003470257,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,random_forest,,fit,0.39027099998202175,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,random_forest,,test_prediction,0.01905319996876642,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,random_forest,,calibration_prediction,0.0200683000148274,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,random_forest,,prediction_metric_calculation,0.0039231000118888915,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+10,university,random_forest,random_forest,selection,0.001613499945960939,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+10,university,random_forest,random_forest,recommendation_metric_calculation,0.0033068000338971615,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+10,university,extra_trees,,feature_preparation,0.03628999995999038,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,extra_trees,,fit,0.2806338999653235,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,extra_trees,,test_prediction,0.015822899993509054,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,extra_trees,,calibration_prediction,0.01629149995278567,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,extra_trees,,prediction_metric_calculation,0.0035735000274144113,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+10,university,extra_trees,extra_trees,selection,0.0017596000107005239,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+10,university,extra_trees,extra_trees,recommendation_metric_calculation,0.00469520001206547,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+10,university,mlp,,feature_preparation,0.035611000028438866,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,mlp,,fit,0.9594862000085413,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,mlp,,test_prediction,0.00222540000686422,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,mlp,,calibration_prediction,0.0017674000118859112,1,Feature arrays extracted separately; fit/predict include their pipeline preprocessing
+10,university,mlp,,prediction_metric_calculation,0.004942300030961633,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+10,university,mlp,mlp,selection,0.002609000017400831,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+10,university,mlp,mlp,recommendation_metric_calculation,0.00705829996149987,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+10,university,neural,,feature_preparation,0.0,1,Includes neural representation preparation and cache/device work inside the call
+10,university,neural,,fit,51.56756860000314,1,Includes neural representation preparation and cache/device work inside the call
+10,university,neural,,test_prediction,0.27529750001849607,1,Includes neural representation preparation and cache/device work inside the call
+10,university,neural,,calibration_prediction,0.2936138999648392,1,Includes neural representation preparation and cache/device work inside the call
+10,university,neural,,prediction_metric_calculation,0.0040627000271342695,1,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+10,university,neural,neural,selection,0.002451399981509894,1,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+10,university,neural,neural,recommendation_metric_calculation,0.004639699996914715,1,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+10,university,ensemble5,,feature_preparation,0.0,5,Includes neural representation preparation and cache/device work inside the call
+10,university,ensemble5,,fit,257.1463894000044,5,Includes neural representation preparation and cache/device work inside the call
+10,university,ensemble5,,test_prediction,1.06722919997992,5,Includes neural representation preparation and cache/device work inside the call
+10,university,ensemble5,,calibration_prediction,0.9449445000500418,5,Includes neural representation preparation and cache/device work inside the call
+10,university,ensemble5,,prediction_metric_calculation,0.008055699989199638,5,"Evaluation-only regression, residual interval and uncertainty-error metrics; reads held-out outcomes"
+10,university,ensemble5,ensemble_mean,selection,0.002064800006337464,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+10,university,ensemble5,ensemble_mean,recommendation_metric_calculation,0.004550200013909489,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
+10,university,ensemble5,ensemble_risk,selection,0.001927000004798174,5,"Final-stage finite-pool selection from existing predictions; no synthesis, encoding, model fitting or DB execution"
+10,university,ensemble5,ensemble_risk,recommendation_metric_calculation,0.004459899966605008,5,Evaluation-only measured-coordinate Pareto/GD/HV/IGD+/regret; excluded from recommendation algorithm runtime
