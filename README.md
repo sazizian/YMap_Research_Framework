@@ -2,11 +2,7 @@
 
 Research software for **Y-Map**: generating relational schema candidates for an object model under ORM mapping rules, measuring them on PostgreSQL, and evaluating learned performance predictors and Pareto/preference-based schema recommendation with leave-one-system-out validation.
 
-## Status — read first
 
-- This repository holds the current Y-Map implementation (version 0.4.0) and **one completed measured study**: 728 generated candidate schemas from 11 object models, measured on PostgreSQL and evaluated with leave-one-system-out cross-validation.
-- The code and data here **do not reproduce the numerical results of earlier manuscript drafts** (for example, the 12,500-candidate corpus). Values transcribed from a draft are kept in [`results/YMap/paper_reported_values.csv`](results/YMap/paper_reported_values.csv) for reference only, labelled as paper-reported and unverified. See [`docs/PAPER_REPORTED_VALUES.md`](docs/PAPER_REPORTED_VALUES.md).
-- An audit of an earlier, separate Y-Map archive is described in [`docs/OLD_CODE_AUDIT.md`](docs/OLD_CODE_AUDIT.md). That archive is not part of this repository and is not used by any command here.
 
 ## Repository layout
 

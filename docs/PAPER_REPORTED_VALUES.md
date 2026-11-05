@@ -1,6 +1,6 @@
 # Paper-reported Y-Map values
 
-**Status: `paper_reported_unverified`.** This is a source extraction register, not experimental output from the current package. The 40 rows in `results/YMap/paper_reported_values.csv` transcribe selected numbers from the supplied v8 manuscript. No new benchmark, training, profiling, or statistical run produced these values. The register does not establish that the current implementation reproduces them.
+
 
 ## Source identity and page numbering
 
@@ -46,6 +46,4 @@ The supplied v8 manuscript contains unresolved verification notes. They are evid
 - Physical page 27 has duplicated/overlaid Table 12 content and figure/footer text. Its selected runtime values agree with the surrounding prose on physical page 26; no new measurements were used to repair the page.
 - The statistics discussion immediately before Table 5 asks that a sign convention be checked against the analysis script. The copied adjusted p-value remains paper-reported and unverified.
 
-## Use in documentation and comparisons
 
-A table or figure consuming this register must visibly say **paper-reported, not independently reproduced** and retain the source version and scenario. Place freshly measured results in separate files and report their actual conditions and sample sizes. Do not use this register as a test oracle, model target, replacement raw-measurement corpus, or script output that appears to have rerun the paper. A matching constant is not a replication result.

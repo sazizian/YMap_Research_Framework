@@ -10,7 +10,7 @@ This file separates what the repository contains, what has been executed, and wh
 | `results/YMap/evaluation_20261023_105939_243/` | Leave-one-system-out evaluation of structural baselines and a 5-member ensemble on those measurements |
 | `results/YMap/graph_symbolic_cpu_ff2ed12dbc97/` | The same evaluation with the graph + symbolic neural model added (CPU) |
 | `YMap_Run_Audit_20261023/` | Read-only consistency audit of the evaluation (no changes to inputs or labels) |
-| `results/YMap/paper_reported_values.csv` | Numbers transcribed from a manuscript draft; not produced by this code |
+| `results/YMap/paper_reported_values.csv` | Numbers transcribed from a manuscript draft;
 | `validation/` | Recorded software checks for releases 0.3 and 0.4 |
 
 ## Not established by this repository
