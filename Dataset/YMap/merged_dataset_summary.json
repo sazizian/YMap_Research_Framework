@@ -1,0 +1,76 @@
+{
+  "inputs_sha256": {
+    "Generated/candidates.jsonl": "2225322bed1f4804ef6ba34814287f83115a7cf27bd6ea98290fec1915781e5c",
+    "Measurements/ymap_postgresql_measurements.csv": "6619ed1a8c87b01eba31c0ac42f5fa3d98b8c71a0f98965662511c019f3a64d1",
+    "Measurements/rorm_supplied_measurements.csv": "e677dc1113f655e822c64b156c529d02af7890f440c8d3d268fa13123b477e28"
+  },
+  "catalog_status": {
+    "reinforceorm:duplicate_ddl": 3885,
+    "reinforceorm:included": 27488,
+    "reinforceorm:sql_without_measurement": 3,
+    "ymap:included": 728
+  },
+  "measurement_rows": {
+    "ymap": 728,
+    "reinforceorm": 31393
+  },
+  "usable_schemas": {
+    "ymap": 728,
+    "reinforceorm": 27488
+  },
+  "usable_schemas_per_object_model": {
+    "banking": 8,
+    "blog_platform": 8,
+    "crm": 16,
+    "customer_order": 4,
+    "ecommerce": 24,
+    "erp_system": 384,
+    "healthcare": 12,
+    "hospital_information_system": 192,
+    "library": 16,
+    "rorm_bank": 22,
+    "rorm_camping": 22,
+    "rorm_canteen": 2496,
+    "rorm_csos": 1672,
+    "rorm_customer_order": 6,
+    "rorm_decider": 72,
+    "rorm_ecommerce": 6120,
+    "rorm_flagship": 128,
+    "rorm_hospital": 9408,
+    "rorm_library": 2496,
+    "rorm_onlinestore": 8,
+    "rorm_order_processing": 24,
+    "rorm_store": 2494,
+    "rorm_traffic_control": 2496,
+    "rorm_university_payroll": 24,
+    "travel_booking": 16,
+    "university": 48
+  },
+  "common_features": [
+    "table_count",
+    "column_count",
+    "foreign_key_count",
+    "pk_column_count",
+    "nullable_column_count",
+    "unique_count",
+    "check_count",
+    "index_count",
+    "trigger_count",
+    "link_table_count",
+    "max_columns_per_table"
+  ],
+  "scenarios": {
+    "ymap": [
+      [
+        "workload_8872893b0f8e92c3",
+        "environment_dae41b366b570b7b"
+      ]
+    ],
+    "reinforceorm": [
+      [
+        "reinforceorm_supplied",
+        "reinforceorm_supplied_units_unconfirmed"
+      ]
+    ]
+  }
+}

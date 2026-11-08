@@ -1,0 +1,18 @@
+# Evaluation of the merged dataset, scenario: Y-Map PostgreSQL measurements.
+# Same settings as config/evaluation.yaml; only the scenario filter is added.
+# Run a separate evaluation for every workload_id/environment_id scenario.
+mode: research
+models: [linear, ridge, random_forest, extra_trees, mlp]
+ensemble_base: extra_trees
+ensemble_size: 5
+model_parameters:
+  random_forest: {n_estimators: 100}
+  extra_trees: {n_estimators: 100}
+  mlp: {hidden_layer_sizes: [64, 32], max_iter: 500}
+seed: 42
+risk_lambda: 1.0
+calibration_alpha: 0.10
+weights: [0.3333333333, 0.3333333333, 0.3333333334]
+
+workload_id: workload_8872893b0f8e92c3
+environment_id: environment_dae41b366b570b7b
