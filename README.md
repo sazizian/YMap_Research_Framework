@@ -1,5 +1,16 @@
 # Y-Map Research Framework
 
+Version **0.5** adds the manuscript workflow: bounded schema synthesis,
+PostgreSQL profiling, five-view prediction, system-held-out evaluation and
+incremental risk-aware recommendation. Start with
+[the workflow and reproduction limits](docs/PAPER_WORKFLOW.md). All released
+data is accessed under `Dataset/YMap` with a named measurement scenario:
+
+```sh
+ymap paper check --dataset native
+ymap paper check --dataset archive
+```
+
 Research software for **Y-Map**: generating relational schema candidates for an object model under ORM mapping rules, measuring them on PostgreSQL, and evaluating learned performance predictors and Pareto/preference-based schema recommendation with leave-one-system-out validation.
 
 
@@ -12,7 +23,7 @@ Research software for **Y-Map**: generating relational schema candidates for an 
 | `tests/` | Unit and integration tests |
 | `config/` | Profiling, evaluation, training and neural configurations |
 | `scripts/` | `check_framework.py` (test runner) and `neural_train_recommend.py` |
-| `Dataset/YMap/` | 11 JSON object models, the 728 generated candidates and their SQL files |
+| `Dataset/YMap/` | Unified SQL and measurement catalog; see the dataset manifest for separate scenarios |
 | `results/YMap/` | Outputs of the measured study (see below) |
 | `YMap_Run_Audit_20261023/` | Independent consistency audit of the measured study |
 | `run_graph_symbolic_evaluation.py` | Runs the graph + symbolic neural evaluation on the existing measurements |
@@ -81,6 +92,24 @@ Macro means over the 11 held-out systems (`summary.json`; lower nRMSE/IGD+ and h
 No paired comparison is significant after Holm adjustment in either evaluation (`paired_statistics.json`). This is a small study and does not establish that the methods are equivalent.
 
 ## Tests
+
+### Preference regret
+
+`recommend()` records `preference_index`, chosen from the returned candidates
+using predicted weighted mean-plus-risk scores only. Evaluation measures that
+specific decision's realized weighted utility against the best feasible measured
+utility, using the same proper-training normalization and weights for both.
+The selected schema ID and normalization are retained in `recommendations.json`.
+Without an explicit prediction-based decision, `preference_regret` is null.
+
+The previous best-measured-member diagnostic is now named `oracle_set_regret`
+and retains the fixed measured-pool normalization used by Pareto metrics.
+Historical result folders used this oracle diagnostic under the name
+`preference_regret`; recompute regret and any affected statistics in a new output
+folder before comparing them with corrected runs. This code fix does not
+recalculate the included research results or establish the manuscript's results.
+
+### Running the tests
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/check_framework.py

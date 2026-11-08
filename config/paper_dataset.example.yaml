@@ -1,0 +1,24 @@
+# Copy and fill this manifest using a verified original or newly measured study.
+# Paths under a dataset entry resolve below dataset_root, relative to project root.
+version: 1
+dataset_root: Dataset/YMap
+datasets:
+  paper-reference:
+    scope: null
+    candidates: PaperReference/candidates.jsonl
+    measurements: PaperReference/measurements.csv
+    workload_id: null
+    environment_id: null
+    label_source: postgresql_measured
+    units_confirmed: true
+    counts:
+      measured_candidates: null
+      source_systems: 11
+      measurement_rows: null
+    provenance:
+      source: null
+      citation: null
+      protocol: null
+      input_sha256:
+        candidates: null
+        measurements: null

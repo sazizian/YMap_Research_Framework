@@ -75,6 +75,44 @@ class EvaluationTests(unittest.TestCase):
         self.assertGreater(timing['total_evaluation_workflow_seconds'], runtime.seconds.sum())
         self.assertIn('schema synthesis/enumeration', timing['excluded_before_evaluation'])
 
+    def test_saved_regret_uses_prediction_choice_and_training_normalization(self):
+        out = self.root / 'regret'
+        config = {**self.config, 'weights': [.8, .2, 0]}
+        summary = evaluate(self.candidates, self.measurements, out, config)
+        predictions = pd.read_csv(out / 'oof_predictions.csv')
+        measurements = pd.read_csv(out / 'aggregated_measurements.csv').set_index('schema_id')
+        audits = {row['test_group']: row for row in json.loads((out / 'fold_audit.json').read_text())}
+        objective_names = ['insert_ms', 'query_ms', 'storage_mb']
+        for row in json.loads((out / 'recommendations.json').read_text()):
+            group = row['object_model']
+            selected = row['selection']
+            index = selected['preference_index']
+            prediction_model = 'ensemble5' if row['model'].startswith('ensemble_') else row['model']
+            fold = predictions[(predictions.object_model == group) & (predictions.model == prediction_model)].sort_values('schema_id')
+            norm = audits[group]['selection_normalization']
+            mean = fold[[f'mean_{name}' for name in objective_names]].to_numpy()
+            std = fold[[f'std_{name}' for name in objective_names]].to_numpy()
+            weights = np.asarray(selected['weights'])
+            score = ((mean - norm['minimum']) / norm['scale'] + selected['risk_lambda'] * std / norm['scale']) @ weights
+            expected_index = selected['indices'][np.argmin(score[selected['indices']])]
+            self.assertEqual(index, expected_index)
+            self.assertEqual(row['preference_schema_id'], fold.iloc[index].schema_id)
+            truth = measurements.loc[fold.schema_id, objective_names].to_numpy()
+            realized = ((truth - norm['minimum']) / norm['scale']) @ weights
+            self.assertAlmostEqual(row['measured_metrics']['preference_regret'], realized[index] - realized.min())
+        self.assertIn('historical_results', summary['preference_regret_definition'])
+
+    def test_empty_beam_exports_undefined_decision_regret(self):
+        out = self.root / 'empty_beam'
+        summary = evaluate(self.candidates, self.measurements, out, {**self.config, 'selection_mode': 'beam', 'beam_budget': 0})
+        for row in json.loads((out / 'recommendations.json').read_text()):
+            self.assertIsNone(row['preference_schema_id'])
+            self.assertIsNone(row['measured_metrics']['preference_regret'])
+        for values in summary['macro_system_means'].values():
+            self.assertIsNone(values['preference_regret'])
+        columns = pd.read_csv(out / 'per_system_metrics.csv').columns
+        self.assertNotIn('preference_decision', columns)
+
     def test_heldout_label_changes_cannot_change_same_fold_predictions(self):
         first_out = self.root / 'first'
         second_out = self.root / 'second'
@@ -87,6 +125,9 @@ class EvaluationTests(unittest.TestCase):
         second = pd.read_csv(second_out / 'oof_predictions.csv')
         columns = ['model', 'schema_id', 'mean_insert_ms', 'mean_query_ms', 'mean_storage_mb']
         pd.testing.assert_frame_equal(first[first.object_model == 'g0'][columns].reset_index(drop=True), second[second.object_model == 'g0'][columns].reset_index(drop=True))
+        first_choices = {row['model']: row['preference_schema_id'] for row in json.loads((first_out / 'recommendations.json').read_text()) if row['object_model'] == 'g0'}
+        second_choices = {row['model']: row['preference_schema_id'] for row in json.loads((second_out / 'recommendations.json').read_text()) if row['object_model'] == 'g0'}
+        self.assertEqual(first_choices, second_choices)
 
     def test_imputer_and_scaler_fit_only_training_values(self):
         model = make_regressor('ridge')

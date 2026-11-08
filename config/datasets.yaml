@@ -1,0 +1,57 @@
+# All paths in a dataset entry are relative to dataset_root.
+version: 1
+dataset_root: Dataset/YMap
+datasets:
+  native:
+    scope: Native PostgreSQL 728-candidate study; separate from the manuscript reference experiment.
+    candidates: Generated/candidates.jsonl
+    measurements: Measurements/ymap_postgresql_measurements.csv
+    workload_id: workload_8872893b0f8e92c3
+    environment_id: environment_dae41b366b570b7b
+    label_source: postgresql_measured
+    units_confirmed: true
+    counts:
+      measured_candidates: 728
+      source_systems: 11
+      measurement_rows: 728
+    provenance:
+      source: Y-Map October 2026 measured study
+      protocol: PostgreSQL 14.24; 100 rows per class; median of five repetitions per candidate.
+      protocol_document: docs/PROFILING_PROTOCOL.md
+      raw_results: results/YMap/evaluation_review_20261023_113149_551.zip
+      repository_input_sha256:
+        candidates: 2225322bed1f4804ef6ba34814287f83115a7cf27bd6ea98290fec1915781e5c
+        measurements: 2d12863257bd7b4ab35fb01e62f404f4e1a2cde304971f67272b1760185aa0af
+      recorded_run_input_sha256:
+        candidates: a3070d97ce7cb05097d1e3f3b9319b19cb9024b35ecc3f0a5861d8ef50162b3e
+        measurements: 6619ed1a8c87b01eba31c0ac42f5fa3d98b8c71a0f98965662511c019f3a64d1
+  archive:
+    scope: Separately measured archival scenario for within-scenario analysis; protocol and units unconfirmed.
+    candidates: all_candidates.jsonl
+    measurements: all_measurements.csv
+    workload_id: reinforceorm_supplied
+    environment_id: reinforceorm_supplied_units_unconfirmed
+    label_source: imported_measured
+    units_confirmed: false
+    counts:
+      measured_candidates: 27488
+      source_systems: 15
+      measurement_rows: 31393
+    provenance:
+      source: ReinforceORM artifact
+      citation: >-
+        Md Rashedul Hasan and Hamid Bagheri. Formal Verification-Integrated
+        Reinforcement Learning for Automated ORM Schema Synthesis. ASE 2026.
+      publication: https://doi.org/10.1145/3832783.3837501
+      artifact: https://doi.org/10.6084/m9.figshare.30071260
+      license: CC BY-NC 4.0
+      license_file: LICENSE_ReinforceORM_CC_BY_NC_4.0.md
+      original_measurements: Measurements/rorm_supplied_measurements.csv
+      original_measurements_sha256: e677dc1113f655e822c64b156c529d02af7890f440c8d3d268fa13123b477e28
+      protocol: Supplied measured labels; original timing and storage units unconfirmed.
+      repository_input_sha256:
+        candidates: 788acaeb4f2dcdf6d2122c399698e003ceb6b6602e6f1ae6ef2128edf207d6e6
+        measurements: d65dcfaec76a8d2e4fb708973b60c1e43e8ba58571e2aa9844c96cad13bcf8da
+      rebuilt_input_sha256:
+        candidates: 788acaeb4f2dcdf6d2122c399698e003ceb6b6602e6f1ae6ef2128edf207d6e6
+        measurements: cec07a5b8f8d59079d8c29d137a5782da224168f7da9532a709488c89086df1b

@@ -1,0 +1,14 @@
+# Copy this file and fill in the actual system IDs and local checkpoint paths.
+# For already aggregated, documented per-schema medians, use protocol_medians.
+scope: paper
+system_order: []
+shared_systems: []
+measurement_rows: protocol_medians
+neural:
+  device: cuda
+  cache_dir: runs/paper_text_cache
+  checkpoints: {}
+  # graphcodebert: /path/to/graphcodebert-base
+  # codet5: /path/to/codet5p-220m
+  # llama: /path/to/Llama-2-7b-hf
+# comparator_selections: /path/to/paired_measured_comparator_selections.json

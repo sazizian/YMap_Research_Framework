@@ -1,7 +1,8 @@
 """Finite-pool recommendation from predictions, and measured-coordinate assessment.
 
 All objectives are minimized. `recommend` never receives measured test objectives.
-Selection normalization MUST be learned from training objectives. Evaluation metrics
+Selection normalization MUST be learned from training objectives. Preference regret
+uses that same normalization and the prediction-only decision. Pareto-set metrics
 use a separate fixed normalization of the entire measured test candidate pool.
 """
 from __future__ import annotations
@@ -63,6 +64,9 @@ def recommend(predictions_mean, predictions_std=None, normalization=None, weight
     Optional embeddings define latent nearest-neighbor proposals. The beam retains
     highest acquisition = -weighted(mean + lambda*std) + eta*weighted(std),
     with every term normalized using the same training objective scales.
+    Every mode also records preference_index: the lowest predicted weighted risk
+    score among the returned indices (first returned index breaks exact ties).
+    This decision is made here, before any measured test objectives are available.
     """
     if normalization is None:
         raise ValueError("Pass normalization fitted on training objectives")
@@ -137,7 +141,8 @@ def recommend(predictions_mean, predictions_std=None, normalization=None, weight
         indices = visited[pareto_mask(risk[visited])] if len(visited) else visited
     else:
         raise ValueError("mode must be 'pareto', 'preference', or 'beam'")
-    return {"indices": indices.tolist(), "visited_indices": visited.tolist(), "risk_objectives": risk.tolist(), "preference_scores": scalar.tolist(), "weights": w.tolist(), "risk_lambda": float(risk_lambda), "exploration_eta": float(exploration_eta), "acquisition_scores": acquisition.tolist(), "neighborhood": "provided_embeddings" if embeddings is not None else "normalized_predicted_objectives", "mode": mode, "trace": trace, "provenance": "final_stage_finite_candidate_pool; all candidates already generated, encoded and predicted; no measured test objectives used for selection"}
+    preference_index = int(indices[np.argmin(scalar[indices])]) if len(indices) else None
+    return {"indices": indices.tolist(), "preference_index": preference_index, "visited_indices": visited.tolist(), "risk_objectives": risk.tolist(), "preference_scores": scalar.tolist(), "weights": w.tolist(), "risk_lambda": float(risk_lambda), "exploration_eta": float(exploration_eta), "acquisition_scores": acquisition.tolist(), "neighborhood": "provided_embeddings" if embeddings is not None else "normalized_predicted_objectives", "mode": mode, "trace": trace, "provenance": "final_stage_finite_candidate_pool; all candidates already generated, encoded and predicted; no measured test objectives used for selection"}
 
 
 def _union_area_2d(points: np.ndarray, reference: np.ndarray) -> float:
@@ -170,13 +175,20 @@ def hypervolume_3d(front, reference=(1.1, 1.1, 1.1)) -> float:
     return float(volume)
 
 
-def recommendation_metrics(true_objectives, selected_indices, weights=None, reference_point=(1.1, 1.1, 1.1)) -> dict[str, Any]:
+def recommendation_metrics(true_objectives, selected_indices, weights=None, reference_point=(1.1, 1.1, 1.1), *, preference_index=None, selection_normalization=None) -> dict[str, Any]:
     """Assess selected IDs at measured coordinates; test labels are metric-only.
 
     GD = mean Euclidean distance from measured recommended points to true front.
     IGD+ = mean_r min_a ||max(a-r,0)|| over true-front points r.
     Precision/recall compare IDs (duplicates with different IDs remain distinct).
-    Normalization uses the whole measured candidate pool, fixed for every method.
+    Pareto metrics use the whole measured candidate pool, fixed for every method.
+    preference_regret evaluates the supplied prediction-only preference_index with
+    the same weights and selection_normalization used by recommend(). It is null
+    unless an explicit decision is supplied; labels never pick a member of a set.
+    Risk-adjusted selection is assessed at realized mean-objective utility, so a
+    positive regret can reflect deliberate risk aversion as well as model error.
+    oracle_set_regret preserves the former best-measured-member set diagnostic,
+    using measured-pool normalization. It is not prediction-based decision regret.
     """
     truth = _matrix(true_objectives)
     if not len(truth):
@@ -187,6 +199,12 @@ def recommendation_metrics(true_objectives, selected_indices, weights=None, refe
     selected = raw_selected.astype(int)
     if selected.ndim != 1 or len(np.unique(selected)) != len(selected) or np.any(selected < 0) or np.any(selected >= len(truth)):
         raise ValueError("Selected indices must be unique valid candidate positions")
+    if preference_index is not None:
+        if isinstance(preference_index, (bool, np.bool_)) or not isinstance(preference_index, (int, np.integer)) or preference_index not in selected:
+            raise ValueError("preference_index must be an integer member of selected_indices")
+        if selection_normalization is None:
+            raise ValueError("Preference regret requires the normalization used for selection")
+        preference_index = int(preference_index)
     true_mask = pareto_mask(truth)
     selected_mask = np.zeros(len(truth), dtype=bool)
     selected_mask[selected] = True
@@ -204,11 +222,18 @@ def recommendation_metrics(true_objectives, selected_indices, weights=None, refe
         raise ValueError("Invalid preference weights")
     w = w / w.max()
     w = w / w.sum()
+    regret = None
+    decision = None
+    if preference_index is not None:
+        preference_points, _ = normalize_predictions(truth, None, selection_normalization)
+        measured_scores = preference_points @ w
+        regret = float(measured_scores[preference_index] - measured_scores.min())
+        decision = {"index": preference_index, "weights": w.tolist(), "normalization": {"minimum": np.asarray(selection_normalization["minimum"], dtype=float).tolist(), "scale": np.asarray(selection_normalization["scale"], dtype=float).tolist(), "source": selection_normalization.get("source", "supplied_selection_normalization")}}
     if len(selected):
         distances = np.linalg.norm(selected_points[:, None, :] - reference_front[None, :, :], axis=2)
         gd = float(distances.min(axis=1).mean())
         igd_plus = float(np.linalg.norm(np.maximum(selected_points[None, :, :] - reference_front[:, None, :], 0), axis=2).min(axis=1).mean())
-        regret = float((selected_points @ w).min() - (normalized @ w).min())
+        oracle_set_regret = float((selected_points @ w).min() - (normalized @ w).min())
     else:
-        gd = igd_plus = regret = None
-    return {"precision": precision, "recall": recall, "f1": f1, "gd": gd, "igd_plus": igd_plus, "hypervolume": hypervolume_3d(selected_points, reference_point), "true_hypervolume": hypervolume_3d(reference_front, reference_point), "preference_regret": regret, "true_pareto_count": int(true_mask.sum()), "selected_count": int(len(selected)), "pool_size": len(truth), "metric_normalization": {"minimum": minimum.tolist(), "scale": np.where(span > 0, span, 1.0).tolist(), "source": "full_measured_test_pool_for_metrics_only"}, "hypervolume_reference": list(reference_point)}
+        gd = igd_plus = oracle_set_regret = None
+    return {"precision": precision, "recall": recall, "f1": f1, "gd": gd, "igd_plus": igd_plus, "hypervolume": hypervolume_3d(selected_points, reference_point), "true_hypervolume": hypervolume_3d(reference_front, reference_point), "preference_regret": regret, "preference_decision": decision, "oracle_set_regret": oracle_set_regret, "true_pareto_count": int(true_mask.sum()), "selected_count": int(len(selected)), "pool_size": len(truth), "metric_normalization": {"minimum": minimum.tolist(), "scale": np.where(span > 0, span, 1.0).tolist(), "source": "full_measured_test_pool_for_metrics_only"}, "hypervolume_reference": list(reference_point)}

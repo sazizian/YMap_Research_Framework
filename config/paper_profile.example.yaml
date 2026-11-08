@@ -1,0 +1,20 @@
+# Copy this file and replace the placeholders with your actual protocol inputs.
+# The checked-in template cannot create databases or reset host caches as-is.
+mode: reference
+variant: reference
+confirm_disposable_server: false
+confirm_dedicated_host: false
+dsn_env: YMAP_POSTGRES_DSN
+seed: null
+warmup_inserts: null
+cache_reset_command: null
+environment_notes: null
+population_by_system: {}
+workload_by_system: {}
+# SystemName:
+#   insert_classes: [ConcreteClass]
+#   T1: {class: ConcreteClass}
+#   T2: {class: ConcreteClass}
+#   T3: {association: FirstAssociation}
+#   T4: {associations: [FirstAssociation, SecondAssociation]}
+#   T5: {association: FirstAssociation, attribute: NumericTargetAttribute, operation: sum}
