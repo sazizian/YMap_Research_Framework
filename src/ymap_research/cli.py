@@ -101,9 +101,14 @@ def run_demo(out_dir):
 
 def main(argv=None):
     arguments = list(sys.argv[1:] if argv is None else argv)
+    if arguments[:1] == ["paper"]:
+        from .paper_cli import main as paper_main
+
+        return paper_main(arguments[1:])
     parser = argparse.ArgumentParser(prog="ymap", description="Y-Map research framework.")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("doctor", help="Report dependencies without printing credentials")
+    sub.add_parser("paper", help="Run the manuscript-method workflow")
     gen = sub.add_parser("generate", help="Generate candidates; does not measure or certify application semantics")
     gen.add_argument("--models", required=True)
     gen.add_argument("--out", required=True)
