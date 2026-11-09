@@ -1,0 +1,11 @@
+# The released 728-design measured study, evaluated with the five-view predictor.
+# This does not use the original manuscript cohort or its comparator results.
+scope: native-five-view
+system_order: [banking, blog_platform, crm, customer_order, ecommerce, erp_system, healthcare, hospital_information_system, library, travel_booking, university]
+neural:
+  device: cuda
+  cache_dir: runs/paper_text_cache
+  checkpoints:
+    graphcodebert: /path/to/graphcodebert-base
+    codet5: /path/to/codet5p-220m
+    llama: /path/to/Llama-2-7b-hf

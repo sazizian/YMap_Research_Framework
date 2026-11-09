@@ -6,6 +6,10 @@ software smoke run, and reproduction of the published numbers are distinct
 claims. This repository does not contain the full original 12,500-design
 profiling run, its original object fixtures, or the original model weights.
 
+This page documents the packaged `ymap paper` commands. For the separate
+`ymap_paper_main.py` runner, including its GPTQ INT4 path, see the
+[repository quickstart](../README.md#train-and-evaluate-the-five-view-predictor).
+
 ## Start from the released data
 
 From the repository root, install the framework and verify each scenario:
@@ -38,6 +42,49 @@ loading Torch. To check the manuscript evaluator on the 728-schema release, use
 exercises system-held-out folds, measured Pareto metrics and preference regret
 without training the five-view model. The archived candidate catalog does not supply the complete
 canonical object mappings required by the manuscript's graph and 12 descriptors.
+
+To exercise actual neural training on a CPU with PyTorch installed:
+
+```sh
+ymap paper evaluate --dataset native --config config/paper_prediction_smoke.yaml --out runs/prediction_cpu_smoke
+```
+
+This trains the graph and symbolic branches with five seeds per fold on three
+small systems (20 measured candidates). It uses the verified physical tables of
+the already-measured schemas without changing their keys, nullability, or SQL.
+Read `oof_predictions.csv` for predictions and spread in the measured objective
+units and `summary.json` for the run scope. No solver, fresh database
+measurements, or pretrained text models are involved in this smoke run.
+
+## Run the five-view predictor on the measured 728 designs
+
+The native study can exercise all five model views separately from the
+manuscript reference experiment. Prepare and verify its inputs on any machine:
+
+```sh
+ymap paper prepare-native --out runs/native_prediction_inputs
+```
+
+The export attaches the typed graph, twelve descriptors, and a canonical-order
+text view of the existing constraints to each of the 728 measured IDs. The
+original executable SQL and measurements stay unchanged. The export is for
+prediction input; it does not constitute a PostgreSQL or Alloy rerun.
+
+On a CUDA machine with the three local checkpoints and the neural extras
+installed, copy [the native five-view config](../config/native_five_view.example.yaml)
+and fill in the checkpoint paths:
+
+```sh
+ymap paper evaluate --dataset native --config path/to/native_five_view.yaml --out runs/native_five_view_evaluation
+ymap paper fit --dataset native --config path/to/native_five_view.yaml --validation-system banking --out runs/native_five_view_ensemble
+```
+
+Evaluation uses 11 cyclic held-out systems and the manuscript's three
+repetitions of five seeds. Fit uses one held-out validation system to produce a
+deployable five-member ensemble; `paper predict` can then score prepared inputs.
+These are native-study results. They use the October 2026 measurement protocol
+and the implemented Llama FP4 loading path; they do not establish agreement
+with the manuscript's historical INT4 run or comparator cohort.
 
 ## Run a documented manuscript-protocol study
 
@@ -99,6 +146,25 @@ The diagnostics consume documented measurements and out-of-fold predictions;
 they do not run the original external systems.
 
 ## Fit once and recommend on a new model
+
+If the candidate schemas have already been produced by Alloy or another
+enumerator, you can score them directly after `paper fit`:
+
+```sh
+ymap paper predict --candidates path/to/prepared_candidates.jsonl --model-dir runs/paper_ensemble --out runs/existing_predictions
+```
+
+The candidate file must contain the original schema and system identifiers,
+canonical `paper_ddl`, `paper_graph` with the five typed relations, and the
+twelve `paper_features` when those views are used by the fitted model. Preserve
+the mappings from the exact physical schemas. Raw SQL alone does not establish
+the inheritance edges or mean join pressure required by the manuscript.
+`predictions.csv` contains the individual members, ensemble means, sample
+standard deviations, and validation-calibrated spreads in the original target
+units. `prediction_manifest.json` records the inputs and model. The command
+does not enumerate, measure, train, or estimate calibration from the scoring
+candidates. If you set `--batch-size`, use an embedding cache to avoid repeated
+checkpoint loads.
 
 ```sh
 ymap paper fit --manifest path/to/dataset.yaml --config path/to/study.yaml \

@@ -1,24 +1,32 @@
 # Evidence and execution status
 
-This file separates what the repository contains, what has been executed, and what it does not establish.
+This file separates released measurements, software checks, and manuscript-reported results. The 728-design native study and the 12,500-file SQL inventory serve different purposes.
+
+## Released material
 
 | Material | Meaning |
-|---|---|
-| `Dataset/YMap/Object_Models/` | 11 JSON object models used by the current implementation |
-| `Dataset/YMap/Generated/`, `Dataset/YMap/All_SQL_Solutions/` | 728 candidate schemas produced by the `python` generator backend, with their SQL files |
-| `results/YMap/evaluation_review_20261023_113149_551.zip` | Raw PostgreSQL measurements for the 728 candidates (5 repetitions each), environment and workload records |
-| `results/YMap/evaluation_20261023_105939_243/` | Leave-one-system-out evaluation of structural baselines and a 5-member ensemble on those measurements |
-| `results/YMap/graph_symbolic_cpu_ff2ed12dbc97/` | The same evaluation with the graph + symbolic neural model added (CPU) |
-| `YMap_Run_Audit_20261023/` | Read-only consistency audit of the evaluation (no changes to inputs or labels) |
-| `results/YMap/paper_reported_values.csv` | Numbers transcribed from a manuscript draft;
-| `validation/` | Recorded software checks for releases 0.3 and 0.4 |
+| --- | --- |
+| `Dataset/YMap/Object_Models/` | 11 JSON object models for the native study. |
+| `Dataset/YMap/Generated/candidates.jsonl` and the native subset of `Dataset/YMap/All_SQL_Solutions/` | 728 native candidate schemas produced by the Python backend, with their SQL. The full SQL catalog also contains archive files. |
+| `Dataset/YMap/Measurements/ymap_postgresql_measurements.csv` | 728 native measurement rows: one median per design. PostgreSQL 14.24, 100 rows per class, five repetitions per design. |
+| `results/YMap/evaluation_review_20261023_113149_551.zip` | Raw native measurements, workload, and environment records. |
+| `results/YMap/evaluation_20261023_105939_243/` | Native leave-one-system-out evaluation of structural baselines and a five-member ensemble. |
+| `results/YMap/graph_symbolic_cpu_ff2ed12dbc97/` | Native evaluation that adds the graph and structural-descriptor neural model on CPU. |
+| `YMap_Run_Audit_20261023/` | Read-only consistency audit of the native evaluation. |
+| `results/YMap/paper_reported_values.csv` | Values transcribed from the manuscript; see the [values register](docs/PAPER_REPORTED_VALUES.md) for scope and caveats. |
+| `validation/` | Recorded software and DDL checks. |
 
-## Not established by this repository
+The separate archive catalog contains 27,488 distinct measured design records in 15 systems, with 31,393 measurement rows. The protocol and measurement units are unconfirmed. See [data and provenance](docs/DATA_AND_PROVENANCE.md).
 
-- The numerical results of earlier manuscript drafts, including the 12,500-candidate corpus.
-- Results of the full three-text-encoder neural model (GraphCodeBERT, CodeT5+, LLaMA); checkpoints are not included.
-- Alloy-solver synthesis of the full candidate space; the included candidates come from the `python` backend.
-- Performance at larger data scales, on other database systems, or through an ORM framework at application level.
-- An unconditional semantic-preservation guarantee; the structural checks are bounded.
+## Checks completed for the v0.5 workflow
 
-New experimental claims must be linked to their own run folder, configuration, environment and measurements.
+| Check | Observed result |
+| --- | --- |
+| Native model input validation (`check-data`) | The runner verified Stage B inputs and their alignment with 728 measured designs in 11 systems. This check does not train the neural model. |
+| Graph and descriptor CPU smoke run | Five seeds, 20 native designs, three systems. No text encoders were used. |
+| Local PostgreSQL inventory (`check-cohort`) | 12,500 SQL files matched the recorded hashes: 728 unchanged native files and 11,772 converted archive files across 26 catalog system IDs. |
+| Converted DDL execution | All 11,772 converted files executed in isolated transactions on PostgreSQL 18.6 via PGlite 0.5.15. See the [DDL validation report](validation/ymap-v0.5-postgresql-ddl.json). No workload was run and no latency or storage labels were produced. |
+
+The [five-view runner](src/ymap_research/ymap_paper_main.py) provides input and checkpoint checks, single-fold fitting, prediction, and full cyclic evaluation. The [README](README.md) lists the commands and runtime requirements.
+
+

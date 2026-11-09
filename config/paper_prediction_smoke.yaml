@@ -1,0 +1,13 @@
+# Three small, separately measured systems; 20 candidates in total.
+# This trains the real graph and descriptor branches on CPU with five seeds.
+# It is a short software check, not a five-view or reference-protocol run.
+scope: smoke
+views: [graph, symbolic]
+system_order: [banking, blog_platform, customer_order]
+repetition_seeds: [[0, 1, 2, 3, 4]]
+prediction_baselines: []
+neural:
+  device: cpu
+  epochs: 2
+  batch_size: 8
+  patience: 1
