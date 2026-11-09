@@ -113,7 +113,7 @@ def check_cohort(root):
     if missing_mapping:
         blockers.append(f"{missing_mapping:,} candidates lack a recorded mapping for the five views.")
     if unverified_protocol or manifest.get("common_protocol_verified") is not True:
-        blockers.append("Common-protocol PostgreSQL performance measurements are not verified.")
+        blockers.append("This SQL inventory lacks verified common-protocol PostgreSQL performance measurements.")
     if system_count != 11:
         blockers.append(f"The inventory has {system_count} catalog systems; the paper uses 11 defined system folds.")
     blockers.append("This CSV lists SQL; fit/evaluate need measured Stage B JSONL and an aligned measurements CSV.")

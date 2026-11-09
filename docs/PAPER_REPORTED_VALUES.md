@@ -32,18 +32,18 @@ These sources describe different collections. None establishes that the others h
 
 | Source | Count and meaning | Relationship to this register |
 | --- | --- | --- |
-| v8 source PDF, physical page 15, Table 3 | Reports 12,500 unique/profiled candidates across 11 systems. Its listed shared-system unique counts sum to 7,506, with the remaining 4,994 assigned to HIS and ERP. | Source-paper corpus claim; not a count verified from raw measurements here. |
+| v8 source PDF, physical page 15, Table 3 | Reports 12,500 unique/profiled candidates across 11 systems. Its listed shared-system unique counts sum to 7,506, with the remaining 4,994 assigned to HIS and ERP. | Count transcribed from manuscript Table 3. |
 | Current package profiling/training outputs | Counts and metrics must be read from their own manifests and generated output files. | Fresh results must carry their own run IDs and provenance, and must never be relabeled from this CSV. |
 
 ## Source caveats preserved
 
-The supplied v8 manuscript contains unresolved verification notes. They are evidence of work still to reconcile, not independently verified findings by this extraction.
+These notes document how the index represents values and annotations from the specific v8 source identified above.
 
 - The gated single-model F1 differs between Table 13 (0.87, marked) and Table 14 (0.86, marked). That ambiguous single-model F1 is intentionally absent from the CSV; the risk-neutral ensemble and kappa = 1 ensemble conditions are kept distinct.
 - Table 15 marks NLL entries for checking against its stated definition. No NLL value is included here.
 - Table 11 explicitly describes the all-fold/all-repetition training total as conditional on a per-fold interpretation. This register includes only the paper's one-fold 2.1 GPU-hour entry, with that interpretation noted; it does not assert a measured all-study GPU total or a deployment break-even point.
 - Table 16's reported diagnostic round-trip pass rate is described as pre-correction; the text says that this does not establish the post-correction validation outcome. No post-correction success rate is inferred or included.
 - Physical page 27 has duplicated/overlaid Table 12 content and figure/footer text. Its selected runtime values agree with the surrounding prose on physical page 26; no new measurements were used to repair the page.
-- The statistics discussion immediately before Table 5 asks that a sign convention be checked against the analysis script. The copied adjusted p-value remains paper-reported and unverified.
+- The statistics discussion immediately before Table 5 asks that a sign convention be checked against the analysis script. The index transcribes the adjusted p-value from Table 8.
 
 

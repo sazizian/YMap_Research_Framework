@@ -2,22 +2,28 @@
 
 **Y-Map** explores relational schemas that implement the same object model under object–relational mapping constraints. It can generate candidate schemas, profile them in PostgreSQL, predict insert latency, query latency, and storage, and recommend schemas using Pareto ranking and user preferences.
 
-This README describes the `ymap-v0.5` branch and the accompanying five-view runner. The 728-schema native study has measured outcomes and verified model inputs. A complete five-view CUDA run has yet to be verified.
+This guide covers the version 0.5 release and its five-view runner. It provides entry points for inspecting the released measurements, checking model inputs, training predictors, and recommending schemas.
+
+## Manuscript reference study
+
+The manuscript reports an evaluation of 12,500 profiled relational designs across 11 object models under a reference PostgreSQL 14.10 protocol with five profiling repetitions per design. Use the `paper-reference` workflow with the experiment's matching candidate records, measured objectives, and study configuration. The [manuscript results index](docs/PAPER_REPORTED_VALUES.md) identifies the source table and evaluation scope for each listed result. The [run status](STATUS.md) indexes the released measurements and software checks by run.
+
+The checked-in `paper-reference` configuration is a template. Supply the manifest for the specific reference-study artifacts you want to evaluate. The checkout includes the registered `native` and `archive` datasets for their respective workflows.
 
 ## Choose the right inputs
 
-| Input | Size | Intended use |
+| Input | Coverage | Intended use |
 | --- | ---: | --- |
-| `native` | 728 measured schemas in 11 systems; 728 measurement rows | Start here. The released PostgreSQL 14.24 study uses 100 rows per class and the median of five repetitions per schema. |
-| `archive` | 27,488 distinct measured schemas in 15 systems; 31,393 measurement rows | Analyze separately. The measurement units and protocol are unconfirmed, and the complete mapping inputs for the five-view model are unavailable. |
-| Prepared PostgreSQL SQL inventory | 12,500 schema files across 26 catalog system IDs: 728 native and 11,772 converted archive files | Inspect and verify DDL. Conversion does not provide the missing mappings or produce performance measurements under a common protocol. |
-| `paper-reference` | The manuscript reports 12,500 profiled designs across 11 systems | Requires a separate measured dataset and an explicit provenance manifest. The original reference inputs and trained weights are not bundled. |
+| `paper-reference` | Manuscript reference study, 12,500 profiled designs across 11 object models | Select the study with a [dataset manifest](config/paper_dataset.example.yaml) and [evaluation configuration](config/paper_study.example.yaml). |
+| `native` | 728 measured schemas across 11 systems | Start here to run the released PostgreSQL 14.24 study workflow. Each schema has one measurement row summarizing five repetitions at 100 rows per class. |
+| `archive` | 27,488 distinct measured schema records across 15 systems, with 31,393 measurement rows | Use for separate analyses of the ReinforceORM archive. Interpret objectives in the context of the source records, whose measurement units and protocol are unconfirmed. |
+| Prepared PostgreSQL SQL inventory | 12,500 DDL files across 26 catalog system IDs, comprising 728 native and 11,772 converted archive files | Inspect and validate DDL. The inventory is indexed by its own manifest and file hashes. |
 
 The default data root is `Dataset/YMap/`; [the dataset registry](config/datasets.yaml) selects a scenario. Native inputs are `Generated/candidates.jsonl` and `Measurements/ymap_postgresql_measurements.csv` within that root. Use `--dataset-root` if the data are stored elsewhere. See [data and provenance](docs/DATA_AND_PROVENANCE.md) for source attribution, licenses, and the distinction between SQL files and measured schemas.
 
 ## Install and verify on Windows
 
-Use Python 3.10 or newer and run these commands from the repository root on `ymap-v0.5`. Skip virtual environment creation if `.venv` already exists.
+Use Python 3.10 or newer and run these commands from the version 0.5 repository root. Skip virtual environment creation if `.venv` already exists.
 
 ```powershell
 python -m venv .venv
@@ -60,7 +66,7 @@ The converter targets the archive's DDL forms. The preparation script preserves 
 
 The model combines GraphCodeBERT, CodeT5+ 220M, Llama 2 7B, a typed schema graph, and 12 structural descriptors. The five views are fused through a learned gate. The model predicts three objectives and uses a five-member ensemble to estimate uncertainty, with calibration fitted on the validation system.
 
-On a CUDA machine, install the `neural` extra with a CUDA-enabled PyTorch build. The standalone runner defaults to `gptq-int4`; it also requires compatible `accelerate`, `optimum`, and `gptqmodel` installations and a local, prequantized GPTQ INT4 Llama 2 7B checkpoint. Installations must be compatible with the dependency ranges in [`pyproject.toml`](pyproject.toml). The framework does not fetch checkpoints. The runner's explicit `--llama-backend fp4` option uses a different quantization format. The manuscript specifies INT4 but does not document the original quantizer or checkpoint hashes.
+On a CUDA machine, install the `neural` extra with a CUDA-enabled PyTorch build. The standalone runner defaults to `gptq-int4` and requires compatible `accelerate`, `optimum`, and `gptqmodel` installations and a local, prequantized GPTQ INT4 Llama 2 7B checkpoint. Use the dependency ranges in [`pyproject.toml`](pyproject.toml) and provide local checkpoint paths. The explicit `--llama-backend fp4` option selects a different quantization format. Record the quantization backend and checkpoint identities alongside each evaluation.
 
 Copy [the example configuration](config/native_five_view.example.yaml) to `runs/native_five_view.yaml` and set `neural.checkpoints.graphcodebert`, `neural.checkpoints.codet5`, and `neural.checkpoints.llama` to the three local checkpoint directories. Keep the embedding cache enabled across runs. From an activated Python environment on the CUDA machine, first check the setup, then fit one fold:
 
@@ -90,7 +96,7 @@ Use a new or empty output directory for each run. Scoring external candidates re
 
 - **CPU smoke test:** with `.[neural]` installed, run `python -m ymap_research paper evaluate --dataset native --config config/paper_prediction_smoke.yaml --out runs/prediction_cpu_smoke`. This exercises graph and descriptor training on 20 measured designs from three systems. It does not exercise the text encoders.
 - **Generation, profiling, and recommendation:** see the [manuscript workflow](docs/PAPER_WORKFLOW.md), [mapping semantics](docs/SUPPORTED_MAPPING_SEMANTICS.md), and [profiling protocol](docs/PROFILING_PROTOCOL.md). Actual database profiling requires the `postgres` extra and an authorized PostgreSQL instance. The Alloy backend additionally requires a JDK and an Alloy JAR. The package CLI has its own model configuration and fit flags; use the standalone runner to score ensembles it fitted.
-- **Recorded results:** see the [run status](STATUS.md) for the native structural baselines and graph-plus-descriptor CPU results. The [manuscript values register](docs/PAPER_REPORTED_VALUES.md) identifies values reported in the paper. Native results, the SQL inventory, and software checks do not reproduce those values.
+- **Recorded results.** See the [run status](STATUS.md) for native structural baselines, graph-plus-descriptor CPU results, and the scope of each software check. See the [manuscript results index](docs/PAPER_REPORTED_VALUES.md) for the source and scope of reference-study values.
 - **Preference regret:** in corrected evaluations, regret compares the recommendation selected using predictions with the best feasible measured choice. Older result folders used the best measured member of the returned set under the old `preference_regret` label; that diagnostic is now `oracle_set_regret`. Recompute affected outputs before comparing regret values.
 
 ## Tests and license

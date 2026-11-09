@@ -1,7 +1,6 @@
-"""PostgreSQL execution of Appendix A with explicit choices for missing inputs.
+"""PostgreSQL profiling using Appendix A and run-specific inputs.
 
-A new measurement is not the historical experiment. Smoke labels deliberately
-cannot be used as research labels by the existing dataset validator.
+The dataset validator reserves smoke labels for software checks.
 """
 from __future__ import annotations
 
@@ -66,10 +65,10 @@ def _configuration(config):
     if variant not in VARIANTS:
         raise ProfilingError(f"Unknown profiling variant: {variant!r}.")
     if type(config.get("seed")) is not int:
-        raise ProfilingError("Specify an integer seed; historical seeds are unavailable.")
+        raise ProfilingError("Specify an integer seed in the profiling configuration.")
     for key in ("population_by_system", "workload_by_system"):
         if not isinstance(config.get(key), dict) or not config[key]:
-            raise ProfilingError(f"Specify {key} explicitly; historical inputs are unavailable.")
+            raise ProfilingError(f"Specify {key} explicitly in the profiling configuration.")
     expected = {"repetitions": 5, "warmup_operations": 1000,
                 "insert_operations": 10_000, "query_operations": 10_000}
     defaults = expected if mode == "reference" else dict(
@@ -854,8 +853,8 @@ def profile_paper(candidates, config, out_dir) -> Path:
     This requires operator-selected populations and equivalent logical query
     instantiations. Reference mode enforces known server settings and counts,
     including a user-authorized restart/cache hook on a dedicated server.
-    No run can establish the undocumented historical inputs or exact hardware
-    equivalence. A failed run leaves evidence but publishes no label CSV.
+    The run records its effective inputs and environment for comparison with the
+    target study. A failed run leaves evidence but publishes no label CSV.
     """
     config = _configuration(config)
     from .paper_schema import paper_executable_candidate

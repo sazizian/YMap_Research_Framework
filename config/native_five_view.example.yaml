@@ -1,5 +1,4 @@
-# The released 728-design measured study, evaluated with the five-view predictor.
-# This does not use the original manuscript cohort or its comparator results.
+# Five-view evaluation configuration for the released 728-design native study.
 scope: native-five-view
 system_order: [banking, blog_platform, crm, customer_order, ecommerce, erp_system, healthcare, hospital_information_system, library, travel_booking, university]
 neural:

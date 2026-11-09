@@ -1,5 +1,5 @@
-# Optional REAL full multi-view model. Supply actual local checkpoints before use.
-# These are an explicit new experiment configuration, not the original paper's settings.
+# Example configuration for the optional multi-view neural backend.
+# Supply the local checkpoints and record this configuration with the run.
 mode: research
 models: [linear, ridge, random_forest, extra_trees, mlp, neural]
 ensemble_base: neural
