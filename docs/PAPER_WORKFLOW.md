@@ -52,6 +52,36 @@ Read `oof_predictions.csv` for predictions and spread in the measured objective
 units and `summary.json` for the run scope. No solver, fresh database
 measurements, or pretrained text models are involved in this smoke run.
 
+## Run the five-view predictor on the measured 728 designs
+
+The native study can exercise all five model views separately from the
+manuscript reference experiment. Prepare and verify its inputs on any machine:
+
+```sh
+ymap paper prepare-native --out runs/native_prediction_inputs
+```
+
+The export attaches the typed graph, twelve descriptors, and a canonical-order
+text view of the existing constraints to each of the 728 measured IDs. The
+original executable SQL and measurements stay unchanged. The export is for
+prediction input; it does not constitute a PostgreSQL or Alloy rerun.
+
+On a CUDA machine with the three local checkpoints and the neural extras
+installed, copy [the native five-view config](../config/native_five_view.example.yaml)
+and fill in the checkpoint paths:
+
+```sh
+ymap paper evaluate --dataset native --config path/to/native_five_view.yaml --out runs/native_five_view_evaluation
+ymap paper fit --dataset native --config path/to/native_five_view.yaml --validation-system banking --out runs/native_five_view_ensemble
+```
+
+Evaluation uses 11 cyclic held-out systems and the manuscript's three
+repetitions of five seeds. Fit uses one held-out validation system to produce a
+deployable five-member ensemble; `paper predict` can then score prepared inputs.
+These are native-study results. They use the October 2026 measurement protocol
+and the implemented Llama FP4 loading path; they do not establish agreement
+with the manuscript's historical INT4 run or comparator cohort.
+
 ## Run a documented manuscript-protocol study
 
 1. Install the runtime extras: `python -m pip install -e ".[postgres,neural,paper-int4]"`.

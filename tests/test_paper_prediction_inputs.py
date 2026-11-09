@@ -1,4 +1,5 @@
 from copy import deepcopy
+from hashlib import sha256
 from unittest import TestCase
 
 from ymap_research.paper_prediction_inputs import native_prediction_records
@@ -52,6 +53,26 @@ class PaperPredictionInputsTests(TestCase):
         features = adapted["paper_features"]
         self.assertEqual(features["pk_column_count"], record["features"]["pk_column_count"])
         self.assertEqual(features["nullable_fraction"], record["features"]["nullable_column_count"] / len(columns))
+
+    def test_text_canonicalizes_without_changing_the_measured_constraints(self):
+        record = _native_candidate()
+        snapshot = deepcopy(record)
+        adapted, = native_prediction_records([record], include_text=True)
+        text = adapted["paper_ddl"]
+
+        self.assertEqual(record, snapshot)
+        self.assertEqual({key: adapted[key] for key in snapshot}, snapshot)
+        self.assertEqual(adapted["paper_ddl_sha256"], sha256(text.encode("utf-8")).hexdigest())
+        self.assertEqual(adapted["paper_ddl_source"], "native_measured_constraints_canonical_order_v1")
+        self.assertIn('PRIMARY KEY ("r_account_source_id", "r_account_target_id")', text)
+        self.assertIn('"a_Account_number" TEXT,', text)
+        self.assertNotIn('"a_Account_number" TEXT NOT NULL', text)
+        for line in record["ddl"].splitlines():
+            if line.startswith("ALTER TABLE "):
+                self.assertIn(line.split(" ADD ", 1)[1].rstrip(";"), text)
+            elif line.startswith(("CREATE FUNCTION ", "CREATE CONSTRAINT TRIGGER ")):
+                self.assertIn(line, text.splitlines())
+        self.assertNotIn("ALTER TABLE ", text)  # The fixture's FKs can be inline.
 
     def test_rejects_tampered_ddl_before_deriving_prediction_views(self):
         record = _native_candidate()

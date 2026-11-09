@@ -100,6 +100,26 @@ def _check(args):
             "units_confirmed": dataset.units_confirmed, "manifest": str(dataset.manifest_path)}
 
 
+def _prepare_native(args):
+    from .paper_evaluation import _validate_canonical_pool
+    from .paper_prediction_inputs import native_prediction_records
+
+    dataset, records, _, counts = _dataset(args)
+    prepared = native_prediction_records(records, include_text=True)
+    _validate_canonical_pool(prepared)
+    out = _new_output(args.out)
+    path = out / "candidates.jsonl"
+    keys = ("schema_id", "object_model", "paper_ddl", "paper_ddl_sha256", "paper_ddl_source",
+            "paper_graph", "paper_features")
+    write_jsonl(path, ({key: record[key] for key in keys} for record in prepared))
+    result = {"status": "prepared", "scope": "native-five-view", "candidate_count": len(prepared),
+              "candidates": str(path), "candidates_sha256": sha256_file(path),
+              "text_input_source": prepared[0]["paper_ddl_source"],
+              "dataset": _dataset_metadata(dataset, counts)}
+    write_json(out / "preparation_manifest.json", result)
+    return result
+
+
 def _evaluate(args):
     dataset, _, _, counts = _dataset(args)
     config = _dataset_config(args, dataset)
@@ -112,7 +132,7 @@ def _evaluate(args):
         out = _new_output(args.out)
         report = evaluate(dataset.candidates_path, dataset.measurements_path, out, config)
     else:
-        from .paper_evaluation import evaluate_paper
+        from .paper_evaluation import NATIVE_FIVE_VIEW, evaluate_paper
 
         native_views = config.get("views")
         native_smoke = (
@@ -120,13 +140,14 @@ def _evaluate(args):
             and isinstance(native_views, (list, tuple))
             and all(view in ("graph", "symbolic") for view in native_views)
         )
-        if dataset.name != "paper-reference" and not native_smoke:
+        native_five = dataset.name == "native" and scope == NATIVE_FIVE_VIEW
+        if dataset.name != "paper-reference" and not (native_smoke or native_five):
             raise ValueError(
                 "Full manuscript evaluation requires a verified paper-reference dataset. "
-                "Native data supports scope: smoke with explicit graph/symbolic views or views: []; "
+                "Native data supports native-five-view, or scope: smoke with explicit graph/symbolic views or views: []; "
                 "use archive-check for released structural evaluations."
             )
-        if native_smoke:
+        if native_smoke or native_five:
             config["measurement_rows"] = "protocol_medians"
         config["scope"] = scope
         out = _new_output(args.out)
@@ -136,16 +157,28 @@ def _evaluate(args):
 
 
 def _fit(args):
-    from .paper_evaluation import _load_paper_data, _row_requirements, _validate_canonical_pool, gaussian_multiplier
+    from .paper_evaluation import (
+        NATIVE_FIVE_VIEW, _load_paper_data, _row_requirements, _validate_canonical_pool, gaussian_multiplier,
+    )
     from .paper_model import fit_paper_ensemble
 
-    if args.dataset != "paper-reference":
-        raise ValueError("The manuscript model requires a verified paper-reference dataset")
     dataset = resolve_dataset(args.project_root, args.dataset, dataset_root=args.dataset_root, manifest_path=args.manifest)
     config = _dataset_config(args, dataset)
+    native_five = dataset.name == "native" and config.get("scope") == NATIVE_FIVE_VIEW
+    if not native_five and (dataset.name != "paper-reference" or config.get("scope", "paper") != "paper"):
+        raise ValueError("Fit requires a paper-reference dataset or native with scope: native-five-view")
+    if config.get("views") is not None:
+        raise ValueError("paper fit uses all five views; omit the views setting")
+    if native_five:
+        config["measurement_rows"] = "protocol_medians"
     records, data, _ = _load_paper_data(dataset.candidates_path, dataset.measurements_path, config)
     counts = dataset.check_alignment(data)
-    _row_requirements(data, config, "paper")
+    scope = NATIVE_FIVE_VIEW if native_five else "paper"
+    _row_requirements(data, config, scope)
+    if native_five:
+        from .paper_prediction_inputs import native_prediction_records
+
+        records = native_prediction_records(records, include_text=True)
     _validate_canonical_pool(records)
     systems = set(data["object_model"])
     holdout = set(args.holdout_system)
@@ -164,7 +197,8 @@ def _fit(args):
     members = ensemble.predict_members(val_records)
     factors = gaussian_multiplier(y_val, members.mean(axis=0), members.std(axis=0, ddof=1))
     ensemble.save(out / "ensemble")
-    result = {"status": "fitted", "validation_system": args.validation_system,
+    result = {"status": "fitted", "scope": scope, "validation_system": args.validation_system,
+              "text_input_source": records[0].get("paper_ddl_source") if native_five else "prepared_paper_views",
               "train_systems": sorted(set(train["object_model"])), "holdout_systems": sorted(holdout),
               "training_objective_extrema": [y_train.min(axis=0), y_train.max(axis=0)],
               "calibration_factors": factors, "dataset": _dataset_metadata(dataset, counts),
@@ -249,6 +283,12 @@ def main(argv):
     _inputs(check)
     check.add_argument("--out", help="Write the full dataset provenance and input hashes as JSON")
 
+    prepare = sub.add_parser("prepare-native", help="Export the five-view inputs for the measured native schemas")
+    prepare.set_defaults(dataset="native", manifest=None)
+    prepare.add_argument("--project-root", default=".")
+    prepare.add_argument("--dataset-root")
+    prepare.add_argument("--out", required=True)
+
     gen = sub.add_parser("generate", help="Enumerate and deduplicate canonical DDL")
     gen.add_argument("--models", required=True)
     gen.add_argument("--scopes", required=True, help="YAML system name to maximum table count")
@@ -305,7 +345,7 @@ def main(argv):
 
     args = parser.parse_args(argv)
     try:
-        handlers = {"check": _check, "generate": _generate, "evaluate": _evaluate, "fit": _fit,
+        handlers = {"check": _check, "prepare-native": _prepare_native, "generate": _generate, "evaluate": _evaluate, "fit": _fit,
                     "predict": _predict, "recommend": _recommend}
         if args.command in handlers:
             result = handlers[args.command](args)

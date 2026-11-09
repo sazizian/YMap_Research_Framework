@@ -30,6 +30,7 @@ from .statistics import holm_adjust, paired_wilcoxon
 
 
 PAPER_SEEDS = ((0, 1, 2, 3, 4), (5, 6, 7, 8, 9), (10, 11, 12, 13, 14))
+NATIVE_FIVE_VIEW = "native-five-view"
 RISK_LEVELS = (0.0, 0.5, 1.0, 2.0)
 BASELINE_GRIDS = {
     "training_mean": ({},),
@@ -268,19 +269,25 @@ def _load_paper_data(candidates_path, measurements_path, config):
 
 def _settings(config, groups):
     scope = config.get("scope", "paper")
-    if scope not in ("paper", "ablation", "smoke"):
-        raise ValueError("scope must be paper, ablation, or smoke")
+    if scope not in ("paper", "ablation", "smoke", NATIVE_FIVE_VIEW):
+        raise ValueError("scope must be paper, ablation, smoke, or native-five-view")
     full = scope == "paper"
+    native_five = scope == NATIVE_FIVE_VIEW
+    strict_predictor = full or native_five
+    if native_five and config.get("dataset") != "native":
+        raise ValueError("native-five-view requires the documented native dataset")
     default_order = None if full else sorted(groups)
     order = _ids(config.get("system_order", default_order), "system_order")
     if len(order) < 3 or set(order) - groups:
         raise ValueError("system_order must contain at least three measured system IDs")
-    if full and (len(order) != 11 or set(order) != groups):
-        raise ValueError("Paper scope requires exactly 11 measured systems in an explicit cyclic order")
+    if strict_predictor and (len(order) != 11 or set(order) != groups):
+        raise ValueError("Five-view evaluation requires all 11 measured systems in the cyclic order")
     shared = _ids(config.get("shared_systems", None if full else []), "shared_systems")
     if (full and len(shared) != 9) or set(shared) - set(order):
         raise ValueError("shared_systems must be within system_order, with exactly nine in paper scope")
-    raw_seeds = config.get("repetition_seeds", PAPER_SEEDS if full else ((0,), (5,), (10,)) if scope == "ablation" else ((0,),))
+    if native_five and (shared or config.get("comparator_selections") is not None):
+        raise ValueError("native-five-view does not use the manuscript comparator sets")
+    raw_seeds = config.get("repetition_seeds", PAPER_SEEDS if strict_predictor else ((0,), (5,), (10,)) if scope == "ablation" else ((0,),))
     if not isinstance(raw_seeds, (list, tuple)) or not raw_seeds:
         raise ValueError("repetition_seeds must contain at least one nonempty seed list")
     seeds = []
@@ -291,20 +298,20 @@ def _settings(config, groups):
     seeds = tuple(seeds)
     if len(set(map(len, seeds))) != 1 or len(set(sum(seeds, ()))) != sum(map(len, seeds)):
         raise ValueError("Repetitions require equal member counts and distinct seeds")
-    if full and seeds != PAPER_SEEDS:
-        raise ValueError("Paper scope requires three fixed five-member seed sets (0–4, 5–9, 10–14)")
+    if strict_predictor and seeds != PAPER_SEEDS:
+        raise ValueError("Five-view evaluation requires three fixed five-member seed sets (0–4, 5–9, 10–14)")
     baselines = _ids(config.get("prediction_baselines", list(BASELINE_GRIDS) if full else ["training_mean", "ridge"] if scope == "smoke" else []), "prediction_baselines")
     if set(baselines) - BASELINE_GRIDS.keys() or (full and set(baselines) != BASELINE_GRIDS.keys()):
         raise ValueError("Paper scope requires all five manuscript prediction baselines")
     views = config.get("views", ("graph", "symbolic") if scope == "smoke" else None)
-    if (full and views is not None) or (scope == "ablation" and views is None):
-        raise ValueError("Use all five views for paper scope, or specify views explicitly for ablation")
+    if (strict_predictor and views is not None) or (scope == "ablation" and views is None):
+        raise ValueError("Use all five views for full prediction, or specify views explicitly for ablation")
     if views is not None:
         views = _ids(views, "views")
         if not views and scope != "smoke":
             raise ValueError("views cannot be empty")
-    if full and config.get("neural", {}).get("fusion", "gated") != "gated":
-        raise ValueError("Paper scope requires gated fusion; use ablation for concatenation")
+    if strict_predictor and config.get("neural", {}).get("fusion", "gated") != "gated":
+        raise ValueError("Five-view evaluation requires gated fusion; use ablation for concatenation")
     return scope, order, shared, seeds, baselines, views
 
 
@@ -510,14 +517,16 @@ def _row_requirements(data, config, scope):
         raise ValueError("measurement_rows must be raw_repetitions or protocol_medians")
     if mode == "protocol_medians" and (data.measurement_seed_count != 1).any():
         raise ValueError("protocol_medians requires one precomputed median row per candidate")
-    if scope == "paper":
+    if scope in ("paper", NATIVE_FIVE_VIEW):
         if data.attrs["unmeasured_candidate_count"]:
-            raise ValueError("Paper scope requires every candidate to have a matched measurement")
+            raise ValueError("Five-view evaluation requires every candidate to have a matched measurement")
         provenance = config.get("protocol_provenance")
         if not isinstance(provenance, (str, dict)) or not provenance or (isinstance(provenance, str) and not provenance.strip()):
             raise ValueError("Paper scope requires documented reference protocol provenance")
         if mode == "raw_repetitions" and (data.measurement_seed_count != 5).any():
             raise ValueError("Paper scope requires five measured repetitions per candidate or documented protocol medians")
+        if scope == NATIVE_FIVE_VIEW and mode != "protocol_medians":
+            raise ValueError("native-five-view uses the released per-candidate protocol medians")
     return mode
 
 
@@ -564,16 +573,18 @@ def evaluate_paper(candidates_path, measurements_path, out_dir, config=None):
     if not isinstance(raw_levels, (list, tuple)) or any(type(k) not in (int, float) or not np.isfinite(k) or k < 0 for k in raw_levels):
         raise ValueError("risk_levels must contain nonnegative finite numbers")
     levels = tuple(dict.fromkeys((0.0, *raw_levels)))
-    if scope == "paper" and levels != RISK_LEVELS:
-        raise ValueError("Paper scope requires the kappa grid 0, 0.5, 1, 2")
+    if scope in ("paper", NATIVE_FIVE_VIEW) and levels != RISK_LEVELS:
+        raise ValueError("Five-view evaluation requires the kappa grid 0, 0.5, 1, 2")
     run_neural = views != ()
     native_views = config.get("dataset") == "native" and run_neural
     if native_views:
-        if scope != "smoke" or views is None or any(view not in ("graph", "symbolic") for view in views):
-            raise ValueError("Native neural evaluation supports only the graph and symbolic smoke views")
+        if scope != NATIVE_FIVE_VIEW and (scope != "smoke" or views is None or any(view not in ("graph", "symbolic") for view in views)):
+            raise ValueError("Native neural evaluation requires native-five-view or the graph and symbolic smoke views")
         from .paper_prediction_inputs import native_prediction_records
 
-        records = native_prediction_records(records)
+        records = native_prediction_records(records, include_text=scope == NATIVE_FIVE_VIEW)
+        if scope == NATIVE_FIVE_VIEW:
+            _validate_canonical_pool(records)
     if run_neural:
         from .paper_model import fit_predict_paper
     elif not baselines:
@@ -605,7 +616,8 @@ def evaluate_paper(candidates_path, measurements_path, out_dir, config=None):
     output.mkdir(parents=True, exist_ok=True)
     predictions, recommendation, uncertainty, members = [], [], [], []
     folds, fits, unavailable = [], [], []
-    model = {"paper": "ymap", "ablation": "ymap_ablation", "smoke": "ymap_smoke"}[scope]
+    model = {"paper": "ymap", "ablation": "ymap_ablation", "smoke": "ymap_smoke",
+             NATIVE_FIVE_VIEW: "ymap_native_five_view"}[scope]
     with ExitStack() as stack:
         def open_output(name):
             return stack.enter_context((output / name).open("w", encoding="utf-8", newline=""))
@@ -728,6 +740,7 @@ def evaluate_paper(candidates_path, measurements_path, out_dir, config=None):
         "system_order": order, "shared_systems": shared, "repetition_seeds": repeats, "views": views,
         "neural_model": model if run_neural else None,
         "neural_input_source": ("native_measured_physical_schema" if native_views else "prepared_paper_views") if run_neural else None,
+        "text_input_source": records[0].get("paper_ddl_source") if scope == NATIVE_FIVE_VIEW else None,
         "prediction_baselines": baselines, "structural_features": feature_names,
         "structural_feature_source": descriptor_source if baselines else None,
         "risk_levels_requested": levels, "default_kappa": 1.0,
