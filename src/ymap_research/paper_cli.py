@@ -114,9 +114,18 @@ def _evaluate(args):
     else:
         from .paper_evaluation import evaluate_paper
 
-        native_smoke = dataset.name == "native" and scope == "smoke" and config.get("views") == []
+        native_views = config.get("views")
+        native_smoke = (
+            dataset.name == "native" and scope == "smoke"
+            and isinstance(native_views, (list, tuple))
+            and all(view in ("graph", "symbolic") for view in native_views)
+        )
         if dataset.name != "paper-reference" and not native_smoke:
-            raise ValueError("Manuscript-method evaluation requires a verified paper-reference dataset. Native data supports scope: smoke with views: []; use archive-check for released structural evaluations.")
+            raise ValueError(
+                "Full manuscript evaluation requires a verified paper-reference dataset. "
+                "Native data supports scope: smoke with explicit graph/symbolic views or views: []; "
+                "use archive-check for released structural evaluations."
+            )
         if native_smoke:
             config["measurement_rows"] = "protocol_medians"
         config["scope"] = scope
@@ -158,9 +167,18 @@ def _fit(args):
     result = {"status": "fitted", "validation_system": args.validation_system,
               "train_systems": sorted(set(train["object_model"])), "holdout_systems": sorted(holdout),
               "training_objective_extrema": [y_train.min(axis=0), y_train.max(axis=0)],
-              "calibration_factors": factors, "dataset": _dataset_metadata(dataset, counts)}
+              "calibration_factors": factors, "dataset": _dataset_metadata(dataset, counts),
+              "ensemble_manifest_sha256": sha256_file(out / "ensemble" / "manifest.json"),
+              "ensemble_member_sha256": {p.name: sha256_file(p) for p in sorted((out / "ensemble").glob("member-*.npz"))}}
     write_json(out / "fit_manifest.json", result)
     return result
+
+
+def _predict(args):
+    from .paper_predict import predict_paper
+
+    return predict_paper(args.candidates, args.model_dir, args.out, config=load_config(args.config),
+                         batch_size=args.batch_size)
 
 
 def _recommend(args):
@@ -253,6 +271,13 @@ def main(argv):
     fit.add_argument("--config", required=True)
     fit.add_argument("--out", required=True)
 
+    pred = sub.add_parser("predict", help="Score existing candidate records using a trained ensemble")
+    pred.add_argument("--candidates", required=True, help="JSONL of candidates with the required paper views")
+    pred.add_argument("--model-dir", required=True, help="Output directory from paper fit")
+    pred.add_argument("--config", help="Optional neural checkpoint paths, cache, and device override")
+    pred.add_argument("--batch-size", type=int, help="Optional candidate batch limit")
+    pred.add_argument("--out", required=True)
+
     rec = sub.add_parser("recommend", help="Run bounded incremental search for a new object model")
     rec.add_argument("--model", required=True)
     rec.add_argument("--model-dir", required=True, help="Output directory from paper fit")
@@ -280,7 +305,8 @@ def main(argv):
 
     args = parser.parse_args(argv)
     try:
-        handlers = {"check": _check, "generate": _generate, "evaluate": _evaluate, "fit": _fit, "recommend": _recommend}
+        handlers = {"check": _check, "generate": _generate, "evaluate": _evaluate, "fit": _fit,
+                    "predict": _predict, "recommend": _recommend}
         if args.command in handlers:
             result = handlers[args.command](args)
         elif args.command == "profile":

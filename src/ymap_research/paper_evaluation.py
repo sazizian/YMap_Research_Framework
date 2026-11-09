@@ -522,6 +522,8 @@ def _row_requirements(data, config, scope):
 
 
 def _validate_canonical_pool(records):
+    from .paper_schema import paper_features, paper_graph
+
     hashes = set()
     for record in records:
         ddl = record.get("paper_ddl")
@@ -533,6 +535,12 @@ def _validate_canonical_pool(records):
         if fingerprint in hashes:
             raise ValueError("Duplicate canonical DDL in paper scope; reconcile the candidate pool before evaluation")
         hashes.add(fingerprint)
+        # Views must describe the schemas as measured. The legacy fallback may
+        # apply different mapping rules, changing keys or column nullability.
+        if not {"paper_graph", "paper_features"} <= record.keys():
+            raise ValueError("Paper scope requires explicit Stage B paper_graph and paper_features for every measured candidate")
+        paper_graph(record)
+        paper_features(record)
 
 
 def evaluate_paper(candidates_path, measurements_path, out_dir, config=None):
@@ -559,6 +567,13 @@ def evaluate_paper(candidates_path, measurements_path, out_dir, config=None):
     if scope == "paper" and levels != RISK_LEVELS:
         raise ValueError("Paper scope requires the kappa grid 0, 0.5, 1, 2")
     run_neural = views != ()
+    native_views = config.get("dataset") == "native" and run_neural
+    if native_views:
+        if scope != "smoke" or views is None or any(view not in ("graph", "symbolic") for view in views):
+            raise ValueError("Native neural evaluation supports only the graph and symbolic smoke views")
+        from .paper_prediction_inputs import native_prediction_records
+
+        records = native_prediction_records(records)
     if run_neural:
         from .paper_model import fit_predict_paper
     elif not baselines:
@@ -712,6 +727,7 @@ def evaluate_paper(candidates_path, measurements_path, out_dir, config=None):
         "input_sha256": {"candidates": sha256_file(candidates_path), "measurements": sha256_file(measurements_path)},
         "system_order": order, "shared_systems": shared, "repetition_seeds": repeats, "views": views,
         "neural_model": model if run_neural else None,
+        "neural_input_source": ("native_measured_physical_schema" if native_views else "prepared_paper_views") if run_neural else None,
         "prediction_baselines": baselines, "structural_features": feature_names,
         "structural_feature_source": descriptor_source if baselines else None,
         "risk_levels_requested": levels, "default_kappa": 1.0,

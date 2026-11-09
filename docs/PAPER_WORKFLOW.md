@@ -39,6 +39,19 @@ exercises system-held-out folds, measured Pareto metrics and preference regret
 without training the five-view model. The archived candidate catalog does not supply the complete
 canonical object mappings required by the manuscript's graph and 12 descriptors.
 
+To exercise actual neural training on a CPU with PyTorch installed:
+
+```sh
+ymap paper evaluate --dataset native --config config/paper_prediction_smoke.yaml --out runs/prediction_cpu_smoke
+```
+
+This trains the graph and symbolic branches with five seeds per fold on three
+small systems (20 measured candidates). It uses the verified physical tables of
+the already-measured schemas without changing their keys, nullability, or SQL.
+Read `oof_predictions.csv` for predictions and spread in the measured objective
+units and `summary.json` for the run scope. No solver, fresh database
+measurements, or pretrained text models are involved in this smoke run.
+
 ## Run a documented manuscript-protocol study
 
 1. Install the runtime extras: `python -m pip install -e ".[postgres,neural,paper-int4]"`.
@@ -99,6 +112,25 @@ The diagnostics consume documented measurements and out-of-fold predictions;
 they do not run the original external systems.
 
 ## Fit once and recommend on a new model
+
+If the candidate schemas have already been produced by Alloy or another
+enumerator, you can score them directly after `paper fit`:
+
+```sh
+ymap paper predict --candidates path/to/prepared_candidates.jsonl --model-dir runs/paper_ensemble --out runs/existing_predictions
+```
+
+The candidate file must contain the original schema and system identifiers,
+canonical `paper_ddl`, `paper_graph` with the five typed relations, and the
+twelve `paper_features` when those views are used by the fitted model. Preserve
+the mappings from the exact physical schemas. Raw SQL alone does not establish
+the inheritance edges or mean join pressure required by the manuscript.
+`predictions.csv` contains the individual members, ensemble means, sample
+standard deviations, and validation-calibrated spreads in the original target
+units. `prediction_manifest.json` records the inputs and model. The command
+does not enumerate, measure, train, or estimate calibration from the scoring
+candidates. If you set `--batch-size`, use an embedding cache to avoid repeated
+checkpoint loads.
 
 ```sh
 ymap paper fit --manifest path/to/dataset.yaml --config path/to/study.yaml \
