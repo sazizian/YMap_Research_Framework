@@ -1,0 +1,36 @@
+{
+  "scope": "DDL execution and inventory verification for the selected 12,500-file cohort",
+  "source_commit": "b236d61601e7ca7daed7c8f28e5b7c719bf54291",
+  "sql_inventory": {
+    "scope": "verified_postgresql_ddl_inventory",
+    "sql_file_count": 12500,
+    "native_unchanged": 728,
+    "archive_converted": 11772,
+    "candidates_csv_sha256": "19939a18f02189f7b114197ebd79a42c459f83ecd3e78674e7ee1dc287e63ded",
+    "original_candidates_csv_sha256": "ccf11469e6559476a272705bf6d3fa074c26188287bdb37bb260749ca1ac5cd5",
+    "conversion_report_sha256": "c8bf69a6727883a77cc125d4a40a5350575c4da706616c9531bec2d389f2a499",
+    "new_measurements": false,
+    "common_protocol_verified": false,
+    "archive_mapping_recovered": false
+  },
+  "converted_ddl_execution": {
+    "method": "Each converted DDL file executed in its own transaction and temporary test schema. Catalog counts were inspected before rollback.",
+    "postgres": "PostgreSQL 18.6 (PGlite 0.5.15) on wasm32-unknown-emscripten, compiled by emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 6.0.13 (e13ee988ce3d87a738dd8f3661d02223308c412a), 32-bit",
+    "pglite": "0.5.15",
+    "total": 11772,
+    "passed": 11772,
+    "failed": 0,
+    "catalog": {
+      "tables": 195696,
+      "primary_keys": 195696,
+      "foreign_keys": 204261,
+      "indexes": 204270
+    },
+    "problems": []
+  },
+  "limits": [
+    "The database test executes the converted DDL; it is not a workload benchmark or a proof of mapping equivalence.",
+    "The 728 native files are retained unchanged; the DDL execution results in this report cover the 11,772 converted files only.",
+    "No training or performance measurements were produced."
+  ]
+}

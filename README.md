@@ -1,122 +1,100 @@
 # Y-Map Research Framework
 
-Version **0.5** adds the manuscript workflow: bounded schema synthesis,
-PostgreSQL profiling, five-view prediction, system-held-out evaluation and
-incremental risk-aware recommendation. Start with
-[the workflow and reproduction limits](docs/PAPER_WORKFLOW.md). All released
-data is accessed under `Dataset/YMap` with a named measurement scenario:
+**Y-Map** explores relational schemas that implement the same object model under object–relational mapping constraints. It can generate candidate schemas, profile them in PostgreSQL, predict insert latency, query latency, and storage, and recommend schemas using Pareto ranking and user preferences.
 
-```sh
-ymap paper check --dataset native
-ymap paper check --dataset archive
-```
+This README describes the `ymap-v0.5` branch and the accompanying five-view runner. The 728-schema native study has measured outcomes and verified model inputs. A complete five-view CUDA run has yet to be verified.
 
-Research software for **Y-Map**: generating relational schema candidates for an object model under ORM mapping rules, measuring them on PostgreSQL, and evaluating learned performance predictors and Pareto/preference-based schema recommendation with leave-one-system-out validation.
+## Choose the right inputs
 
+| Input | Size | Intended use |
+| --- | ---: | --- |
+| `native` | 728 measured schemas in 11 systems; 728 measurement rows | Start here. The released PostgreSQL 14.24 study uses 100 rows per class and the median of five repetitions per schema. |
+| `archive` | 27,488 distinct measured schemas in 15 systems; 31,393 measurement rows | Analyze separately. The measurement units and protocol are unconfirmed, and the complete mapping inputs for the five-view model are unavailable. |
+| Prepared PostgreSQL SQL inventory | 12,500 schema files across 26 catalog system IDs: 728 native and 11,772 converted archive files | Inspect and verify DDL. Conversion does not provide the missing mappings or produce performance measurements under a common protocol. |
+| `paper-reference` | The manuscript reports 12,500 profiled designs across 11 systems | Requires a separate measured dataset and an explicit provenance manifest. The original reference inputs and trained weights are not bundled. |
 
+The default data root is `Dataset/YMap/`; [the dataset registry](config/datasets.yaml) selects a scenario. Native inputs are `Generated/candidates.jsonl` and `Measurements/ymap_postgresql_measurements.csv` within that root. Use `--dataset-root` if the data are stored elsewhere. See [data and provenance](docs/DATA_AND_PROVENANCE.md) for source attribution, licenses, and the distinction between SQL files and measured schemas.
 
-## Repository layout
+## Install and verify on Windows
 
-| Path | Contents |
-|---|---|
-| `src/ymap_research/` | Framework source: candidate generation (`synthesis.py`), schema representations, PostgreSQL profiling, evaluation, recommendation, statistics, optional neural backend |
-| `tests/` | Unit and integration tests |
-| `config/` | Profiling, evaluation, training and neural configurations |
-| `scripts/` | `check_framework.py` (test runner) and `neural_train_recommend.py` |
-| `Dataset/YMap/` | Unified SQL and measurement catalog; see the dataset manifest for separate scenarios |
-| `results/YMap/` | Outputs of the measured study (see below) |
-| `YMap_Run_Audit_20261023/` | Independent consistency audit of the measured study |
-| `run_graph_symbolic_evaluation.py` | Runs the graph + symbolic neural evaluation on the existing measurements |
-| `docs/` | Profiling protocol, supported mapping semantics, neural backend, technical references |
-| `validation/` | Recorded software-validation logs for releases 0.3 and 0.4 |
-
-## Installation
-
-Python 3.10 or newer is required. Run all commands from the project root.
-
-**Windows (PowerShell)**
+Use Python 3.10 or newer and run these commands from the repository root on `ymap-v0.5`. Skip virtual environment creation if `.venv` already exists.
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -e .
 .\.venv\Scripts\python.exe -m ymap_research doctor
+.\.venv\Scripts\python.exe -m ymap_research paper check --dataset native
 ```
 
-**Linux / macOS**
+On Linux or macOS, use `python3 -m venv .venv`, activate with `source .venv/bin/activate`, and use `python` in place of the PowerShell interpreter path.
+
+The package check verifies the registered native measurements and their candidate IDs. Use the [five-view runner](src/ymap_research/ymap_paper_main.py) to also validate the native model inputs:
+
+```powershell
+.\.venv\Scripts\python.exe .\src\ymap_research\ymap_paper_main.py check-data --dataset native --config .\config\native_five_view.example.yaml
+```
+
+Expect `measured_stage_b_inputs_verified` and observed counts of **728 candidates, 11 systems, and 728 measurement rows**. The example configuration can be used as-is for this check. `neural_execution_tested: false` is expected: this command does not load or train the model.
+
+If you have prepared the separate SQL inventory at `runs/ymap_cohort_12500_postgresql_ready/`, verify its manifest and SQL file hashes:
+
+```powershell
+.\.venv\Scripts\python.exe .\src\ymap_research\ymap_paper_main.py check-cohort .\runs\ymap_cohort_12500_postgresql_ready
+```
+
+Expect `verified_sql_files: 12500` and `can_use_inventory_directly_for_fit_or_evaluate: false`. Neither check requires a GPU or a running PostgreSQL server.
+
+### Prepare the local SQL inventory
+
+If you have the original `ymap-cohort-12500-with-sql.zip` bundle, extract it under `runs/ymap_cohort_12500_sql/`, keeping the SQL, CSV, manifests, and `provenance/` together. From the root in an activated Python environment:
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -e .
-.venv/bin/python -m ymap_research doctor
+python scripts/count_ymap_sql.py runs/ymap_cohort_12500_sql
+python scripts/convert_ymap_archive_to_postgresql.py runs/ymap_cohort_12500_sql runs/ymap_cohort_12500_postgresql
+python scripts/prepare_ymap_postgresql_cohort.py runs/ymap_cohort_12500_sql runs/ymap_cohort_12500_postgresql runs/ymap_cohort_12500_postgresql_ready
 ```
 
-Optional extras: `.[postgres]` for profiling, `.[neural]` for the neural backend, `.[xgboost]`, `.[plots]`.
+The converter targets the archive's DDL forms. The preparation script preserves the native files and checks that every converted file matches its conversion report. The SQL bundle and generated `runs/` folders are kept outside Git. To rebuild the candidate **list** from the pinned source catalog, use `python scripts/build_ymap_cohort.py --dataset-root Dataset/YMap --out-dir runs/ymap_cohort_12500` with the source SQL files present. That command produces selection metadata, not the SQL bundle. The [status report](STATUS.md) records the checks and their limits.
 
-## Running a study
+## Train and evaluate the five-view predictor
 
-Set the PostgreSQL connection locally (never commit credentials). `docker-compose.yml` starts an optional local PostgreSQL 14 server.
+The model combines GraphCodeBERT, CodeT5+ 220M, Llama 2 7B, a typed schema graph, and 12 structural descriptors. The five views are fused through a learned gate. The model predicts three objectives and uses a five-member ensemble to estimate uncertainty, with calibration fitted on the validation system.
 
-```powershell
-.\.venv\Scripts\python.exe -m pip install -e ".[postgres]"
-$env:YMAP_POSTGRES_DSN = "host=localhost port=55432 dbname=ymap user=ymap password=YOUR_LOCAL_PASSWORD"
+On a CUDA machine, install the `neural` extra with a CUDA-enabled PyTorch build. The standalone runner defaults to `gptq-int4`; it also requires compatible `accelerate`, `optimum`, and `gptqmodel` installations and a local, prequantized GPTQ INT4 Llama 2 7B checkpoint. Installations must be compatible with the dependency ranges in [`pyproject.toml`](pyproject.toml). The framework does not fetch checkpoints. The runner's explicit `--llama-backend fp4` option uses a different quantization format. The manuscript specifies INT4 but does not document the original quantizer or checkpoint hashes.
 
-.\.venv\Scripts\python.exe -m ymap_research generate --models Dataset/YMap/Object_Models --out runs/candidates --backend python
-.\.venv\Scripts\python.exe -m ymap_research profile  --candidates runs/candidates/candidates.jsonl --config config/profile.yaml --out runs/measurements
-.\.venv\Scripts\python.exe -m ymap_research validate --candidates runs/candidates/candidates.jsonl --measurements runs/measurements/measurements.csv
-.\.venv\Scripts\python.exe -m ymap_research evaluate --candidates runs/candidates/candidates.jsonl --measurements runs/measurements/measurements.csv --config config/evaluation.yaml --out runs/evaluation
+Copy [the example configuration](config/native_five_view.example.yaml) to `runs/native_five_view.yaml` and set `neural.checkpoints.graphcodebert`, `neural.checkpoints.codet5`, and `neural.checkpoints.llama` to the three local checkpoint directories. Keep the embedding cache enabled across runs. From an activated Python environment on the CUDA machine, first check the setup, then fit one fold:
+
+```bash
+python src/ymap_research/ymap_paper_main.py check-model --config runs/native_five_view.yaml
+python src/ymap_research/ymap_paper_main.py fit --dataset native --config runs/native_five_view.yaml --test-system banking --out runs/native_paper_fit
 ```
 
-Use a new output folder for every run. The `python` backend applies the structural checks in [`docs/SUPPORTED_MAPPING_SEMANTICS.md`](docs/SUPPORTED_MAPPING_SEMANTICS.md); `--backend alloy` additionally requires a JDK and an Alloy JAR. The neural backend requires PyTorch, Transformers and local pretrained checkpoints, which are not included (see [`docs/NEURAL_BACKEND.md`](docs/NEURAL_BACKEND.md)).
+The example holds out `banking`, uses `blog_platform` for validation and calibration, and trains on the other nine systems. It saves the five fitted members and `fit_manifest.json`. A successful `check-model` checks configuration and runtime availability; the fit exercises checkpoint loading and training.
 
-## Included measured study
+To score prepared inputs with the fitted ensemble:
 
-| Item | Value |
-|---|---|
-| Candidates | 728 schemas from 11 object models, generated with the `python` backend |
-| Database | PostgreSQL 14.24 (Docker), default server settings, Windows 11 client |
-| Workload | `ymap_logical_workload_v1`, 100 rows per class, 5 repetitions per candidate (see [`docs/PROFILING_PROTOCOL.md`](docs/PROFILING_PROTOCOL.md)) |
-| Raw measurements | `results/YMap/evaluation_review_20261023_113149_551.zip` (`measurements/`) |
-| Evaluation (structural baselines + 5-member ensemble) | `results/YMap/evaluation_20261023_105939_243/` |
-| Evaluation adding the graph + symbolic neural model (CPU) | `results/YMap/graph_symbolic_cpu_ff2ed12dbc97/` |
-
-Macro means over the 11 held-out systems (`summary.json`; lower nRMSE/IGD+ and higher HV/F1 are better):
-
-| Model | nRMSE | HV | IGD+ | F1 |
-|---|---|---|---|---|
-| Ridge | 0.107 | 0.875 | 0.154 | 0.444 |
-| Linear | 0.126 | 0.909 | 0.115 | 0.459 |
-| Extra trees | 0.143 | 0.898 | 0.130 | 0.463 |
-| Ensemble (5 × extra trees), mean | 0.143 | 0.896 | 0.132 | 0.390 |
-| Neural (graph + symbolic) | 0.137 | 0.882 | 0.161 | 0.373 |
-
-No paired comparison is significant after Holm adjustment in either evaluation (`paired_statistics.json`). This is a small study and does not establish that the methods are equivalent.
-
-## Tests
-
-### Preference regret
-
-`recommend()` records `preference_index`, chosen from the returned candidates
-using predicted weighted mean-plus-risk scores only. Evaluation measures that
-specific decision's realized weighted utility against the best feasible measured
-utility, using the same proper-training normalization and weights for both.
-The selected schema ID and normalization are retained in `recommendations.json`.
-Without an explicit prediction-based decision, `preference_regret` is null.
-
-The previous best-measured-member diagnostic is now named `oracle_set_regret`
-and retains the fixed measured-pool normalization used by Pareto metrics.
-Historical result folders used this oracle diagnostic under the name
-`preference_regret`; recompute regret and any affected statistics in a new output
-folder before comparing them with corrected runs. This code fix does not
-recalculate the included research results or establish the manuscript's results.
-
-### Running the tests
-
-```powershell
-.\.venv\Scripts\python.exe scripts/check_framework.py
+```bash
+python -m ymap_research paper prepare-native --out runs/native_prediction_inputs
+python src/ymap_research/ymap_paper_main.py predict --candidates runs/native_prediction_inputs/candidates.jsonl --model-dir runs/native_paper_fit --out runs/native_paper_predictions
 ```
 
-Tests that need PostgreSQL, Alloy or neural checkpoints are skipped when those are unavailable; skipped tests are not passes.
+The output `predictions.csv` contains member predictions, ensemble means, and raw and calibrated spreads. This example scores the entire native set, including training systems. Use the following command for **held-out performance**: it runs 11 cyclic folds, with three repetitions of five members per fold, and writes `oof_predictions.csv` plus prediction and uncertainty reports.
 
-## License
+```bash
+python src/ymap_research/ymap_paper_main.py evaluate --dataset native --config runs/native_five_view.yaml --out runs/native_five_view_evaluation
+```
 
-See [`LICENSE.md`](LICENSE.md). Third-party dependencies, PostgreSQL, Alloy and pretrained checkpoints remain under their own licenses.
+Use a new or empty output directory for each run. Scoring external candidates requires Stage B JSONL with matching schema and system IDs, canonical DDL, the typed graph, and all 12 descriptors. The SQL inventory CSV cannot replace that JSONL. For training or evaluation, the candidate file must also align with a measured objectives CSV. See the [reference manifest example](config/paper_dataset.example.yaml) and [study configuration](config/paper_study.example.yaml) for the `paper-reference` inputs.
+
+## Other workflows and results
+
+- **CPU smoke test:** with `.[neural]` installed, run `python -m ymap_research paper evaluate --dataset native --config config/paper_prediction_smoke.yaml --out runs/prediction_cpu_smoke`. This exercises graph and descriptor training on 20 measured designs from three systems. It does not exercise the text encoders.
+- **Generation, profiling, and recommendation:** see the [manuscript workflow](docs/PAPER_WORKFLOW.md), [mapping semantics](docs/SUPPORTED_MAPPING_SEMANTICS.md), and [profiling protocol](docs/PROFILING_PROTOCOL.md). Actual database profiling requires the `postgres` extra and an authorized PostgreSQL instance. The Alloy backend additionally requires a JDK and an Alloy JAR. The package CLI has its own model configuration and fit flags; use the standalone runner to score ensembles it fitted.
+- **Recorded results:** see the [run status](STATUS.md) for the native structural baselines and graph-plus-descriptor CPU results. The [manuscript values register](docs/PAPER_REPORTED_VALUES.md) identifies values reported in the paper. Native results, the SQL inventory, and software checks do not reproduce those values.
+- **Preference regret:** in corrected evaluations, regret compares the recommendation selected using predictions with the best feasible measured choice. Older result folders used the best measured member of the returned set under the old `preference_regret` label; that diagnostic is now `oracle_set_regret`. Recompute affected outputs before comparing regret values.
+
+## Tests and license
+
+Run `python scripts/check_framework.py` from the project root using the installed environment. Integration tests requiring unavailable services or checkpoints can be skipped; the test summary records skips separately.
+
+See [`LICENSE.md`](LICENSE.md) for the framework and [data and provenance](docs/DATA_AND_PROVENANCE.md) for third-party data terms. Dependencies and pretrained checkpoints have their own licenses.

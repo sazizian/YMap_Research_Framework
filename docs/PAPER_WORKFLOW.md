@@ -6,6 +6,10 @@ software smoke run, and reproduction of the published numbers are distinct
 claims. This repository does not contain the full original 12,500-design
 profiling run, its original object fixtures, or the original model weights.
 
+This page documents the packaged `ymap paper` commands. For the separate
+`ymap_paper_main.py` runner, including its GPTQ INT4 path, see the
+[repository quickstart](../README.md#train-and-evaluate-the-five-view-predictor).
+
 ## Start from the released data
 
 From the repository root, install the framework and verify each scenario:
