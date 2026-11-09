@@ -2,8 +2,8 @@
 
 The test system is used for scoring only. Selection scales come from candidate
 predictions, while reported regret and front quality use measured-pool scales.
-This workflow does not reconstruct historical results or implement the external
-research baselines: their selected schema IDs must be supplied with provenance.
+For external research baselines, supply the selected schema IDs and their
+provenance for the measured candidate pool under evaluation.
 """
 from __future__ import annotations
 

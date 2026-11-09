@@ -1,6 +1,6 @@
 # Supported object/relational mapping semantics
 
-This is a new research implementation. It does not reconstruct the measurements, model checkpoints, or formal guarantees of the submitted manuscript. The old package's formula-based profiler is not called anywhere in this implementation.
+This guide documents the mapping constraints and validation checks implemented in this release. The [profiling guide](PROFILING_PROTOCOL.md) describes how this implementation measures PostgreSQL performance.
 
 ## Input contract
 

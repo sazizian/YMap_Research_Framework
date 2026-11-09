@@ -1,8 +1,8 @@
 # Optional neural multi-view backend
 
-This implementation is a new research implementation. It is not a reconstruction
-of unavailable historical model weights, and it does not establish the submitted
-paper's results. No manuscript performance number is produced or hard-coded here.
+This guide describes the optional neural backend in this release, including
+checkpoint loading, feature encoding, training, and software integration tests.
+See the [manuscript workflow](PAPER_WORKFLOW.md) for study inputs and evaluation.
 
 The original uploaded project includes a lightweight hash-token encoder. This
 backend **never uses that encoder**. Checkpoint or dependency failures stop the
@@ -247,12 +247,11 @@ ensemble training, missing-weight rejection, and saved-model prediction equality
 Additional tests check explicit tensor dtypes under a float64 global default,
 finite scaling for large features, and repeatability under a fixed seed.
 
-The verification environment used CPU PyTorch 2.14.1+cpu, Transformers 4.57.6,
-Tokenizers 0.22.2 and Safetensors 0.8.0. These successful software integration
-tests do **not** establish pretrained semantic quality, the manuscript's
-predictive accuracy, or historical reproducibility. No full pretrained
-GraphCodeBERT/CodeT5+/LLaMA experiment on measured research data was executed;
-those experiments still require actual authorized checkpoints and measurements.
+This software verification used CPU PyTorch 2.14.1+cpu, Transformers 4.57.6,
+Tokenizers 0.22.2 and Safetensors 0.8.0. Its scope was integration testing with
+small, randomly initialized checkpoints. An evaluation on measured research
+data uses the pretrained checkpoints and the study inputs described in the
+[manuscript workflow](PAPER_WORKFLOW.md).
 
 After installing dependencies, run:
 

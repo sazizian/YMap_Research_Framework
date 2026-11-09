@@ -2,7 +2,7 @@
 
 Profiling requires a PostgreSQL server and optional `psycopg[binary]>=3.1`. Set a connection string in the environment variable named by `dsn_env` (default `YMAP_POSTGRES_DSN`). Credentials are never copied to manifests or printed by this code. A connection failure is fatal; no synthetic timing fallback exists.
 
-The configuration must explicitly set `fixture_mode: deterministic_generated`. This authorizes generation of new reference input objects and associations. It does not authorize treating generated inputs or newly measured labels as the original manuscript data. The current package is a new implementation; none of its timing values should be reported as previously collected measurements.
+Set `fixture_mode: deterministic_generated` to generate the input objects and associations for a profiling run. Each run has its own fixture, environment, workload, and measurement records. See the [manuscript workflow](PAPER_WORKFLOW.md) for configuring the reference protocol.
 
 ## Configuration
 
@@ -46,4 +46,4 @@ Live integration tests are enabled with `YMAP_TEST_POSTGRES_DSN`. They execute m
 
 Additional build verification used the official PGlite 0.5.10 PostgreSQL 18.6 WebAssembly engine. Positive psycopg socket roundtrips passed four multilevel/polymorphic mappings and six mappings spanning all three supported inheritance strategies with leaf associations and scalar types. Its direct JavaScript API rejected six invalid-data probes with the expected PostgreSQL SQLSTATEs, including subtype violations, one-to-one duplicates, partially null composite foreign keys, and missing mandatory target links. The PGlite socket wrapper did not correctly recover expected-error transactions under psycopg in this environment, so negative native-driver error recovery remains unverified; the native integration tests are retained without weakening constraints. These checks are execution verification against a WASM PostgreSQL engine, not native-server performance experiments or reproduction of the original manuscript's results. Runtime class/version and psycopg version are recorded in profiling environment manifests.
 
-The native-server limitation is environmental: PostgreSQL refuses to run as root, while this sandbox exposes only root and prevents switching to a nonroot UID. Do not interpret the unavailable native run as a passing native-server test. No performance comparison, statistical claim, or manuscript result is established by these software checks.
+The software validation environment for the PGlite checks provided root access only, which prevented starting a native PostgreSQL server there. The native integration suite uses a separate PostgreSQL environment configured through `YMAP_TEST_POSTGRES_DSN`.

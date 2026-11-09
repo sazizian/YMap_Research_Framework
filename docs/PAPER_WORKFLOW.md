@@ -1,10 +1,11 @@
 # Y-Map manuscript workflow
 
-Version 0.5 adds a pipeline for the manuscript's method and retains the
-released 728-schema PostgreSQL experiment. A workflow implementation, a
-software smoke run, and reproduction of the published numbers are distinct
-claims. This repository does not contain the full original 12,500-design
-profiling run, its original object fixtures, or the original model weights.
+The manuscript reports a reference experiment on 12,500 profiled designs.
+This guide describes how to use the version 0.5 software with the matching
+study inputs through `paper-reference`, or with the released 728-schema
+PostgreSQL dataset through `native`. The [dataset manifest](../config/paper_dataset.example.yaml)
+specifies the inputs, workload, environment, and checksums for a reference-study run.
+For the source of manuscript table values, see the [results index](PAPER_REPORTED_VALUES.md).
 
 This page documents the packaged `ymap paper` commands. For the separate
 `ymap_paper_main.py` runner, including its GPTQ INT4 path, see the
@@ -82,18 +83,20 @@ ymap paper fit --dataset native --config path/to/native_five_view.yaml --validat
 Evaluation uses 11 cyclic held-out systems and the manuscript's three
 repetitions of five seeds. Fit uses one held-out validation system to produce a
 deployable five-member ensemble; `paper predict` can then score prepared inputs.
-These are native-study results. They use the October 2026 measurement protocol
-and the implemented Llama FP4 loading path; they do not establish agreement
-with the manuscript's historical INT4 run or comparator cohort.
+These commands produce native-study results under the October 2026
+measurement protocol using the package CLI's Llama FP4 path. Use the
+`paper-reference` scenario and its matching model and comparator configuration
+to work with the manuscript reference cohort.
 
 ## Run a documented manuscript-protocol study
 
 1. Install the runtime extras: `python -m pip install -e ".[postgres,neural,paper-int4]"`.
    Provide a compatible JDK, an Alloy distribution JAR, local GraphCodeBERT,
    CodeT5+ 220M and Llama-2 7B checkpoints (weights and tokenizer files), and a
-   CUDA device. The paper does not specify its exact four-bit format; this
-   implementation uses bitsandbytes FP4 with FP16 compute for Llama. Checkpoint
-   files are not fetched by the workflow.
+   CUDA device. This package CLI uses bitsandbytes FP4 with FP16 compute
+   for Llama. See the [standalone runner](../README.md#train-and-evaluate-the-five-view-predictor)
+   for its GPTQ INT4 option. Provide the local checkpoint files and record the
+   loading configuration for the run.
 2. Supply object-model JSONs and a YAML mapping from each system ID to its
    maximum table count. Generate canonical SQL and its typed graph and 12
    descriptors. The scope is a table-count bound enforced during compilation.
@@ -129,11 +132,11 @@ The profiler writes one median measurement row per schema by default; its
 per-repetition evidence and realized protocol are saved alongside the CSV.
 Use `--backend python` to test the bounded compiler without a JDK/Alloy; it
 uses the same finite decision space, but does not perform formal solving.
-The Alloy bridge encodes finite mapping strategy choices. It does not recover
-the paper's original relational translator or all of its constraints. The
-four recommendation streams have seeded declaration and choice orders; they
-are not guaranteed to use independent SAT solver seeds. SQL deduplication
-checks canonical DDL bytes, not full relational equivalence.
+The Alloy bridge in this release encodes finite mapping strategy choices.
+See [the supported mapping semantics](SUPPORTED_MAPPING_SEMANTICS.md) for its
+translation and constraint scope. The four recommendation streams vary
+declaration and choice order through seeds. SQL deduplication compares
+canonical DDL bytes.
 
 Full evaluation fits the five views with cyclic system-held-out validation,
 three repetitions of five members, validation-only Gaussian recalibration,
@@ -142,8 +145,7 @@ prediction baselines and the 66 manuscript preference vectors. Use
 explicit view subset. These scopes have different outputs and are identified
 in the reports. Use `ymap paper transfer --help` and
 `ymap paper compare-orm --help` to analyze measured workload and ORM comparisons.
-The diagnostics consume documented measurements and out-of-fold predictions;
-they do not run the original external systems.
+The diagnostics analyze supplied measurements and out-of-fold predictions.
 
 ## Fit once and recommend on a new model
 

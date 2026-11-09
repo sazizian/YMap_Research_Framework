@@ -1,4 +1,4 @@
-# Small REAL measurement protocol for a first executable check, not the paper's original protocol.
+# Example configuration for the released native PostgreSQL study.
 dsn_env: YMAP_POSTGRES_DSN
 fixture_mode: deterministic_generated
 rows_per_class: 100
