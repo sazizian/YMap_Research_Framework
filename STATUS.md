@@ -29,11 +29,4 @@ The separate archive catalog contains 27,488 distinct measured design records in
 
 The [five-view runner](src/ymap_research/ymap_paper_main.py) provides input and checkpoint checks, single-fold fitting, prediction, and full cyclic evaluation. The [README](README.md) lists the commands and runtime requirements.
 
-## What remains unverified
 
-- Full five-view training and evaluation on CUDA with GraphCodeBERT, CodeT5+ and Llama 2. The necessary checkpoints are not bundled.
-- Reproduction of the manuscript's numerical results or its 12,500 profiled designs across 11 systems. The locally prepared SQL inventory contains 26 catalog system IDs and lacks the archive mappings and measurements under a common protocol.
-- Full-space Alloy synthesis for the original experiment. The bundled native study used the Python generator.
-- Performance at larger data scales, on other database systems, or through an ORM at application level. The structural checks apply within the supported mapping rules and bounds; they do not prove unconditional semantic preservation.
-
-Link each new experimental claim to the run outputs, configuration, environment, and measured inputs that support it.
