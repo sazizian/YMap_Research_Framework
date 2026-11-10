@@ -8,7 +8,7 @@ This guide covers the version 0.5 release and its five-view runner. It provides 
 
 The manuscript reports an evaluation of 12,500 profiled relational designs across 11 object models under a reference PostgreSQL 14.10 protocol with five profiling repetitions per design. Use the `paper-reference` workflow with the experiment's matching candidate records, measured objectives, and study configuration. The [manuscript results index](docs/PAPER_REPORTED_VALUES.md) identifies the source table and evaluation scope for each listed result. The [run status](STATUS.md) indexes the released measurements and software checks by run.
 
-The checked-in `paper-reference` configuration is a template. Supply the manifest for the specific reference-study artifacts you want to evaluate. The checkout includes the registered `native` and `archive` datasets for their respective workflows.
+The checked-in `paper-reference` configuration is a template. Supply a manifest that ties the reference study's candidate records and measured objectives to its profiling protocol. The prepared local SQL cohort is documented below, alongside the released `native` and `archive` datasets.
 
 ## Choose the right inputs
 
@@ -17,7 +17,7 @@ The checked-in `paper-reference` configuration is a template. Supply the manifes
 | `paper-reference` | Manuscript reference study, 12,500 profiled designs across 11 object models | Select the study with a [dataset manifest](config/paper_dataset.example.yaml) and [evaluation configuration](config/paper_study.example.yaml). |
 | `native` | 728 measured schemas across 11 systems | Start here to run the released PostgreSQL 14.24 study workflow. Each schema has one measurement row summarizing five repetitions at 100 rows per class. |
 | `archive` | 27,488 distinct measured schema records across 15 systems, with 31,393 measurement rows | Use for separate analyses of the ReinforceORM archive. Interpret objectives in the context of the source records, whose measurement units and protocol are unconfirmed. |
-| Prepared PostgreSQL SQL inventory | 12,500 DDL files across 26 catalog system IDs, comprising 728 native and 11,772 converted archive files | Inspect and validate DDL. The inventory is indexed by its own manifest and file hashes. |
+| Local PostgreSQL SQL inventory (`runs/ymap_cohort_12500_postgresql_ready/`) | 12,500 DDL files across 26 catalog system IDs, comprising 728 native and 11,772 converted archive files | Inspect the candidate inventory and verify its manifest and SQL file hashes. |
 
 The default data root is `Dataset/YMap/`; [the dataset registry](config/datasets.yaml) selects a scenario. Native inputs are `Generated/candidates.jsonl` and `Measurements/ymap_postgresql_measurements.csv` within that root. Use `--dataset-root` if the data are stored elsewhere. See [data and provenance](docs/DATA_AND_PROVENANCE.md) for source attribution, licenses, and the distinction between SQL files and measured schemas.
 
@@ -42,17 +42,21 @@ The package check verifies the registered native measurements and their candidat
 
 Expect `measured_stage_b_inputs_verified` and observed counts of **728 candidates, 11 systems, and 728 measurement rows**. The example configuration can be used as-is for this check. `neural_execution_tested: false` is expected: this command does not load or train the model.
 
-If you have prepared the separate SQL inventory at `runs/ymap_cohort_12500_postgresql_ready/`, verify its manifest and SQL file hashes:
+### Verify the prepared local SQL inventory
+
+The prepared development copy of the 12,500-candidate cohort is at `runs/ymap_cohort_12500_postgresql_ready/`, relative to the repository root. The folder contains the SQL files, `candidates.csv`, `postgresql_bundle_manifest.json`, and source and conversion records under `provenance/`. The `sql_path` entries in `candidates.csv` are relative to the cohort folder.
+
+From the repository root, verify the inventory with `check-cohort`.
 
 ```powershell
 .\.venv\Scripts\python.exe .\src\ymap_research\ymap_paper_main.py check-cohort .\runs\ymap_cohort_12500_postgresql_ready
 ```
 
-Expect `verified_sql_files: 12500` and `can_use_inventory_directly_for_fit_or_evaluate: false`. Neither check requires a GPU or a running PostgreSQL server.
+The recorded local check returned `verified_sql_files: 12500`, `catalog_systems: 26`, and `can_use_inventory_directly_for_fit_or_evaluate: false`. This is a file and hash check that runs without a GPU or a PostgreSQL server. Fitting or evaluating the manuscript's reference study requires matching Stage B candidate records, measured objectives under the study protocol, and the study manifest.
 
 ### Prepare the local SQL inventory
 
-If you have the original `ymap-cohort-12500-with-sql.zip` bundle, extract it under `runs/ymap_cohort_12500_sql/`, keeping the SQL, CSV, manifests, and `provenance/` together. From the root in an activated Python environment:
+To prepare the inventory in another checkout, extract the original `ymap-cohort-12500-with-sql.zip` bundle under `runs/ymap_cohort_12500_sql/`. Keep the SQL, CSV, manifests, and `provenance/` together. Run these commands from the repository root in an activated Python environment.
 
 ```bash
 python scripts/count_ymap_sql.py runs/ymap_cohort_12500_sql
